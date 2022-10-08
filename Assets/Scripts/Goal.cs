@@ -32,4 +32,9 @@ public class Goal : MonoBehaviour
             _action.Invoke();
         }
     }
+
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -47,17 +47,15 @@ public class Infolutedama : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
 
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Ground")
         {
             Destroy(this.gameObject);
         }
 
-        if (collision.gameObject.tag == "Player" && !GM.star)
+        if (collision.gameObject.tag == "Player")
         {
             Instantiate(_hit, collision.transform.position, Quaternion.identity);
-            GM.StartCoroutine("StarTime");
         }
 
     }

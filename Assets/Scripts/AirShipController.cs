@@ -32,7 +32,7 @@ public class AirShipController : MonoBehaviour
         //ÇªÇÍÇºÇÍÇÃóvëfÇGetConponentÇ∑ÇÈÅB
         _rb = GetComponent<Rigidbody2D>();
         //AttackAni =GetComponent<Animator>();
-        //_gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        _gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         //_activeLoad = GameObject.FindGameObjectWithTag("GM").GetComponent<SceneLoader>();
     }
 
@@ -81,9 +81,11 @@ public class AirShipController : MonoBehaviour
                 StartCoroutine(CoolTime());
             }
         }
+
     }
     IEnumerator CoolTime()
     {
+        _gm.AddScore(-100);
         _airShipOnOff.SetActive(false);
         _cooltime = true;
         yield return new WaitForSeconds(_time);

@@ -9,12 +9,14 @@ public class PlayerBullet : MonoBehaviour
     [SerializeField] GameObject _hit;
     [SerializeField,Range(-1,1)] float _minas = 1f;
     [SerializeField] bool _isplayerBullet;
+    [SerializeField] GameObject _bakuhatu;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         //下に球を出す。
         rb.velocity = Vector2.down * _speed * _minas;
+        StartCoroutine(BakuhatuTime());
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class PlayerBullet : MonoBehaviour
         //壁か地面に当たったら破壊。
         if (collision.gameObject.tag == "Wall")
         {
-            Destroy(this.gameObject);
+            Bakuhatu();
         }
         ////プレイヤーへのダメージ(!GM.starは無敵時間じゃないとき)
         //if (collision.gameObject.tag == "Player" && !GM.star && !_isPlayer)
@@ -37,5 +39,18 @@ public class PlayerBullet : MonoBehaviour
         //    Instantiate(_hit, collision.transform.position, Quaternion.identity);
         //    GM.StartCoroutine("StarTime");
         //}
+    }
+    IEnumerator BakuhatuTime()
+    {
+        yield return new WaitForSeconds(2f);
+        Bakuhatu();
+    }
+    void Bakuhatu()
+    {
+        if (_isplayerBullet && _bakuhatu)
+        {
+            Instantiate(_bakuhatu, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
     }
 }

@@ -45,10 +45,9 @@ public abstract class CopyBase : MonoBehaviour
             notHoming = true;
         }
         //プレイヤーに当たるかつ無敵時間じゃないとダメージを受けて、ホーミングを止め、無敵時間の開始。
-        if(collision.gameObject.tag == "Player" && !GM.star)
+        if(collision.gameObject.tag == "Player")
         {
             Instantiate(_hit, collision.transform.position, Quaternion.identity);
-            GM.StartCoroutine("StarTime");
             notHoming = true;
         }
     }
