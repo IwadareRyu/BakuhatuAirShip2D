@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wall
+  - GM
+  - EnemyBullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
