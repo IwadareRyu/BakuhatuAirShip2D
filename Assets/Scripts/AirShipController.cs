@@ -25,6 +25,8 @@ public class AirShipController : MonoBehaviour
     GameManager _gm;
     [Tooltip("リトライするための変数。")]
     SceneLoader _activeLoad;
+    [Tooltip("PowerUpのスクリプト")]
+    private PowerUp _power;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class AirShipController : MonoBehaviour
         //AttackAni =GetComponent<Animator>();
         _gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         //_activeLoad = GameObject.FindGameObjectWithTag("GM").GetComponent<SceneLoader>();
+        _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();
     }
 
     // Update is called once per frame
@@ -49,8 +52,7 @@ public class AirShipController : MonoBehaviour
         //飛行機を飛ばす。
         if (Input.GetButton("Fire1") && !_cooltime)
         {
-            Instantiate(_airShip, _airShipMazzle.transform.position, Quaternion.identity);
-            StartCoroutine(CoolTime());
+            StartCoroutine(BulletCoolTime());
         }
 
         ////リトライ
@@ -78,16 +80,21 @@ public class AirShipController : MonoBehaviour
         {
             if (!_cooltime)
             {
-                StartCoroutine(CoolTime());
+                StartCoroutine(BulletCoolTime());
             }
         }
 
     }
-    IEnumerator CoolTime()
+    IEnumerator BulletCoolTime()
     {
         _gm.AddScore(-100);
-        _airShipOnOff.SetActive(false);
         _cooltime = true;
+        for (var i = 0; i < _power._airnum; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            Instantiate(_airShip, _airShipMazzle.transform.position, Quaternion.identity);
+        }
+        _airShipOnOff.SetActive(false);
         yield return new WaitForSeconds(_time);
         _airShipOnOff.SetActive(true);
         _cooltime = false;

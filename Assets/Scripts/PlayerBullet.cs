@@ -10,12 +10,14 @@ public class PlayerBullet : MonoBehaviour
     [SerializeField,Range(-1,1)] float _minas = 1f;
     [SerializeField] bool _isplayerBullet;
     [SerializeField] GameObject _bakuhatu;
+    private PowerUp _power;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //下に球を出す。
-        rb.velocity = Vector2.down * _speed * _minas;
+        _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();
+        //球を出す。
+        rb.velocity = Vector2.down * (_speed +_power._speedUp * 0.1f) * _minas;
         StartCoroutine(BakuhatuTime());
     }
 
