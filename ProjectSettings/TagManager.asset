@@ -10,6 +10,10 @@ TagManager:
   - Enemy
   - Bullet
   - UP
+  - Time
+  - Score
+  - TotalMoney
+  - BuildUp
   layers:
   - Default
   - TransparentFX

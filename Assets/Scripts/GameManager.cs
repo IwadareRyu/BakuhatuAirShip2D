@@ -7,10 +7,10 @@ using DG.Tweening;
 
 public class GameManager : SingletonMonovihair<GameManager>
 {
-    [SerializeField] Text _timeText;
-    [SerializeField] Text _scoreText;
-    [SerializeField] string _resultText = "ResultScore";
-    [SerializeField] Text _totalMoneyText;
+    private Text _timeText;
+    private Text _scoreText;
+    private Text _totalMoneyText;
+    [SerializeField] GameObject _resultText;
     [SerializeField] GameObject _gameOverCanvas;
     string _reScore;
     [Tooltip("現在のスコアの値")]
@@ -32,33 +32,24 @@ public class GameManager : SingletonMonovihair<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        ////DontDestroyOnLoadにGameManagerがあれば自身を破壊、なければ自身をDontDestroyOnLoadに移動してスコアに初期値を代入。
-        //if(FindObjectsOfType<GameManager>().Length > 1)
-        //{
-        //    Destroy(gameObject);
-        //}
-        //else
-        //{
-        //    DontDestroyOnLoad(gameObject);
-        //    ShowScore();
-        //    _isStarted = true;
-        //}
+        _scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
+        _timeText = GameObject.FindGameObjectWithTag("Time").GetComponent<Text>();
+        _totalMoneyText = GameObject.FindGameObjectWithTag("TotalMoney").GetComponent<Text>();
         //スコアの初期化
         ShowScore();
         _isStarted = true;
-        _scoreText.text = _score.ToString("D7");
+        _scoreText.text = _score.ToString("0000000");
         AddScore(0);
-        _totalMoneyText.text = _totalMoney.ToString("D7");
+        _totalMoneyText.text = _totalMoney.ToString("0000000");
     }
-    /// <summary>リザルトシーンの際、scoreを表示する。</summary>
+    /// <summary>強化画面の際、合計金額を表示する。</summary>
     public void ShowScore()
     {
-        GameObject go = GameObject.Find(_resultText);
-        Text text = go?.GetComponent<Text>();
+        Text text = _resultText?.GetComponent<Text>();
 
         if (text)
         {
-            text.text = _reScore;
+            text.text = _totalMoney.ToString("0000000");
         }
 
     }
@@ -90,7 +81,7 @@ public class GameManager : SingletonMonovihair<GameManager>
     public void TotalMoney(int score)
     {
         _totalMoney = Mathf.Min(_totalMoney + score, _maxScore);
-        _totalMoneyText.text = _totalMoney.ToString("D7");
+        ShowScore();
     }
 
     //リザルトシーンへスコアを代入する。
@@ -108,7 +99,9 @@ public class GameManager : SingletonMonovihair<GameManager>
 
     private void OnLevelWasLoaded(int level)
     {
-        if (_isStarted) ShowScore();
+        //if (_isStarted) ShowScore();
         _score = 1000;
+        Start();
+        PowerUp.Instance.Start();
     }
 }

@@ -15,7 +15,6 @@ public class SceneLoader : MonoBehaviour
     /// <summary>リトライとスコア、ライフのリセットのロード</summary>
     public void ActiveSceneLoad()
     {
-        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
