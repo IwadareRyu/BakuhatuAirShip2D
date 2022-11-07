@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7535648433907101431}
   m_Layer: 0
   m_Name: Bakuhatu!
-  m_TagString: Bullet
+  m_TagString: Bakuhatu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

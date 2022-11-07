@@ -47,7 +47,7 @@ public class DestroyEnamy : MonoBehaviour
         //当たりエフェクト生成して、当たった球を破壊した後、自身のHPを減らす。
         if (collision.gameObject.tag == ("Bullet"))
         {
-            Instantiate(_bakuhatu, collision.transform.position, Quaternion.identity);
+            Instantiate(_bakuhatu, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             _enemyHP = _enemyHP - 2;
         }
@@ -73,5 +73,11 @@ public class DestroyEnamy : MonoBehaviour
     void InsMoney(int i)
     {
         Instantiate(_money[i], transform.position, Quaternion.identity);
+    }
+
+    public void Damage()
+    {
+        Instantiate(_bakuhatu, transform.position, Quaternion.identity);
+        _enemyHP = _enemyHP - 2;
     }
 }
