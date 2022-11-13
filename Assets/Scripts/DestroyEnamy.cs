@@ -10,7 +10,6 @@ public class DestroyEnamy : MonoBehaviour
     [SerializeField] GameObject _zangeki;
     [SerializeField] GameObject _hit;
     [SerializeField] GameObject _bakuhatu;
-    private GameManager GM;
     [SerializeField] bool _event;
     [SerializeField] UnityEvent _action;
     [SerializeField] GameObject[] _money;
@@ -47,7 +46,7 @@ public class DestroyEnamy : MonoBehaviour
         //当たりエフェクト生成して、当たった球を破壊した後、自身のHPを減らす。
         if (collision.gameObject.tag == ("Bullet"))
         {
-            Instantiate(_bakuhatu, transform.position, Quaternion.identity);
+            Instantiate(_bakuhatu, collision.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             _enemyHP = _enemyHP - 2;
         }
@@ -77,7 +76,6 @@ public class DestroyEnamy : MonoBehaviour
 
     public void Damage()
     {
-        Instantiate(_bakuhatu, transform.position, Quaternion.identity);
         _enemyHP = _enemyHP - 2;
     }
 }

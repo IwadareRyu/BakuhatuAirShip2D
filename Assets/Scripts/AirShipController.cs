@@ -9,6 +9,8 @@ public class AirShipController : MonoBehaviour
     bool _cooltime;
     [Tooltip("飛ばす飛行機")]
     [SerializeField] GameObject _airShip;
+    [Tooltip("爆風")]
+    [SerializeField] GameObject _bakuhatu;
     [Tooltip("飛ばす飛行機の初期位置")]
     [SerializeField] GameObject _airShipMazzle;
     [Tooltip("プレイヤーに付いてくる飛行機のオンオフ")]
@@ -52,7 +54,7 @@ public class AirShipController : MonoBehaviour
         //飛行機を飛ばす。
         if (Input.GetButton("Fire1") && !_cooltime)
         {
-            StartCoroutine(BulletCoolTime());
+            StartCoroutine(BulletCoolTime(_airShip));
         }
 
         ////リトライ
@@ -80,19 +82,19 @@ public class AirShipController : MonoBehaviour
         {
             if (!_cooltime)
             {
-                StartCoroutine(BulletCoolTime());
+                StartCoroutine(BulletCoolTime(_bakuhatu));
             }
         }
 
     }
-    IEnumerator BulletCoolTime()
+    IEnumerator BulletCoolTime(GameObject go)
     {
         _gm.AddScore(-100);
         _cooltime = true;
         for (var i = 0; i < _power._airnum; i++)
         {
             yield return new WaitForSeconds(0.1f);
-            Instantiate(_airShip, _airShipMazzle.transform.position, Quaternion.identity);
+            Instantiate(go, _airShipMazzle.transform.position, Quaternion.identity);
         }
         _airShipOnOff.SetActive(false);
         yield return new WaitForSeconds(_time);
