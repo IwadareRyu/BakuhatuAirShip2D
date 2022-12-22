@@ -1,50 +1,50 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class CopyBase : MonoBehaviour
 {
-    [Tooltip("ƒpƒŠƒB‚µ‚½‚Æ‚«‚É‰¹‚ğ–Â‚ç‚·")]
+    [Tooltip("ãƒ‘ãƒªã‚£ã—ãŸã¨ãã«éŸ³ã‚’é³´ã‚‰ã™")]
     [SerializeField] AudioClip _sound;
-    [Tooltip("ƒAƒCƒeƒ€‚©ƒRƒs[‚©")]
+    [Tooltip("ã‚¢ã‚¤ãƒ†ãƒ ã‹ã‚³ãƒ”ãƒ¼ã‹")]
     [SerializeField] Item _whatitem = Item.Copy;
     [SerializeField] GameObject _player;
-    [Tooltip("ƒz[ƒ~ƒ“ƒO‚·‚é‹…‚ÌÛA‘ÎÛ•¨‚ğƒz[ƒ~ƒ“ƒO‚·‚é‚©‚µ‚È‚¢‚©")]
+    [Tooltip("ãƒ›ãƒ¼ãƒŸãƒ³ã‚°ã™ã‚‹çƒã®éš›ã€å¯¾è±¡ç‰©ã‚’ãƒ›ãƒ¼ãƒŸãƒ³ã‚°ã™ã‚‹ã‹ã—ãªã„ã‹")]
     public bool notHoming = false;
     [SerializeField] GameObject _hit;
     private GameManager GM;
-    /// <summary>Œp³</summary>
+    /// <summary>ç¶™æ‰¿</summary>
     public abstract void CopyTech();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
-        //“–‚½‚è”»’è‚É‚ ‚½‚é‚Æ
+        //å½“ãŸã‚Šåˆ¤å®šã«ã‚ãŸã‚‹ã¨
         if(collision.gameObject.tag.Equals("Atari"))
         {
-            //ƒTƒEƒ“ƒh‚ªŒÄ‚Ño‚³‚ê
+            //ã‚µã‚¦ãƒ³ãƒ‰ãŒå‘¼ã³å‡ºã•ã‚Œ
             if(_sound)
             {
                 AudioSource.PlayClipAtPoint(_sound, Camera.main.transform.position);
             }
-            //—ñ‹“Œ^‚ªitem‚¾‚ÆA‚»‚Ìê‚ÅCopytech‚ğŒÄ‚Ño‚·B
+            //åˆ—æŒ™å‹ãŒitemã ã¨ã€ãã®å ´ã§Copytechã‚’å‘¼ã³å‡ºã™ã€‚
             if(_whatitem == Item.Copy)
             {
                 CopyTech();
                 Destroy(this.gameObject);
             }
         }
-        //ƒz[ƒ~ƒ“ƒO‚É‘Î‰‚µ‚Ä‚¢‚È‚¢•Ç‚â’n–Ê‚É“–‚½‚é‚Æ”j‰ó‚·‚éB
+        //ãƒ›ãƒ¼ãƒŸãƒ³ã‚°ã«å¯¾å¿œã—ã¦ã„ãªã„å£ã‚„åœ°é¢ã«å½“ãŸã‚‹ã¨ç ´å£Šã™ã‚‹ã€‚
         else if(collision.gameObject.tag.Equals("Wall") || collision.gameObject.tag == "Ground")
         {
             Destroy(this.gameObject);
         }
-        //ƒz[ƒ~ƒ“ƒO‚ğ‚â‚ß‚éƒuƒƒbƒN
+        //ãƒ›ãƒ¼ãƒŸãƒ³ã‚°ã‚’ã‚„ã‚ã‚‹ãƒ–ãƒ­ãƒƒã‚¯
         if(collision.gameObject.tag == "HomingBlock")
         {
             notHoming = true;
         }
-        //ƒvƒŒƒCƒ„[‚É“–‚½‚é‚©‚Â–³“GŠÔ‚¶‚á‚È‚¢‚Æƒ_ƒ[ƒW‚ğó‚¯‚ÄAƒz[ƒ~ƒ“ƒO‚ğ~‚ßA–³“GŠÔ‚ÌŠJnB
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«å½“ãŸã‚‹ã‹ã¤ç„¡æ•µæ™‚é–“ã˜ã‚ƒãªã„ã¨ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ã¦ã€ãƒ›ãƒ¼ãƒŸãƒ³ã‚°ã‚’æ­¢ã‚ã€ç„¡æ•µæ™‚é–“ã®é–‹å§‹ã€‚
         if(collision.gameObject.tag == "Player")
         {
             Instantiate(_hit, collision.transform.position, Quaternion.identity);
@@ -54,9 +54,9 @@ public abstract class CopyBase : MonoBehaviour
 
     enum Item
     {
-        /// <summary>ƒRƒs[‚µ‚½ </summary>
+        /// <summary>ã‚³ãƒ”ãƒ¼ã—ãŸæ™‚ </summary>
         Copy,
-        /// <summary>ƒAƒCƒeƒ€‚ğE‚Á‚½‚Æ‚«</summary>
+        /// <summary>ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ‹¾ã£ãŸã¨ã</summary>
         item,
     }
 }

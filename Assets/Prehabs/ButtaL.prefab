@@ -189,6 +189,8 @@ MonoBehaviour:
   _rLMove: -1
   _uDMove: -0.48
   _speed: 3
+  _rigidbody: 1
+  _tramsform: 0
 --- !u!1 &6113528818804459647
 GameObject:
   m_ObjectHideFlags: 0

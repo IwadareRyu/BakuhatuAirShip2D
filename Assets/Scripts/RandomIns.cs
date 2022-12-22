@@ -8,11 +8,12 @@ public class RandomIns : MonoBehaviour
     [SerializeField] float _randomIntervalmin = 1f;
     [SerializeField] GameObject _prehab;
     bool _intervalTime;
+    BulletPool _pool;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        _pool = GameObject.FindGameObjectWithTag("EnemyPool").GetComponent<BulletPool>();
     }
 
     // Update is called once per frame
@@ -29,7 +30,8 @@ public class RandomIns : MonoBehaviour
     {
         var ram = Random.Range(_randomIntervalmin, _randomIntervalmax);
         yield return new WaitForSeconds(ram);
-        Instantiate(_prehab, transform.position,Quaternion.identity);
+        var bullet = _pool.GetBullet();
+        bullet.transform.localPosition = transform.position;
         _intervalTime = false;
     }
 }

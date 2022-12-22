@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class Ram : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        //ˆê’è‚ÌŽžŠÔ‚ª‚½‚Á‚½‚çObject¶¬
+        //ä¸€å®šã®æ™‚é–“ãŒãŸã£ãŸã‚‰Objectç”Ÿæˆ
         if (_timer > _interval)
         {
             _timer = 0;

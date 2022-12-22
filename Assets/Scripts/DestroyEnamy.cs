@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,10 +23,10 @@ public class DestroyEnamy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //“G‚ÌHP‚ª0‚É‚È‚Á‚½
+        //æ•µã®HPãŒ0ã«ãªã£ãŸæ™‚
         if(_enemyHP <= 0)
         {
-            //ƒCƒxƒ“ƒg‚Ìbool‚ªtrue‚È‚çƒCƒxƒ“ƒg‚ª‹N‚±‚éB
+            //ã‚¤ãƒ™ãƒ³ãƒˆã®boolãŒtrueãªã‚‰ã‚¤ãƒ™ãƒ³ãƒˆãŒèµ·ã“ã‚‹ã€‚
             if (_event)
             {
                 _action.Invoke();
@@ -37,17 +37,18 @@ public class DestroyEnamy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //aŒ‚ƒGƒtƒFƒNƒg¶¬‚µ‚Ä©g‚ÌHP‚ğŒ¸‚ç‚·B
+        //æ–¬æ’ƒã‚¨ãƒ•ã‚§ã‚¯ãƒˆç”Ÿæˆã—ã¦è‡ªèº«ã®HPã‚’æ¸›ã‚‰ã™ã€‚
         if(collision.gameObject.tag == ("Atari"))
         {
             Instantiate(_zangeki, transform.position, Quaternion.identity);
             _enemyHP--;
         }
-        //“–‚½‚èƒGƒtƒFƒNƒg¶¬‚µ‚ÄA“–‚½‚Á‚½‹…‚ğ”j‰ó‚µ‚½ŒãA©g‚ÌHP‚ğŒ¸‚ç‚·B
+        //å½“ãŸã‚Šã‚¨ãƒ•ã‚§ã‚¯ãƒˆç”Ÿæˆã—ã¦ã€å½“ãŸã£ãŸçƒã‚’ç ´å£Šã—ãŸå¾Œã€è‡ªèº«ã®HPã‚’æ¸›ã‚‰ã™ã€‚
         if (collision.gameObject.tag == ("Bullet"))
         {
             Instantiate(_bakuhatu, collision.transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
+            var bullet = collision.gameObject.GetComponent<PlayerBullet>();
+            bullet.Reset();
             _enemyHP = _enemyHP - 2;
         }
     }

@@ -96,7 +96,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6688738744584001175}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -151,4 +151,3 @@ MonoBehaviour:
   _minas: -1
   _isplayerBullet: 1
   _bakuhatu: {fileID: 2303163670325522591, guid: eb2c1c916b006b24081be7ccdc909ea8, type: 3}
-  _power: {fileID: 0}

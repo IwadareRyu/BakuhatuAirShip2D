@@ -102,6 +102,8 @@ MonoBehaviour:
   _rLMove: 0
   _uDMove: -1
   _speed: 3
+  _rigidbody: 1
+  _tramsform: 0
 --- !u!50 &4922850483593448534
 Rigidbody2D:
   serializedVersion: 4

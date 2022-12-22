@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,7 +41,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
             text.text = up.ToString();
         }
     }
-    /// <summary>”š”­‚ÌˆĞ—Í‚ğƒAƒbƒv‚³‚¹‚éŠÖ”</summary>
+    /// <summary>çˆ†ç™ºã®å¨åŠ›ã‚’ã‚¢ãƒƒãƒ—ã•ã›ã‚‹é–¢æ•°</summary>
     public void BakuhatuUp()
     {
         if (GM._totalMoney >= _bakuhatuPower * 1000)
@@ -51,7 +51,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
             AllTextShow();
         }
     }
-    /// <summary>‹…‚ÌƒXƒs[ƒh‚ğƒAƒbƒv‚³‚¹‚éŠÖ”</summary>
+    /// <summary>çƒã®ã‚¹ãƒ”ãƒ¼ãƒ‰ã‚’ã‚¢ãƒƒãƒ—ã•ã›ã‚‹é–¢æ•°</summary>
     public void SpeedUp()
     {
         if (GM._totalMoney >= _speedUp * 100)
@@ -61,7 +61,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
             AllTextShow();
         }
     }
-    /// <summary>ˆê“x‚Éo‚·‹@‘Ì‚ğ‘‚â‚·ŠÖ”</summary>
+    /// <summary>ä¸€åº¦ã«å‡ºã™æ©Ÿä½“ã‚’å¢—ã‚„ã™é–¢æ•°</summary>
     public void AirNum()
     {
         if (GM._totalMoney >= _airnum * 10000)

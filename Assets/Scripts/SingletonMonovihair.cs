@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +18,7 @@ public abstract class SingletonMonovihair<T> : MonoBehaviour where T : MonoBehav
                 instance = (T)FindObjectOfType(t);
                 if (!instance)
                 {
-                    Debug.LogError(t + "ÇÕÇ†ÇËÇ‹ÇπÇÒÅB");
+                    Debug.LogError(t + "„ÅØ„ÅÇ„Çä„Åæ„Åõ„Çì„ÄÇ");
                 }
             }
             return instance;

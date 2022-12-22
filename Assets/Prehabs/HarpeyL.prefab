@@ -188,3 +188,5 @@ MonoBehaviour:
   _rLMove: -1
   _uDMove: 0
   _speed: 5
+  _rigidbody: 1
+  _tramsform: 0

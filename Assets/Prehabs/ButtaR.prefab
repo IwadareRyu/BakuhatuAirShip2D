@@ -187,8 +187,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rLMove: 1
-  _uDMove: -0.49
+  _uDMove: -0.5
   _speed: 3
+  _rigidbody: 1
+  _tramsform: 0
 --- !u!1 &6113528818804459647
 GameObject:
   m_ObjectHideFlags: 0

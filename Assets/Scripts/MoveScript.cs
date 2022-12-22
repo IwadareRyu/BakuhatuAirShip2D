@@ -1,33 +1,41 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveScript : MonoBehaviour
 {
-    [Tooltip("¶‰E‚ÌˆÚ“®")]
+    [Tooltip("å·¦å³ã®ç§»å‹•")]
     [SerializeField][Range(1.0f,-1.0f)] float _rLMove = 1.0f;
-    [Tooltip("ã‰º‚ÌˆÚ“®")]
+    [Tooltip("ä¸Šä¸‹ã®ç§»å‹•")]
     [SerializeField][Range(1.0f, -1.0f)] float _uDMove = -1.0f;
-    [Tooltip("ƒXƒs[ƒh")]
+    [Tooltip("ã‚¹ãƒ”ãƒ¼ãƒ‰")]
     [SerializeField] float _speed = 3f;
     Rigidbody2D _rb;
+    [SerializeField] bool _reset;
+    
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        
+        _rb = this?.GetComponent<Rigidbody2D>();
+        //ç§»å‹•æ–¹å‘
+        Vector2 dir = new Vector2(_rLMove, _uDMove).normalized;
+        //ç§»å‹•
+        _rb.velocity = dir * _speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //ˆÚ“®•ûŒü
-        Vector2 dir = new Vector2(_rLMove, _uDMove).normalized;
-        //ˆÚ“®
-        _rb.velocity = dir * _speed;
-        if(transform.position.x > 15 || transform.position.x < -15
+        if(_rb.simulated == false)
+        {
+            return;
+        }
+
+        if (transform.position.x > 15 || transform.position.x < -15
             || transform.position.y > 15 || transform.position.y < -15)
         {
-            Destroy(this.gameObject);
+            _rb.simulated = false;
         }
     }
 }
