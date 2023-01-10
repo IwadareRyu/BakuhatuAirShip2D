@@ -30,7 +30,7 @@ public class AirShipController : MonoBehaviour
     [Tooltip("PowerUpのスクリプト")]
     private PowerUp _power;
     [Tooltip("プール")]
-    private BulletPool _pool;
+    [SerializeField] BulletPoolActive _pool;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,6 @@ public class AirShipController : MonoBehaviour
         _gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         //_activeLoad = GameObject.FindGameObjectWithTag("GM").GetComponent<SceneLoader>();
         _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();
-        _pool = GameObject.FindGameObjectWithTag("PlayerPool").GetComponent<BulletPool>();
     }
 
 

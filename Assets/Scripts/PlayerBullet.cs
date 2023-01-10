@@ -13,12 +13,10 @@ public class PlayerBullet : MonoBehaviour
     private PowerUp _power;
     private Vector3 _trans;
     public bool _bakuhatutime = true;
-    private void Awake()
+
+    void OnEnable()
     {
         _rb = GetComponent<Rigidbody2D>();
-    }
-    void Start()
-    {
         _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();
         //球を出す。
         _rb.velocity = Vector2.down * (_speed +_power._speedUp * 0.1f) * _minas;
@@ -68,6 +66,6 @@ public class PlayerBullet : MonoBehaviour
         _trans = transform.position;
         _trans.y = 10f;
         transform.position = _trans;
-        _rb.simulated = false;
+        gameObject.SetActive(false);
     }
 }

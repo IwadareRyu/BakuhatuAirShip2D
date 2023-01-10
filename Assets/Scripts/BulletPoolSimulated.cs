@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPool : MonoBehaviour
+public class BulletPoolSimulated : MonoBehaviour
 {
     [Tooltip("プールするオブジェクト。")]
     [SerializeField] GameObject _poolObj;
@@ -27,7 +27,7 @@ public class BulletPool : MonoBehaviour
         {
             var newObj = CreateNewBullet(); //新しい球を作る。
             newObj.GetComponent<Rigidbody2D>().simulated = false; //作った球の物理演算をfalseにする。
-            if(Parent)newObj.transform.parent = Parent.transform; //Hielarceyを綺麗にしたいので一度球を空の親オブジェクトの子にした。
+            if (Parent)newObj.transform.parent = Parent.transform; //Hielarceyを綺麗にしたいので一度球を空の親オブジェクトの子にした。
             _poolObjects.Add(newObj); //球をリストに追加。
         }
     }
@@ -51,7 +51,7 @@ public class BulletPool : MonoBehaviour
         foreach (var go in _poolObjects)
         {
             var gorb = go.GetComponent<Rigidbody2D>();
-            if(gorb.simulated == false)
+            if (gorb.simulated == false)
             {
                 gorb.simulated = true;
                 return go;

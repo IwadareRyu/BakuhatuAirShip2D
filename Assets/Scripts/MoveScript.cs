@@ -36,6 +36,7 @@ public class MoveScript : MonoBehaviour
             || transform.position.y > 15 || transform.position.y < -15)
         {
             _rb.simulated = false;
+            gameObject.SetActive(false);
         }
     }
 }
