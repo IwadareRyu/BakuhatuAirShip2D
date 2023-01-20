@@ -27,13 +27,16 @@ public class ActiveBossBullet : MonoBehaviour
 
     private void Move()
     {
-        _rb = GetComponent<Rigidbody2D>();
-        _velocity.x = _speed * Mathf.Cos(_angle * Mathf.Deg2Rad);
+        if (_typeA)
+        {
+            _rb = GetComponent<Rigidbody2D>();
+            _velocity.x = _speed * Mathf.Cos(_angle * Mathf.Deg2Rad);
 
-        _velocity.y = _speed * Mathf.Sin(_angle * Mathf.Deg2Rad);
-
-        float zAngle = Mathf.Atan2(_velocity.y, _velocity.x) * Mathf.Rad2Deg - 90.0f;
-        transform.rotation = Quaternion.Euler(0, 0, zAngle);
+            _velocity.y = _speed * Mathf.Sin(_angle * Mathf.Deg2Rad);
+            float zAngle = Mathf.Atan2(_velocity.y, _velocity.x) * Mathf.Rad2Deg - 90.0f;
+            transform.rotation = Quaternion.Euler(0, 0, zAngle);
+            _rb.velocity = _velocity;
+        }
         if (_stop)
         {
             StartCoroutine(StopBullet());
@@ -69,11 +72,6 @@ public class ActiveBossBullet : MonoBehaviour
     {
         _angle = angle;
         _speed = speed;
-        if (_typeA)
-        {
-            Move();
-        }
+        Move();
     }
-
-
 }

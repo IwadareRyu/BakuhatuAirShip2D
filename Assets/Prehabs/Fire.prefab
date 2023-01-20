@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _angle: 300
-  _speed: -4.6
+  _speed: 1
   _stop: 0
   _typeA: 1
   _typeB: 0
