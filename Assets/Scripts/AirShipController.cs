@@ -101,8 +101,6 @@ public class AirShipController : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
             var bullet = _pool.GetBullet();
-            var bulletcs = bullet.GetComponent<PlayerBullet>();
-            bulletcs._bakuhatutime = false;
             bullet.transform.position = _airShipMazzle.transform.position;
         }
         _airShipOnOff.SetActive(false);

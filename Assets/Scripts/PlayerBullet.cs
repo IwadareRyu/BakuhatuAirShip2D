@@ -20,6 +20,7 @@ public class PlayerBullet : MonoBehaviour
         _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();
         //球を出す。
         _rb.velocity = Vector2.down * (_speed +_power._speedUp * 0.1f) * _minas;
+        _bakuhatutime = false;
     }
 
     // Update is called once per frame
