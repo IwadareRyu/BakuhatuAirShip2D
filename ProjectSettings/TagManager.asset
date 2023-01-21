@@ -17,6 +17,7 @@ TagManager:
   - Bakuhatu
   - PlayerPool
   - EnemyPool
+  - WarpPoint
   layers:
   - Default
   - TransparentFX

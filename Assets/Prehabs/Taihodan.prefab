@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4777501690075766969}
   - component: {fileID: 4777501690075766968}
-  - component: {fileID: 4777501690075766971}
   - component: {fileID: 4777501690075766970}
   - component: {fileID: 4777501690075766966}
+  - component: {fileID: 3320410397133945843}
   m_Layer: 0
-  m_Name: FireLeft
+  m_Name: Taihodan
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300000, guid: f8f5edd36b015ee489fb963e46d14958, type: 3}
-  m_Color: {r: 0.70469356, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,32 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4777501690075766971
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4777501690075766973}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.000000029802322, y: 0.02931881}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6666667, y: 0.6666667}
-    newSize: {x: 0.6666667, y: 0.6666667}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.33083314, y: 0.43211627}
-  m_EdgeRadius: 0
 --- !u!50 &4777501690075766970
 Rigidbody2D:
   serializedVersion: 4
@@ -147,8 +121,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _angle: 300
-  _speed: 3
+  _speed: 1
   _stop: 0
-  _typeA: 0
-  _typeB: 0
-  _typeC: 1
+  _redFire: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
+  _bluesphere: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
+  _redsphere: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
+--- !u!58 &3320410397133945843
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4777501690075766973}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.02}
+  serializedVersion: 2
+  m_Radius: 0.2

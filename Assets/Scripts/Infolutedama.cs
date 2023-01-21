@@ -32,8 +32,6 @@ public class Infolutedama : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //ここでSetParentsを使って追尾させたいキャラの子にするのがよいと思う。
-
         //円運動のスタート位置
         _startTime = Time.time + _startCirclePos;
         //現在の位置から回るようにしている。
