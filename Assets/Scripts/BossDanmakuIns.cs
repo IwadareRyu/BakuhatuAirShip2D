@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossIns : MonoBehaviour
+public class BossDanmakuIns : MonoBehaviour
 {
     [SerializeField] float _count = 5;
     [SerializeField] BulletPoolActive _pool;
     bool _bulletime;
     ActiveBossBullet bulletcs;
     float _rad;
-    int num = 20;
+    [Header("球と球の間隔を入力。")]
+    [SerializeField]int num = 20;
     [SerializeField] float _bulletspeed = 1f;
-    [Header("0:直線redFire、1:右回り、2:左回り、3:直線blueFire")]
-    [SerializeField,Range(0,3)] int _bulletType = 0;
-    [Header("0:弾幕パターン1(波)、1:パターン2(回転)、2:パターン3(自機攻撃)、3:パターン4")]
-    [SerializeField, Range(0, 3)] int _danmakuPattern = 0;
     bool _interval;
-    int _type = 0;
+    [Header("DanmakuStateがRotateの場合、ColorStateを入力してください。")]
+    [SerializeField] BulletTypeClass.BulletState _danmakuState;
+    [SerializeField] BulletTypeClass.BulletSpriteState _colorState;
 
     // Update is called once per frame
     void Update()
@@ -30,10 +29,9 @@ public class BossIns : MonoBehaviour
 
     IEnumerator BulletTime()
     {
-        yield return new WaitForSeconds(_count);
-        if(_danmakuPattern == 0)
+        if(_danmakuState == BulletTypeClass.BulletState.Nami)
         {
-            _bulletType = 0;
+            _colorState = BulletTypeClass.BulletSpriteState.RedFire;
             if(!_interval)
             {
                 for (var i = 0; i <= 15; i += 5)
@@ -50,18 +48,33 @@ public class BossIns : MonoBehaviour
                     AllBulletIns(i);
                     yield return new WaitForSeconds(_count);
                 }
+                yield return new WaitForSeconds(0.5f);
                 _interval = false;
             }
         }
-        else if(_danmakuPattern == 2)
+        else if(_danmakuState == BulletTypeClass.BulletState.Ziki)
         {
-            _bulletType = 3;
+            _colorState = BulletTypeClass.BulletSpriteState.BlueFire;
             OnePointIns();
+        }
+        else if(_danmakuState == BulletTypeClass.BulletState.AllZiki)
+        {
+            _colorState = BulletTypeClass.BulletSpriteState.BlueFire;
+            for(var j = 0;j < 5;j++)
+            {
+                yield return new WaitForSeconds(0.1f);
+                for (var k = 0; k < 5; k++)
+                {
+                    yield return new WaitForSeconds(0.01f);
+                    OnePointIns();
+                }
+            }
         }
         else
         {
             AllBulletIns(0);
         }
+        yield return new WaitForSeconds(_count);
         _bulletime = false;
     }
 
@@ -72,14 +85,14 @@ public class BossIns : MonoBehaviour
             var bullet = _pool.GetBullet();
             bulletcs = bullet.GetComponent<ActiveBossBullet>();
             bullet.transform.position = transform.position;
-            bulletcs.BulletAdd(i, _bulletspeed, _bulletType);
+            bulletcs.BulletAdd(i, _bulletspeed, _colorState);
         }
     }
-    private void OnePointIns()
+    private void OnePointIns(bool stop = false)
     {
         var bullet = _pool.GetBullet();
         bulletcs = bullet.GetComponent<ActiveBossBullet>();
         bullet.transform.position = transform.position;
-        bulletcs.BulletAdd(0, _bulletspeed, _bulletType);
+        bulletcs.BulletAdd(0, _bulletspeed, _colorState,stop);
     }
 }

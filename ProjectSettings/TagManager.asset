@@ -18,6 +18,7 @@ TagManager:
   - PlayerPool
   - EnemyPool
   - WarpPoint
+  - Boss
   layers:
   - Default
   - TransparentFX

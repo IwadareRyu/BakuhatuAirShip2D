@@ -8,6 +8,8 @@ public class BakuhatuScale : MonoBehaviour
     PowerUp _power;
     Vector2 cir;
     Vector2 start;
+
+    bool _attack;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,12 @@ public class BakuhatuScale : MonoBehaviour
             {
                 var dead = a.GetComponent<DestroyEnamy>();
                 dead.Damage();
+            }
+            else if(a.gameObject.tag =="Boss" && !_attack)
+            {
+                var boss = a.GetComponent<BossGanerator>();
+                boss.AddBossDamage(-1.0f);
+                _attack = true;
             }
         }
     }
