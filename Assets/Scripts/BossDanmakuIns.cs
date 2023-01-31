@@ -27,8 +27,11 @@ public class BossDanmakuIns : MonoBehaviour
         }
     }
 
+    /// <summary>球の動きや数、パターンを決めるメソッド</summary>
+    /// <returns></returns>
     IEnumerator BulletTime()
     {
+        //波の場合は右方向に向かって波、左方向に向かって波を出す。
         if(_danmakuState == BulletTypeClass.BulletState.Nami)
         {
             _colorState = BulletTypeClass.BulletSpriteState.RedFire;
@@ -52,6 +55,7 @@ public class BossDanmakuIns : MonoBehaviour
                 _interval = false;
             }
         }
+        //
         else if(_danmakuState == BulletTypeClass.BulletState.Ziki)
         {
             _colorState = BulletTypeClass.BulletSpriteState.BlueFire;
@@ -78,13 +82,19 @@ public class BossDanmakuIns : MonoBehaviour
         _bulletime = false;
     }
 
+    /// <summary>365度均等に球を出すメソッド。</summary>
+    /// <param name="rad">球の間隔</param>
     private void AllBulletIns(int rad)
     {
+        //球一つずつに処理を加える。
         for (var i = rad; i < 365; i += num)
         {
+            //球をpoolから取り出す。
             var bullet = _pool.GetBullet();
             bulletcs = bullet.GetComponent<ActiveBossBullet>();
+            //球の位置をスポーンポイントに移動する。
             bullet.transform.position = transform.position;
+            //球の動きを設定するメソッドに代入。
             bulletcs.BulletAdd(i, _bulletspeed, _colorState);
         }
     }

@@ -20,7 +20,11 @@ public class AirShipController : MonoBehaviour
     float h;
     float v;
     [Tooltip("プレイヤーのスピード")]
-    [SerializeField] float Speed = 3f;
+    [SerializeField] float _speed = 3f;
+    [Tooltip("プレイヤーの低速スピード")]
+    [SerializeField] float _lowSpeed = 1.5f;
+    [Tooltip("プレイヤーの現在のスピード")]
+    float _nowSpeed;
     public float _minas => minas;
     [Tooltip("飛行機が再生成される時間")]
     [SerializeField] float _time = 3f;
@@ -38,9 +42,10 @@ public class AirShipController : MonoBehaviour
         //それぞれの要素をGetConponentする。
         _rb = GetComponent<Rigidbody2D>();
         //AttackAni =GetComponent<Animator>();
-        _gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        _gm = GameManager.Instance;
         //_activeLoad = GameObject.FindGameObjectWithTag("GM").GetComponent<SceneLoader>();
-        _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();
+        _power = PowerUp.Instance;
+        _nowSpeed = _speed;
     }
 
 
@@ -63,6 +68,15 @@ public class AirShipController : MonoBehaviour
             }
         }
 
+        if(Input.GetButtonDown("Fire3"))
+        {
+            _nowSpeed = _lowSpeed;
+        }
+        if(Input.GetButtonUp("Fire3"))
+        {
+            _nowSpeed = _speed;
+        }
+
         ////リトライ
         //if (Input.GetButtonDown("Fire2"))
         //{
@@ -78,7 +92,7 @@ public class AirShipController : MonoBehaviour
     {
         //上下左右に入力されたときの動きの計算。
         Vector2 dir = new Vector2(h, v).normalized;
-        _rb.velocity = dir * Speed;
+        _rb.velocity = dir * _nowSpeed;
         
     }
 

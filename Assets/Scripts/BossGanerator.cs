@@ -72,7 +72,47 @@ public class BossGanerator : MonoBehaviour
         }
         else if(_stateboss == BossState.Six)
         {
+            if (!_oneShot)
+            {
+                _oneShot = true;
+                StartCoroutine(StopTime());
+            }
 
+            if(_bossHP / _bossMaxHP < 0.4f)
+            {
+                BulletReset();
+                _youso = 3;
+                _stateboss = BossState.Four;
+            }
+        }
+        else if (_stateboss == BossState.Four)
+        {
+            if (!_oneShot)
+            {
+                _oneShot = true;
+                StartCoroutine(StopTime());
+            }
+
+            if (_bossHP / _bossMaxHP < 0.2f)
+            {
+                BulletReset();
+                _youso = 4;
+                _stateboss = BossState.Two;
+            }
+        }
+        else if (_stateboss == BossState.Two)
+        {
+            if (!_oneShot)
+            {
+                _oneShot = true;
+                StartCoroutine(StopTime());
+            }
+
+            if (_bossHP <= 0f)
+            {
+                BulletReset();
+                Destroy(gameObject);
+            }
         }
     }
 
