@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class DestroyTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //ˆê’è‚ÌŠÔ‚ªŒo‚Á‚½‚ç©g‚ğ”j‰óB
+        //ä¸€å®šã®æ™‚é–“ãŒçµŒã£ãŸã‚‰è‡ªèº«ã‚’ç ´å£Šã€‚
         Destroy(this.gameObject, m_deadtime);
     }
 

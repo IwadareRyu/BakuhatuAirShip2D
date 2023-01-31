@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 9216983604668817247}
   - component: {fileID: 1504541094410284204}
   - component: {fileID: 6917427191647901542}
+  - component: {fileID: -2074393624168057307}
+  - component: {fileID: 7535648433907101431}
   m_Layer: 0
   m_Name: Bakuhatu!
-  m_TagString: Bullet
+  m_TagString: Bakuhatu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -98,3 +100,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_deadtime: 0.5
+--- !u!114 &-2074393624168057307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303163670325522591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4d9b35487fa174f84be93a3582b542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &7535648433907101431
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303163670325522591}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +9,7 @@ public class Action : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //‰‚ß‚ÉƒCƒxƒ“ƒgÀsB
+        //åˆã‚ã«ã‚¤ãƒ™ãƒ³ãƒˆå®Ÿè¡Œã€‚
         _action.Invoke();
     }
 

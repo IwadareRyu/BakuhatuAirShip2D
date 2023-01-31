@@ -1,25 +1,24 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    /// <summary>ƒV[ƒ“‚Ìƒ[ƒh</summary>
+    /// <summary>ã‚·ãƒ¼ãƒ³ã®ãƒ­ãƒ¼ãƒ‰</summary>
     /// <param name="sceneName"></param>
     public void SceneLoad(string sceneName)
     {
         StartCoroutine(SceneLoadTime(sceneName));
     }
 
-    /// <summary>ƒŠƒgƒ‰ƒC‚ÆƒXƒRƒAAƒ‰ƒCƒt‚ÌƒŠƒZƒbƒg‚Ìƒ[ƒh</summary>
+    /// <summary>ãƒªãƒˆãƒ©ã‚¤ã¨ã‚¹ã‚³ã‚¢ã€ãƒ©ã‚¤ãƒ•ã®ãƒªã‚»ãƒƒãƒˆã®ãƒ­ãƒ¼ãƒ‰</summary>
     public void ActiveSceneLoad()
     {
-        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    /// <summary>ƒXƒRƒAAƒ‰ƒCƒt‚ÌƒŠƒZƒbƒg‚ÌƒV[ƒ“‚Ìƒ[ƒh</summary>
+    /// <summary>ã‚¹ã‚³ã‚¢ã€ãƒ©ã‚¤ãƒ•ã®ãƒªã‚»ãƒƒãƒˆã®ã‚·ãƒ¼ãƒ³ã®ãƒ­ãƒ¼ãƒ‰</summary>
     /// <param name="sceneName"></param>
     public void ResultSceneLoad(string sceneName)
     {
@@ -27,13 +26,13 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(SceneLoadTime(sceneName));
     }
 
-    /// <summary>ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌI—¹</summary>
+    /// <summary>ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®çµ‚äº†</summary>
     public void EndGame()
     {
         Application.Quit();
     }
 
-    //ƒV[ƒ“‚ğƒ[ƒh‚·‚é‚Ü‚Å‚Ì‘Ò‹@ŠÔB
+    //ã‚·ãƒ¼ãƒ³ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ã¾ã§ã®å¾…æ©Ÿæ™‚é–“ã€‚
     IEnumerator SceneLoadTime(string sceneName)
     {
         yield return new WaitForSeconds(0.5f);

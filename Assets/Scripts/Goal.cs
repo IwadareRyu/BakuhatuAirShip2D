@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,7 +17,7 @@ public class Goal : MonoBehaviour
     {
 
     }
-    //trigger,collisonŠÖ‚í‚ç‚¸AƒvƒŒƒCƒ„[‚É“–‚½‚Á‚½‚çƒCƒxƒ“ƒg‚ª‹N‚±‚éB
+    //trigger,collisoné–¢ã‚ã‚‰ãšã€ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«å½“ãŸã£ãŸã‚‰ã‚¤ãƒ™ãƒ³ãƒˆãŒèµ·ã“ã‚‹ã€‚
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

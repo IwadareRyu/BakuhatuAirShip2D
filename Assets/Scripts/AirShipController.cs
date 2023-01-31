@@ -1,59 +1,83 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AirShipController : MonoBehaviour
 {
     Rigidbody2D _rb;
-    [Tooltip("UŒ‚‚ÌƒN[ƒ‹ƒ^ƒCƒ€")]
+    [Tooltip("æ”»æ’ƒã®ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ ")]
     bool _cooltime;
-    [Tooltip("”ò‚Î‚·”òs‹@")]
-    [SerializeField] GameObject _airShip;
-    [Tooltip("”ò‚Î‚·”òs‹@‚Ì‰ŠúˆÊ’u")]
+    //[Tooltip("é£›ã°ã™é£›è¡Œæ©Ÿ")]
+    //[SerializeField] GameObject _airShip;
+    [Tooltip("çˆ†é¢¨")]
+    [SerializeField] GameObject _bakuhatu;
+    [Tooltip("é£›ã°ã™é£›è¡Œæ©Ÿã®åˆæœŸä½ç½®")]
     [SerializeField] GameObject _airShipMazzle;
-    [Tooltip("ƒvƒŒƒCƒ„[‚É•t‚¢‚Ä‚­‚é”òs‹@‚ÌƒIƒ“ƒIƒt")]
+    [Tooltip("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«ä»˜ã„ã¦ãã‚‹é£›è¡Œæ©Ÿã®ã‚ªãƒ³ã‚ªãƒ•")]
     [SerializeField] GameObject _airShipOnOff;
-    [Tooltip("‰E‚ğŒü‚¢‚Ä‚¢‚½‚ç+1A¶‚ğŒü‚¢‚Ä‚¢‚½‚ç-1B")]
+    [Tooltip("å³ã‚’å‘ã„ã¦ã„ãŸã‚‰+1ã€å·¦ã‚’å‘ã„ã¦ã„ãŸã‚‰-1ã€‚")]
     float minas = 1;
     float h;
     float v;
-    [Tooltip("ƒvƒŒƒCƒ„[‚ÌƒXƒs[ƒh")]
-    [SerializeField] float Speed = 3f;
+    [Tooltip("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚¹ãƒ”ãƒ¼ãƒ‰")]
+    [SerializeField] float _speed = 3f;
+    [Tooltip("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ä½é€Ÿã‚¹ãƒ”ãƒ¼ãƒ‰")]
+    [SerializeField] float _lowSpeed = 1.5f;
+    [Tooltip("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç¾åœ¨ã®ã‚¹ãƒ”ãƒ¼ãƒ‰")]
+    float _nowSpeed;
     public float _minas => minas;
-    [Tooltip("”òs‹@‚ªÄ¶¬‚³‚ê‚éŠÔ")]
+    [Tooltip("é£›è¡Œæ©ŸãŒå†ç”Ÿæˆã•ã‚Œã‚‹æ™‚é–“")]
     [SerializeField] float _time = 3f;
     GameManager _gm;
-    [Tooltip("ƒŠƒgƒ‰ƒC‚·‚é‚½‚ß‚Ì•Ï”B")]
+    [Tooltip("ãƒªãƒˆãƒ©ã‚¤ã™ã‚‹ãŸã‚ã®å¤‰æ•°ã€‚")]
     SceneLoader _activeLoad;
+    [Tooltip("PowerUpã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ")]
+    private PowerUp _power;
+    [Tooltip("ãƒ—ãƒ¼ãƒ«")]
+    [SerializeField] BulletPoolActive _pool;
 
     // Start is called before the first frame update
     void Start()
     {
-        //‚»‚ê‚¼‚ê‚Ì—v‘f‚ğGetConponent‚·‚éB
+        //ãã‚Œãã‚Œã®è¦ç´ ã‚’GetConponentã™ã‚‹ã€‚
         _rb = GetComponent<Rigidbody2D>();
         //AttackAni =GetComponent<Animator>();
-        _gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        _gm = GameManager.Instance;
         //_activeLoad = GameObject.FindGameObjectWithTag("GM").GetComponent<SceneLoader>();
+        _power = PowerUp.Instance;
+        _nowSpeed = _speed;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         //if (!_gm._gameover)
         //{
-        //ƒvƒŒƒCƒ„[‚Ì¶‰E‚Ì“®‚«B
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å·¦å³ã®å‹•ãã€‚
         h = Input.GetAxisRaw("Horizontal");
-        //ƒvƒŒƒCƒ„[‚Ìã‰º‚Ì“®‚«B
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ä¸Šä¸‹ã®å‹•ãã€‚
         v = Input.GetAxisRaw("Vertical");
 
-        //”òs‹@‚ğ”ò‚Î‚·B
-        if (Input.GetButton("Fire1") && !_cooltime)
+        //é£›è¡Œæ©Ÿã‚’é£›ã°ã™ã€‚
+        if (Input.GetButton("Fire1"))
         {
-            Instantiate(_airShip, _airShipMazzle.transform.position, Quaternion.identity);
-            StartCoroutine(CoolTime());
+            if (!_cooltime)
+            {
+                _gm.AddScore(-100);
+                StartCoroutine(BulletCoolTime());
+            }
         }
 
-        ////ƒŠƒgƒ‰ƒC
+        if(Input.GetButtonDown("Fire3"))
+        {
+            _nowSpeed = _lowSpeed;
+        }
+        if(Input.GetButtonUp("Fire3"))
+        {
+            _nowSpeed = _speed;
+        }
+
+        ////ãƒªãƒˆãƒ©ã‚¤
         //if (Input.GetButtonDown("Fire2"))
         //{
         //    _activeLoad.ActiveSceneLoad();
@@ -66,9 +90,9 @@ public class AirShipController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //ã‰º¶‰E‚É“ü—Í‚³‚ê‚½‚Æ‚«‚Ì“®‚«‚ÌŒvZB
+        //ä¸Šä¸‹å·¦å³ã«å…¥åŠ›ã•ã‚ŒãŸã¨ãã®å‹•ãã®è¨ˆç®—ã€‚
         Vector2 dir = new Vector2(h, v).normalized;
-        _rb.velocity = dir * Speed;
+        _rb.velocity = dir * _nowSpeed;
         
     }
 
@@ -76,18 +100,33 @@ public class AirShipController : MonoBehaviour
     {
         if(collision.gameObject.tag == "EnemyBullet" || collision.gameObject.tag == "Enemy")
         {
+            _gm.AddScore(-100);
             if (!_cooltime)
             {
-                StartCoroutine(CoolTime());
+                StartCoroutine(BakuhatuTime());
             }
         }
 
     }
-    IEnumerator CoolTime()
+    IEnumerator BulletCoolTime()
     {
-        _gm.AddScore(-100);
-        _airShipOnOff.SetActive(false);
         _cooltime = true;
+        for (var i = 0; i < _power._airnum; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            var bullet = _pool.GetBullet();
+            bullet.transform.position = _airShipMazzle.transform.position;
+        }
+        _airShipOnOff.SetActive(false);
+        yield return new WaitForSeconds(_time);
+        _airShipOnOff.SetActive(true);
+        _cooltime = false;
+    }
+    IEnumerator BakuhatuTime()
+    {
+        _cooltime = true;
+        Instantiate(_bakuhatu, transform.position, Quaternion.identity);
+        _airShipOnOff.SetActive(false);
         yield return new WaitForSeconds(_time);
         _airShipOnOff.SetActive(true);
         _cooltime = false;

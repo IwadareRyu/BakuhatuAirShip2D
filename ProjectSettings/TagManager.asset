@@ -9,6 +9,16 @@ TagManager:
   - EnemyBullet
   - Enemy
   - Bullet
+  - UP
+  - Time
+  - Score
+  - TotalMoney
+  - BuildUp
+  - Bakuhatu
+  - PlayerPool
+  - EnemyPool
+  - WarpPoint
+  - Boss
   layers:
   - Default
   - TransparentFX

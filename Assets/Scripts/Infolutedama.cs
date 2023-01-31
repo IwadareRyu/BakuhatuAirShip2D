@@ -1,23 +1,23 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Infolutedama : MonoBehaviour
 {
-    [Tooltip("‰Šú‚ÌˆÊ’u")]
+    [Tooltip("åˆæœŸã®ä½ç½®")]
     Vector2 _senterPos;
-    [Tooltip("‰ñ‚éˆÊ’u")]
+    [Tooltip("å›ã‚‹ä½ç½®")]
     Vector2 _rotaPos;
-    [Tooltip("Å‰‚ÌˆÊ’u")]
+    [Tooltip("æœ€åˆã®ä½ç½®")]
     float _startTime;
-    [Tooltip("‰~‰^“®‚Ì‘¬‚³")]
+    [Tooltip("å††é‹å‹•ã®é€Ÿã•")]
     [SerializeField] float _speed = 2f;
     [SerializeField] GameObject _hit;
-    [Tooltip("Œv‰ñ‚è‚©”½Œv‰ñ‚è‚ğ1‚©-1‚ğ“ü—Í‚·‚éB")]
+    [Tooltip("æ™‚è¨ˆå›ã‚Šã‹åæ™‚è¨ˆå›ã‚Šã‚’1ã‹-1ã‚’å…¥åŠ›ã™ã‚‹ã€‚")]
     [SerializeField,Range(1,-1)] float _minas = 1f;
-    [Tooltip("‰~‚Ì‘å‚«‚³")]
+    [Tooltip("å††ã®å¤§ãã•")]
     [SerializeField]float _radius = 3f;
-    [Tooltip("‰~‰^“®‚ğn‚ß‚éˆÊ’u")]
+    [Tooltip("å††é‹å‹•ã‚’å§‹ã‚ã‚‹ä½ç½®")]
     [SerializeField] float _startCirclePos;
     // Start is called before the first frame update
     void Start()
@@ -32,16 +32,14 @@ public class Infolutedama : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //‚±‚±‚ÅSetParents‚ğg‚Á‚Ä’Ç”ö‚³‚¹‚½‚¢ƒLƒƒƒ‰‚Ìq‚É‚·‚é‚Ì‚ª‚æ‚¢‚Æv‚¤B
-
-        //‰~‰^“®‚ÌƒXƒ^[ƒgˆÊ’u
+        //å††é‹å‹•ã®ã‚¹ã‚¿ãƒ¼ãƒˆä½ç½®
         _startTime = Time.time + _startCirclePos;
-        //Œ»İ‚ÌˆÊ’u‚©‚ç‰ñ‚é‚æ‚¤‚É‚µ‚Ä‚¢‚éB
+        //ç¾åœ¨ã®ä½ç½®ã‹ã‚‰å›ã‚‹ã‚ˆã†ã«ã—ã¦ã„ã‚‹ã€‚
         _rotaPos = _senterPos;
-        //’†‰›‚©‚ç‚Ì‹——£‚ğx‚Æy‚Ìƒ|ƒWƒVƒ‡ƒ“‚ÌˆÊ’u‚ÅŒvZ‚·‚éB
+        //ä¸­å¤®ã‹ã‚‰ã®è·é›¢ã‚’xã¨yã®ãƒã‚¸ã‚·ãƒ§ãƒ³ã®ä½ç½®ã§è¨ˆç®—ã™ã‚‹ã€‚
         _rotaPos.x += _radius * Mathf.Cos(2 * Mathf.PI * _speed * _startTime *_minas);
         _rotaPos.y += _radius * Mathf.Sin(2 * Mathf.PI * _speed * _startTime *_minas);
-        //Œ»İ‚ÌˆÊ’u‚ğ‘ã“ü‚·‚éB
+        //ç¾åœ¨ã®ä½ç½®ã‚’ä»£å…¥ã™ã‚‹ã€‚
         transform.position = _rotaPos;
     }
 

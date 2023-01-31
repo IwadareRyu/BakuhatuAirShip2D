@@ -1,77 +1,90 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonMonovihair<GameManager>
 {
-    [SerializeField] Text _timeText;
-    [SerializeField] Text _scoreText;
-    [SerializeField] string _resultText = "ResultScore";
+    private Text _timeText;
+    private Text _scoreText;
+    private Text _totalMoneyText;
+    [SerializeField] GameObject _resultText;
     [SerializeField] GameObject _gameOverCanvas;
     string _reScore;
-    [Tooltip("Œ»İ‚ÌƒXƒRƒA‚Ì’l")]
-    [SerializeField]int _score = 1000;
-    [Tooltip("ƒXƒRƒA‚ÌŒÀŠE’l")]
-    int _maxScore = 999999;
+    [Tooltip("ç¾åœ¨ã®ã‚¹ã‚³ã‚¢ã®å€¤")]
+    public int _score = 1000;
+    public int _totalMoney = 0;
+    [Tooltip("ã‚¹ã‚³ã‚¢ã®é™ç•Œå€¤")]
+    int _maxScore = 9999999;
     [SerializeField] float _countDownTime = 60f;
     bool _isStarted;
-    [Tooltip("ƒfƒoƒbƒN—p")]
+    [Tooltip("ãƒ‡ãƒãƒƒã‚¯ç”¨")]
     [SerializeField] bool _godmode;
     [SerializeField] float _gaugeInterval = 1f;
-    [Tooltip("GameOver")]
+    [Tooltip("GameOveræ™‚")]
     bool _isgameOver;
     public bool _gameover => _isgameOver;
+
+    protected override bool _dontDestroyOnLoad { get { return true; } }
+
     // Start is called before the first frame update
     void Start()
     {
-        //DontDestroyOnLoad‚ÉGameManager‚ª‚ ‚ê‚Î©g‚ğ”j‰óA‚È‚¯‚ê‚Î©g‚ğDontDestroyOnLoad‚ÉˆÚ“®‚µ‚ÄƒXƒRƒA‚É‰Šú’l‚ğ‘ã“üB
-        if(FindObjectsOfType<GameManager>().Length > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-            ShowScore();
-            _isStarted = true;
-        }
-        //ƒXƒRƒA‚Ì‰Šú‰»
-        _scoreText.text = _score.ToString("D6");
+        _scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
+        _timeText = GameObject.FindGameObjectWithTag("Time").GetComponent<Text>();
+        _totalMoneyText = GameObject.FindGameObjectWithTag("TotalMoney").GetComponent<Text>();
+        //ã‚¹ã‚³ã‚¢ã®åˆæœŸåŒ–
+        ShowScore();
+        _isStarted = true;
+        _scoreText.text = _score.ToString("0000000");
         AddScore(0);
+        _totalMoneyText.text = _totalMoney.ToString("0000000");
     }
-    /// <summary>ƒŠƒUƒ‹ƒgƒV[ƒ“‚ÌÛAscore‚ğ•\¦‚·‚éB</summary>
+    /// <summary>å¼·åŒ–ç”»é¢ã®éš›ã€åˆè¨ˆé‡‘é¡ã‚’è¡¨ç¤ºã™ã‚‹ã€‚</summary>
     public void ShowScore()
     {
-        GameObject go = GameObject.Find(_resultText);
-        Text text = go?.GetComponent<Text>();
+        Text text = _resultText?.GetComponent<Text>();
 
         if (text)
         {
-            text.text = _reScore;
+            text.text = _totalMoney.ToString("0000000");
         }
 
     }
-    /// <summary>ƒXƒRƒA‚Ì’Ç‰Á</summary>
+    /// <summary>ã‚¹ã‚³ã‚¢ã®è¿½åŠ </summary>
     /// <param name="score"></param>
     public void AddScore(int score)
     {
 
         if (!_godmode)
         {
-            //ƒXƒRƒA‚ğ‰ÁZ‚·‚é‘O‚ÌƒXƒRƒA‚ğ‘ã“ü‚·‚éB
-            int tempScore = _score;
-            //2‚Â‚Ì’l‚Ì¬‚³‚¢‚Ù‚¤‚ª_score‚É‘ã“ü‚³‚ê‚éB
+            //ã‚¹ã‚³ã‚¢ã‚’åŠ ç®—ã™ã‚‹å‰ã®ã‚¹ã‚³ã‚¢ã‚’ä»£å…¥ã™ã‚‹ã€‚
+            float tempScore = _score;
+            //2ã¤ã®å€¤ã®å°ã•ã„ã»ã†ãŒ_scoreã«ä»£å…¥ã•ã‚Œã‚‹ã€‚
             _score = Mathf.Min(_score + score,_maxScore);
-            //ƒXƒRƒA‚ğ‰ÁZ‚·‚é‘O‚ÌƒXƒRƒA‚©‚çAŒã‚ÌƒXƒRƒA‚Ü‚Å‚Ì’l‚ğ¬‚³‚¢’l‚ğ‘ã“ü‚µ‚È‚ª‚çŒã‚ÌƒXƒRƒA‚Ì’l‚É‚È‚é‚Ü‚Å‘ã“ü‚·‚éB
+            //ã‚¹ã‚³ã‚¢ã‚’åŠ ç®—ã™ã‚‹å‰ã®ã‚¹ã‚³ã‚¢ã‹ã‚‰ã€å¾Œã®ã‚¹ã‚³ã‚¢ã¾ã§ã®å€¤ã‚’å°ã•ã„å€¤ã‚’ä»£å…¥ã—ãªãŒã‚‰å¾Œã®ã‚¹ã‚³ã‚¢ã®å€¤ã«ãªã‚‹ã¾ã§ä»£å…¥ã™ã‚‹ã€‚
             DOTween.To(() => tempScore, x => { _scoreText.text = string.Format("{0:D7}",x.ToString("0000000;-000000;")); },_score, _gaugeInterval).OnComplete(() => _scoreText.text = string.Format("{0:D7}",_score.ToString("0000000;-000000;")));
             _scoreText.text = string.Format("{0:D7}",_score.ToString("0000000;-000000;"));
         }
 
     }
-    //ƒŠƒUƒ‹ƒgƒV[ƒ“‚ÖƒXƒRƒA‚ğ‘ã“ü‚·‚éB
+
+    /// <summary>ãƒªã‚¶ãƒ«ãƒˆã§_scoreã®å¼•æ•°ã®Totalmoneyé–¢æ•°å‘¼ã³å‡ºã—ç”¨</summary>
+    public void Resultscore()
+    {
+        TotalMoney(_score);
+    }
+    /// <summary>åˆè¨ˆé‡‘é¡ã‚’å¢—æ¸›ã•ã›ã‚‹é–¢æ•°</summary>
+    /// <param name="score"></param>
+    public void TotalMoney(int score)
+    {
+        _totalMoney = Mathf.Min(_totalMoney + score, _maxScore);
+        ShowScore();
+    }
+
+    //ãƒªã‚¶ãƒ«ãƒˆã‚·ãƒ¼ãƒ³ã¸ã‚¹ã‚³ã‚¢ã‚’ä»£å…¥ã™ã‚‹ã€‚
     public void SetName(Text input)
     {
         _reScore = input.text;
@@ -79,16 +92,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ƒJƒEƒ“ƒgƒ_ƒEƒ“
+        //ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
         _timeText.text = String.Format("{0:00.00}", _countDownTime);
         _countDownTime = Mathf.Max(_countDownTime - Time.deltaTime,0f);
     }
 
     private void OnLevelWasLoaded(int level)
     {
-        if (_isStarted) ShowScore();
+        //if (_isStarted) ShowScore();
         _score = 1000;
+        Start();
+        PowerUp.Instance.Start();
     }
-    /// <summary>–³“GŠÔ</summary>
-    /// <returns></returns>
 }

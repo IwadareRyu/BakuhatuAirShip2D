@@ -1,46 +1,54 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
     [SerializeField] float _speed = 5f;
-    Rigidbody2D rb;
+    Rigidbody2D _rb;
     [SerializeField] GameObject _hit;
     [SerializeField,Range(-1,1)] float _minas = 1f;
     [SerializeField] bool _isplayerBullet;
     [SerializeField] GameObject _bakuhatu;
-    // Start is called before the first frame update
-    void Start()
+    private PowerUp _power;
+    private Vector3 _trans;
+    public bool _bakuhatutime = true;
+
+    void OnEnable()
     {
-        rb = GetComponent<Rigidbody2D>();
-        //‰º‚É‹…‚ğo‚·B
-        rb.velocity = Vector2.down * _speed * _minas;
-        StartCoroutine(BakuhatuTime());
+        _rb = GetComponent<Rigidbody2D>();
+        _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();
+        //çƒã‚’å‡ºã™ã€‚
+        _rb.velocity = Vector2.down * (_speed +_power._speedUp * 0.1f) * _minas;
+        _bakuhatutime = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(!_bakuhatutime)
+        {
+            _bakuhatutime = true;
+            StartCoroutine(BakuhatuTime());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameManager GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
-        //•Ç‚©’n–Ê‚É“–‚½‚Á‚½‚ç”j‰óB
+        //å£ã‹åœ°é¢ã«å½“ãŸã£ãŸã‚‰ç ´å£Šã€‚
         if (collision.gameObject.tag == "Wall")
         {
             Bakuhatu();
         }
-        ////ƒvƒŒƒCƒ„[‚Ö‚Ìƒ_ƒ[ƒW(!GM.star‚Í–³“GŠÔ‚¶‚á‚È‚¢‚Æ‚«)
+        ////ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¸ã®ãƒ€ãƒ¡ãƒ¼ã‚¸(!GM.starã¯ç„¡æ•µæ™‚é–“ã˜ã‚ƒãªã„ã¨ã)
         //if (collision.gameObject.tag == "Player" && !GM.star && !_isPlayer)
         //{
         //    Instantiate(_hit, collision.transform.position, Quaternion.identity);
         //    GM.StartCoroutine("StarTime");
         //}
     }
-    IEnumerator BakuhatuTime()
+    public IEnumerator BakuhatuTime()
     {
         yield return new WaitForSeconds(2f);
         Bakuhatu();
@@ -51,6 +59,14 @@ public class PlayerBullet : MonoBehaviour
         {
             Instantiate(_bakuhatu, transform.position, Quaternion.identity);
         }
-        Destroy(gameObject);
+        Reset();
+    }
+
+    public void Reset()
+    {
+        _trans = transform.position;
+        _trans.y = 10f;
+        transform.position = _trans;
+        gameObject.SetActive(false);
     }
 }
