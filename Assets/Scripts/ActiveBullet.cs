@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActiveBossBullet : MonoBehaviour
+public class ActiveBullet : MonoBehaviour
 {
     [Tooltip("’µ‚ÔŒü‚«")]
     [SerializeField] float _angle;

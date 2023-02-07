@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class SingletonMonovihair<T> : MonoBehaviour where T : MonoBehaviour
@@ -27,25 +25,14 @@ public abstract class SingletonMonovihair<T> : MonoBehaviour where T : MonoBehav
 
     protected virtual void Awake()
     {
-        if(this != Instance)
+        if (this != Instance)
         {
             Destroy(this);
             return;
         }
-        if(_dontDestroyOnLoad)
+        if (_dontDestroyOnLoad)
         {
             DontDestroyOnLoad(gameObject);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
