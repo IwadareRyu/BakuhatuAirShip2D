@@ -42,6 +42,7 @@ public class GameManager : SingletonMonovihair<GameManager>
         AddScore(0);
         _totalMoneyText.text = _totalMoney.ToString("0000000");
     }
+
     /// <summary>強化画面の際、合計金額を表示する。</summary>
     public void ShowScore()
     {
@@ -65,7 +66,8 @@ public class GameManager : SingletonMonovihair<GameManager>
             //2つの値の小さいほうが_scoreに代入される。
             _score = Mathf.Min(_score + score,_maxScore);
             //スコアを加算する前のスコアから、後のスコアまでの値を小さい値を代入しながら後のスコアの値になるまで代入する。
-            DOTween.To(() => tempScore, x => { _scoreText.text = string.Format("{0:D7}",x.ToString("0000000;-000000;")); },_score, _gaugeInterval).OnComplete(() => _scoreText.text = string.Format("{0:D7}",_score.ToString("0000000;-000000;")));
+            DOTween.To(() => tempScore, x => { _scoreText.text = string.Format("{0:D7}",x.ToString("0000000;-000000;")); },_score, _gaugeInterval)
+                .OnComplete(() => _scoreText.text = string.Format("{0:D7}",_score.ToString("0000000;-000000;")));
             _scoreText.text = string.Format("{0:D7}",_score.ToString("0000000;-000000;"));
         }
 
