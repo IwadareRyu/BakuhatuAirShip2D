@@ -7,7 +7,7 @@ public class BossDanmakuIns : MonoBehaviour
     [SerializeField] float _count = 5;
     [SerializeField] BulletPoolActive _pool;
     bool _bulletime;
-    ActiveBossBullet bulletcs;
+    ActiveBullet bulletcs;
     float _rad;
     [Header("球と球の間隔を入力。")]
     [SerializeField]int num = 20;
@@ -91,7 +91,7 @@ public class BossDanmakuIns : MonoBehaviour
         {
             //球をpoolから取り出す。
             var bullet = _pool.GetBullet();
-            bulletcs = bullet.GetComponent<ActiveBossBullet>();
+            bulletcs = bullet.GetComponent<ActiveBullet>();
             //球の位置をスポーンポイントに移動する。
             bullet.transform.position = transform.position;
             //球の動きを設定するメソッドに代入。
@@ -101,7 +101,7 @@ public class BossDanmakuIns : MonoBehaviour
     private void OnePointIns(bool stop = false)
     {
         var bullet = _pool.GetBullet();
-        bulletcs = bullet.GetComponent<ActiveBossBullet>();
+        bulletcs = bullet.GetComponent<ActiveBullet>();
         bullet.transform.position = transform.position;
         bulletcs.BulletAdd(0, _bulletspeed, _colorState,stop);
     }

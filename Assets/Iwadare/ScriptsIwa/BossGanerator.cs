@@ -123,7 +123,7 @@ public class BossGanerator : MonoBehaviour
         var bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
         foreach (var i in bullets)
         {
-            var bullet = i.GetComponent<ActiveBossBullet>();
+            var bullet = i.GetComponent<ActiveBullet>();
             bullet.Reset();
         }
     }
