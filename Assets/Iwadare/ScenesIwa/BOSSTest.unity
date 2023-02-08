@@ -4396,7 +4396,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _hit: {fileID: 0}
   _minas: 1
   _radius: 1
   _startCirclePos: 0
