@@ -6,14 +6,14 @@ public class EnemyBulletIns : MonoBehaviour
 {
     bool _insbool;
     [SerializeField] float _inssec = 3f;
-    [SerializeField] BulletPoolActive _pool;
+    BulletPoolActive _pool;
     [SerializeField] float _angle = 270f;
     [SerializeField] float _speed = 3f;
     [SerializeField] BulletTypeClass.BulletSpriteState _type;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _pool = GameObject.FindGameObjectWithTag("EnemyPool").GetComponent<BulletPoolActive>();
     }
 
     // Update is called once per frame
