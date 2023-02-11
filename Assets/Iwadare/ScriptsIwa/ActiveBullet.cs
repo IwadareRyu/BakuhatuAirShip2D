@@ -26,6 +26,7 @@ public class ActiveBullet : MonoBehaviour
     [SerializeField] Sprite _redsphere;
     [Tooltip("炎の色、形によって動きを分けるためのenum")]
     BulletTypeClass.BulletSpriteState _state;
+    bool _stopbool;
 
     private void Awake()
     {
@@ -106,9 +107,9 @@ public class ActiveBullet : MonoBehaviour
     /// <summary>一度球を止めてから一定時間たった後に動き出す処理。</summary>
     IEnumerator StopBullet()
     {
-        yield return new WaitForSeconds(0.2f);
         _rb.simulated = false;
-        yield return new WaitForSeconds(3f);
+        _stopbool = false;
+        yield return new WaitWhile(() => _stopbool == true);
         _rb.simulated = true;
     }
 
@@ -154,5 +155,9 @@ public class ActiveBullet : MonoBehaviour
                 Type1Move();
                 break;
         }
+    }
+    public void StopTrue()
+    {
+        _stopbool = true;
     }
 }

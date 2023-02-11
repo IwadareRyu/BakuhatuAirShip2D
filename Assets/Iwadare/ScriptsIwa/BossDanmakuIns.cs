@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossDanmakuIns : MonoBehaviour
 {
     [SerializeField] float _count = 5;
+    [SerializeField] float _angleCount = 1f;
     [SerializeField] BulletPoolActive _pool;
     bool _bulletime;
     ActiveBullet bulletcs;
@@ -13,6 +14,8 @@ public class BossDanmakuIns : MonoBehaviour
     [SerializeField]int num = 20;
     [SerializeField] float _bulletspeed = 1f;
     bool _interval;
+    [SerializeField] float _angle = 0f;
+    List<GameObject> _bulletList = new List<GameObject>();
     [Header("DanmakuStateÇ™RotateÇÃèÍçáÅAColorStateÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ÅB")]
     [SerializeField] BulletTypeClass.BulletState _danmakuState;
     [SerializeField] BulletTypeClass.BulletSpriteState _colorState;
@@ -74,6 +77,20 @@ public class BossDanmakuIns : MonoBehaviour
                 }
             }
         }
+        else if(_danmakuState == BulletTypeClass.BulletState.StopBullet)
+        {
+            for(var i = 0;i < 11;i++)
+            {
+                yield return new WaitForSeconds(_angleCount);
+                OnePointIns(true,_angle,true);
+            }
+            yield return new WaitForSeconds(_angleCount);
+            foreach(var j in _bulletList)
+            {
+                bulletcs = j.GetComponent<ActiveBullet>();
+                bulletcs.StopTrue();
+            }
+        }
         else
         {
             AllBulletIns(0);
@@ -98,11 +115,15 @@ public class BossDanmakuIns : MonoBehaviour
             bulletcs.BulletAdd(i, _bulletspeed, _colorState);
         }
     }
-    private void OnePointIns(bool stop = false)
+    private void OnePointIns(bool stop = false, float angle = 0, bool listbool = false)
     {
         var bullet = _pool.GetBullet();
         bulletcs = bullet.GetComponent<ActiveBullet>();
         bullet.transform.position = transform.position;
-        bulletcs.BulletAdd(0, _bulletspeed, _colorState,stop);
+        if(listbool)
+        {
+            _bulletList.Add(bullet);
+        }
+        bulletcs.BulletAdd(angle, _bulletspeed, _colorState,stop);
     }
 }
