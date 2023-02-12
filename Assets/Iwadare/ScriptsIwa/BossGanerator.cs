@@ -138,6 +138,7 @@ public class BossGanerator : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         _danmakuPattern[_youso].SetActive(true);
+        int ram = (int)Random.Range(0f, 1.9f);
     }
 
     enum BossState
