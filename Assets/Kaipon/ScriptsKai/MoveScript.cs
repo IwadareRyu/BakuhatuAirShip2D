@@ -32,11 +32,10 @@ public class MoveScript : MonoBehaviour
             return;
         }
 
-        if (transform.position.x > 15 || transform.position.x < -15
-            || transform.position.y > 15 || transform.position.y < -15)
+        if (transform.position.x > 13 || transform.position.x < -10
+            || transform.position.y > 13 || transform.position.y < -10)
         {
-            _rb.simulated = false;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
