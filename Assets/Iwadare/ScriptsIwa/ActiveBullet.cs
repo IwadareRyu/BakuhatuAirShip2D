@@ -109,7 +109,7 @@ public class ActiveBullet : MonoBehaviour
     {
         _rb.simulated = false;
         _stopbool = false;
-        yield return new WaitWhile(() => _stopbool == true);
+        yield return new WaitWhile(() => _stopbool == false);
         _rb.simulated = true;
     }
 
