@@ -79,16 +79,18 @@ public class BossDanmakuIns : MonoBehaviour
         }
         else if(_danmakuState == BulletTypeClass.BulletState.StopBullet)
         {
-            for(var i = 0;i < 11;i++)
+            for(var i = 0;i < 10;i++)
             {
                 yield return new WaitForSeconds(_angleCount);
                 OnePointIns(true,_angle,true);
             }
             yield return new WaitForSeconds(_angleCount);
-            foreach(var j in _bulletList)
+            var num = _bulletList.Count;
+            for(var j = 0; j < num;j++)
             {
-                bulletcs = j.GetComponent<ActiveBullet>();
+                bulletcs = _bulletList[0].GetComponent<ActiveBullet>();
                 bulletcs.StopTrue();
+                _bulletList.RemoveAt(0);
             }
         }
         else
