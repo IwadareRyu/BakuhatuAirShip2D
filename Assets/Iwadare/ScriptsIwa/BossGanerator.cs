@@ -111,6 +111,7 @@ public class BossGanerator : MonoBehaviour
             if (_bossHP <= 0f)
             {
                 BulletReset();
+                GameManager.Instance.SetDeadEnemy(-1);
                 Destroy(gameObject);
             }
         }

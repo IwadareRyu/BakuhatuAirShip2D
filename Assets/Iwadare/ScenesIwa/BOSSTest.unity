@@ -1990,6 +1990,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  _deadEnemy: -1
+  _goalPos: {fileID: 1920351826}
+  _speed: 2
+  _countDownTime: 500
 --- !u!61 &575733518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2181,7 +2185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625066366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5207473, y: 2.482106, z: -1.166022}
+  m_LocalPosition: {x: -0.03, y: 0.08, z: -1.166022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5150,7 +5154,7 @@ GameObject:
   - component: {fileID: 1462952464}
   m_Layer: 5
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: EnemyText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7364,6 +7368,37 @@ MonoBehaviour:
   _poolObj: {fileID: 4777501690075766973, guid: 253e62a7d7033e54bb4a20e4ea6b0ce1, type: 3}
   _maxCount: 350
   Parent: {fileID: 1915144805}
+--- !u!1 &1920351825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1920351826}
+  m_Layer: 0
+  m_Name: GoalPos
+  m_TagString: WarpPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1920351826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920351825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 18.15917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1954805428
 GameObject:
   m_ObjectHideFlags: 0
@@ -8283,6 +8318,10 @@ PrefabInstance:
     - target: {fileID: 1076212189700790908, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
       propertyPath: m_Name
       value: PlayerCore
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076212189700790908, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
