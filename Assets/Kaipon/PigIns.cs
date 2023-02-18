@@ -14,7 +14,10 @@ public class PigIns : MonoBehaviour
     {
 
     }
-
+    private void OnEnable()
+    {
+        _instansbool = false;
+    }
     // Update is called once per frame
     void Update()
     {
