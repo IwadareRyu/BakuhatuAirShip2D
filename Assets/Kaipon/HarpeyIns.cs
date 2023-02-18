@@ -14,7 +14,10 @@ public class HarpeyIns : MonoBehaviour
     {
         
     }
-
+    private void OnEnable()
+    {
+        _insbool = false;
+    }
     // Update is called once per frame
     void Update()
     {
