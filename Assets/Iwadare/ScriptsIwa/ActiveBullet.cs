@@ -37,8 +37,8 @@ public class ActiveBullet : MonoBehaviour
     private void Update()
     {
         //画面の外に出ると、SetActiveがfalseになるReset関数。
-        if (transform.position.x > 5 || transform.position.x < -5
-            || transform.position.y > 7 || transform.position.y < -7)
+        if (transform.position.x > 7 || transform.position.x < -7
+            || transform.position.y > 8 || transform.position.y < -7)
         {
             Reset();
         }
@@ -119,6 +119,7 @@ public class ActiveBullet : MonoBehaviour
         _transA = transform.position;
         _transA.y = 10f;
         transform.position = _transA;
+        _rb.simulated = true;
         gameObject.SetActive(false);
     }
 
