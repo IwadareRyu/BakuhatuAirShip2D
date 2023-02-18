@@ -10,16 +10,20 @@ public class GameManager : SingletonMonovihair<GameManager>
     private Text _timeText;
     private Text _scoreText;
     private Text _totalMoneyText;
+    private Text _deadEnemyText;
     [SerializeField] GameObject _resultText;
     [SerializeField] GameObject _gameOverCanvas;
     string _reScore;
     [Tooltip("現在のスコアの値")]
-    public int _score = 1000;
+    public int _score = 4000;
     public int _totalMoney = 0;
     [Tooltip("スコアの限界値")]
     int _maxScore = 9999999;
     [SerializeField] float _countDownTime = 60f;
     bool _isStarted;
+    [Tooltip("倒す敵の数")]
+    int _deadEnemy;
+    public int _enemy => _deadEnemy;
     [Tooltip("デバック用")]
     [SerializeField] bool _godmode;
     [SerializeField] float _gaugeInterval = 1f;
@@ -29,12 +33,16 @@ public class GameManager : SingletonMonovihair<GameManager>
 
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         _scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
         _timeText = GameObject.FindGameObjectWithTag("Time").GetComponent<Text>();
         _totalMoneyText = GameObject.FindGameObjectWithTag("TotalMoney").GetComponent<Text>();
+        _deadEnemyText = GameObject.FindGameObjectWithTag("EnemyText").GetComponent<Text>();
+    }
+
+    void Start()
+    {
         //スコアの初期化
         ShowScore();
         _isStarted = true;
@@ -91,6 +99,18 @@ public class GameManager : SingletonMonovihair<GameManager>
     {
         _reScore = input.text;
     }
+
+    public void SetCountDown(float time)
+    {
+        _countDownTime = time;
+    }
+
+    public void SetDeadEnemy(int enemy)
+    {
+        _deadEnemy = Mathf.Max(0,_deadEnemy + enemy);
+        _deadEnemyText.text = _deadEnemy.ToString("00000");
+    }
+
     // Update is called once per frame
     void Update()
     {

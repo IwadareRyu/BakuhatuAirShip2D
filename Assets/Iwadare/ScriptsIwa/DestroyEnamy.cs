@@ -31,6 +31,7 @@ public class DestroyEnamy : MonoBehaviour
             {
                 _action.Invoke();
             }
+            GameManager.Instance.SetDeadEnemy(-1);
             Instantiate(_hit, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
