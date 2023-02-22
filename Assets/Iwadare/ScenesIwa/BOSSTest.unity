@@ -1990,7 +1990,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _deadEnemy: 1
+  _deadEnemy: -1
   _goalPos: {fileID: 1920351826}
   _speed: 2
   _countDownTime: 500
@@ -2621,7 +2621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolObj: {fileID: 4777501690075766973, guid: d7cc281068f3b14439964f0892f0f4f1, type: 3}
-  _maxCount: 150
+  _maxCount: 300
   Parent: {fileID: 744209873}
 --- !u!4 &744209875
 Transform:
@@ -7155,10 +7155,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 989190377}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+      - m_Target: {fileID: 665620920}
+        m_TargetAssemblyTypeName: PowerUp, Assembly-CSharp
         m_MethodName: SceneLoad
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7366,7 +7366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolObj: {fileID: 4777501690075766973, guid: 253e62a7d7033e54bb4a20e4ea6b0ce1, type: 3}
-  _maxCount: 350
+  _maxCount: 400
   Parent: {fileID: 1915144805}
 --- !u!1 &1920351825
 GameObject:
@@ -7879,10 +7879,10 @@ MonoBehaviour:
   _stopdis: 0.8
   _speed: 0
   _danmakuPattern:
-  - {fileID: 396461739}
-  - {fileID: 231697800}
-  - {fileID: 396282870}
   - {fileID: 71818439}
+  - {fileID: 396282870}
+  - {fileID: 231697800}
+  - {fileID: 396461739}
   - {fileID: 1678915559}
   - {fileID: 550781329}
 --- !u!212 &2119182481
