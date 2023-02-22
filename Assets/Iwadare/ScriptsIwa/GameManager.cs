@@ -123,6 +123,7 @@ public class GameManager : SingletonMonovihair<GameManager>
     {
         //if (_isStarted) ShowScore();
         _score = 1000;
+        Awake();
         Start();
         PowerUp.Instance.Start();
     }
