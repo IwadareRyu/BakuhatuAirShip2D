@@ -9,6 +9,7 @@ public class HarpeyIns : MonoBehaviour
     [SerializeField] GameObject[] _harpeyDown, _harpeyLeft, _harpeyRight ,_harpey;
     [SerializeField] float _coolsec;
     [SerializeField] float _inssec;
+    [SerializeField] Spawn_Pattern _pattern;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +22,21 @@ public class HarpeyIns : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_insbool ==false)
+        if(_insbool == false)
         {
             _insbool = true;
-            StartCoroutine(HarpeyInstans());
+            if(_pattern == Spawn_Pattern.Legion)
+            {
+                StartCoroutine(HarpeyLegionInstans());
+            }
+            else if(_pattern == Spawn_Pattern.RandomIns)
+            {
+                StartCoroutine(RandomInstance());
+            }
         }
     }
-    IEnumerator HarpeyInstans()
+
+    IEnumerator HarpeyLegionInstans()
     {
         yield return new WaitForSeconds(_inssec);
         var ram = (int)Random.Range(0,1.9f);
@@ -40,5 +49,34 @@ public class HarpeyIns : MonoBehaviour
         Instantiate(_harpey[2], _harpeyRight[ram].transform.position, Quaternion.identity);
         yield return new WaitForSeconds(_coolsec);
         _insbool = false;
+    }
+
+    IEnumerator RandomInstance()
+    {
+        yield return new WaitForSeconds(_inssec);
+        var ram = (int)Random.Range(0, 2.9f);
+        if (ram == 0)
+        {
+            ram = (int)Random.Range(0, 1.9f);
+            Instantiate(_harpey[0], _harpeyDown[ram].transform.position, Quaternion.identity);
+        }
+        else if (ram == 1)
+        {
+            ram = (int)Random.Range(0, 2.9f);
+            Instantiate(_harpey[1], _harpeyLeft[ram].transform.position, Quaternion.identity);
+        }
+        else 
+        {
+            ram = (int)Random.Range(0, 2.9f);
+            Instantiate(_harpey[2], _harpeyRight[ram].transform.position, Quaternion.identity);
+        }
+        _insbool = false;   
+    }
+
+
+    enum Spawn_Pattern
+    {
+        Legion,  //  åRíc
+        RandomIns,  //Å@ÉâÉìÉ_ÉÄê∂ê¨  
     }
 }
