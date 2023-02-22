@@ -9,6 +9,7 @@ public class Goal : MonoBehaviour
     [SerializeField] int _deadEnemy = 100;
     [SerializeField] Transform _goalPos;
     [SerializeField] float _speed = 1f;
+    [SerializeField] GameObject _clearText;
     float _stopdis = 0.5f;
     [SerializeField] float _countDownTime = 60f;
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class Goal : MonoBehaviour
     {
         GameManager.Instance.SetDeadEnemy(_deadEnemy);
         GameManager.Instance.SetCountDown(_countDownTime);
+        _clearText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,14 +38,16 @@ public class Goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            _action.Invoke();
+            _clearText.SetActive(true);
+            //_action.Invoke();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            _action.Invoke();
+            _clearText.SetActive(true);
+            //_action.Invoke();
         }
     }
 

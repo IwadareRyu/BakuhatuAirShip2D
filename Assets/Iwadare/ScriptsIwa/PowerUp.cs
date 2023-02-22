@@ -15,6 +15,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     [SerializeField] Text _powerMoneyText;
     [SerializeField] Text _speedMoneyText;
     [SerializeField] Text _airnumMoneyText;
+    string _changeScene;
 
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
@@ -75,5 +76,15 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     {
         GameObject _build = transform.GetChild(0).gameObject;
         _build.SetActive(true);
+    }
+
+    public void SceneName(string scene)
+    {
+        _changeScene = scene;
+    }
+
+    public void SceneLoad()
+    {
+        SceneLoader.Instance.SceneLoad(_changeScene);
     }
 }

@@ -7,8 +7,10 @@ public class AirShipController : MonoBehaviour
     Rigidbody2D _rb;
     [Tooltip("攻撃のクールタイム")]
     bool _cooltime;
-    //[Tooltip("飛ばす飛行機")]
-    //[SerializeField] GameObject _airShip;
+    [Tooltip("オールアタックポイント")]
+    [SerializeField] GameObject[] _allAttackPoints;
+    [Tooltip("全てを消す爆発,オールアタック")]
+    [SerializeField] GameObject _allAttack;
     [Tooltip("爆風")]
     [SerializeField] GameObject _bakuhatu;
     [Tooltip("飛ばす飛行機の初期位置")]
@@ -35,6 +37,14 @@ public class AirShipController : MonoBehaviour
     private PowerUp _power;
     [Tooltip("プール")]
     [SerializeField] BulletPoolActive _pool;
+    [Tooltip("無敵時間")]
+    bool _starTime;
+    [Header("通常時の色")]
+    [Tooltip("通常時の色")]
+    [SerializeField] Color _normalColor;
+    [Header("無敵時の色")]
+    [Tooltip("無敵時の色")]
+    [SerializeField] Color _starColor;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +69,7 @@ public class AirShipController : MonoBehaviour
         v = Input.GetAxisRaw("Vertical");
 
         //飛行機を飛ばす。
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && !_starTime)
         {
             if (!_cooltime)
             {
@@ -76,17 +86,6 @@ public class AirShipController : MonoBehaviour
         {
             _nowSpeed = _speed;
         }
-
-        ////リトライ
-        //if (Input.GetButtonDown("Fire2"))
-        //{
-        //    _activeLoad.ActiveSceneLoad();
-        //}
-        //else
-        //{
-        //    h = 0;
-        //    v = 0;
-        //}
     }
     private void FixedUpdate()
     {
@@ -98,16 +97,31 @@ public class AirShipController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "EnemyBullet" || collision.gameObject.tag == "Enemy")
+        if(!_starTime && collision.gameObject.tag == "EnemyBullet" || !_starTime && collision.gameObject.tag == "Enemy")
         {
-            _gm.AddScore(-100);
-            if (!_cooltime)
-            {
-                StartCoroutine(BakuhatuTime());
-            }
+            _gm.AddScore(-500);
+            _starTime = true;
+            StartCoroutine(AllAtackTime());
         }
-
     }
+
+    IEnumerator AllAtackTime()
+    {
+        var col = GetComponent<SpriteRenderer>();
+        col.color = _starColor;
+        _airShipOnOff.SetActive(false);
+        Instantiate(_bakuhatu, transform.position, Quaternion.identity);
+        foreach (var i in _allAttackPoints)
+        {
+            yield return new WaitForSeconds(0.3f);
+            Instantiate(_allAttack, i.transform.position, Quaternion.identity);
+        }
+        yield return new WaitForSeconds(4f);
+        _starTime = false;
+        col.color = _normalColor;
+        _airShipOnOff.SetActive(true);
+    }
+
     IEnumerator BulletCoolTime()
     {
         _cooltime = true;
@@ -119,16 +133,10 @@ public class AirShipController : MonoBehaviour
         }
         _airShipOnOff.SetActive(false);
         yield return new WaitForSeconds(_time);
-        _airShipOnOff.SetActive(true);
-        _cooltime = false;
-    }
-    IEnumerator BakuhatuTime()
-    {
-        _cooltime = true;
-        Instantiate(_bakuhatu, transform.position, Quaternion.identity);
-        _airShipOnOff.SetActive(false);
-        yield return new WaitForSeconds(_time);
-        _airShipOnOff.SetActive(true);
+        if (!_starTime)
+        {
+            _airShipOnOff.SetActive(true);
+        }
         _cooltime = false;
     }
 }

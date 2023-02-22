@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class SceneLoader : SingletonMonovihair<SceneLoader>
 {
+    protected override bool _dontDestroyOnLoad { get { return true; } }
     /// <summary>シーンのロード</summary>
     /// <param name="sceneName"></param>
     public void SceneLoad(string sceneName)
