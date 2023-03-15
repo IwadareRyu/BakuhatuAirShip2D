@@ -6,10 +6,12 @@ public class PigMove : MonoBehaviour
 {
     [SerializeField] float _speed = 3f;
     [SerializeField] float _stopsec = 10f;
+    [SerializeField] GameObject _bulletpoint;
     Rigidbody2D _rb;
     float _y;
     [Tooltip("’âŽ~”»’è")]
     bool _stopBool;
+    [SerializeField] bool _takatori;
 
     private void OnEnable()
     {
@@ -42,6 +44,10 @@ public class PigMove : MonoBehaviour
         _rb.velocity *= 0;
         yield return new WaitForSeconds(_stopsec);
         _rb.velocity = Vector2.down * _speed;
+        if(_takatori)
+        {
+            _bulletpoint.SetActive(false);
+        }
     }
 
 }
