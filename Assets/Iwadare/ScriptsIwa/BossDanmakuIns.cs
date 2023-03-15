@@ -122,7 +122,18 @@ public class BossDanmakuIns : MonoBehaviour
             //球の位置をスポーンポイントに移動する。
             bullet.transform.position = transform.position;
             //球の動きを設定するメソッドに代入。
-            bulletcs.BulletAdd(i, _bulletspeed, _colorState);
+            if (_danmakuState == BulletTypeClass.BulletState.ChangeBulletOne)
+            {
+                bulletcs.BulletAdd(i, _bulletspeed, _colorState, false, true);
+            }
+            else if(_danmakuState == BulletTypeClass.BulletState.ChangeBulletTwo)
+            {
+                bulletcs.BulletAdd(i, _bulletspeed, _colorState, false, true,true);
+            }
+            else
+            {
+                bulletcs.BulletAdd(i, _bulletspeed, _colorState);
+            }
         }
     }
     private void OnePointIns(bool stop = false, float angle = 0, bool listbool = false)
