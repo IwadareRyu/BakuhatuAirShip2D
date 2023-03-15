@@ -10,7 +10,7 @@ public class RandomManege : MonoBehaviour
     [SerializeField] float _desSec;
     int _current = 0;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
          
         foreach (var i in _pattern)
