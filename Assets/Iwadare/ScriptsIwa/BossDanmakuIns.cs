@@ -20,6 +20,14 @@ public class BossDanmakuIns : MonoBehaviour
     [SerializeField] BulletTypeClass.BulletState _danmakuState;
     [SerializeField] BulletTypeClass.BulletSpriteState _colorState;
 
+    private void Start()
+    {
+        if(!_pool)
+        {
+            _pool = GameObject.FindGameObjectWithTag("MidBulletPool").GetComponent<BulletPoolActive>();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
