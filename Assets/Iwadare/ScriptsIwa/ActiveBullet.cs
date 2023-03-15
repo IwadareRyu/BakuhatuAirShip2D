@@ -27,6 +27,8 @@ public class ActiveBullet : MonoBehaviour
     [Tooltip("炎の色、形によって動きを分けるためのenum")]
     BulletTypeClass.BulletSpriteState _state;
     bool _stopbool;
+    bool _change1;
+    bool _change2;
 
     private void Awake()
     {
@@ -83,6 +85,10 @@ public class ActiveBullet : MonoBehaviour
         {
             StartCoroutine(StopBullet());
         }
+        if(_change1)
+        {
+            StartCoroutine(ChangeBullet());
+        }
     }
 
     /// <summary>プレイヤーに向かって飛ぶ球</summary>
@@ -113,6 +119,27 @@ public class ActiveBullet : MonoBehaviour
         _rb.simulated = true;
     }
 
+    IEnumerator ChangeBullet()
+    {
+        yield return new WaitForSeconds(1f);
+        _rb.simulated = false;
+        yield return new WaitForSeconds(1f);
+        _sprite.sprite = _bluesphere;
+        _state = BulletTypeClass.BulletSpriteState.LeftSphere;
+        _rb.simulated = true;
+        _speed = 0.2f;
+        if (_change2)
+        {
+            yield return new WaitForSeconds(2f);
+            _rb.simulated = false;
+            yield return new WaitForSeconds(1f);
+            _sprite.sprite = _redsphere;
+            _state = BulletTypeClass.BulletSpriteState.RightSphere;
+            _speed = -0.2f;
+            _rb.simulated = true;
+        }
+    }
+
     /// <summary>球をpoolに返す際に実行する処理</summary>
     public void Reset()
     {
@@ -130,13 +157,15 @@ public class ActiveBullet : MonoBehaviour
     /// (クラスでstateを決めているので他スクリプトのstateの中身は同じ)</param>
     /// <param name="stop">球を止めるか止めないか
     /// (入力しなくても自動で止めない設定にしている)</param>
-    public void BulletAdd(float angle, float speed, BulletTypeClass.BulletSpriteState type,bool stop = false,bool change = false)
+    public void BulletAdd(float angle, float speed, BulletTypeClass.BulletSpriteState type, bool stop = false, bool change1 = false, bool change2 = false)
     {
         //入力されてきた変数をそれぞれ代入。
         _angle = angle;
         _speed = speed;
         _state = type;
         _stop = stop;
+        _change1 = change1;
+        _change2 = change2;
         dist = 0;
         //stateによって球の色を変えたり、動きの処理をするswitch文。
         switch(_state)

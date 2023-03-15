@@ -17,6 +17,10 @@ public class BulletTypeClass
         AllZiki,
 
         StopBullet,
+
+        ChangeBulletOne,
+
+        ChangeBulletTwo,
     }
 
     public enum BulletSpriteState
