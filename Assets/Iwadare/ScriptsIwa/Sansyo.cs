@@ -24,4 +24,9 @@ public class Sansyo : MonoBehaviour
     {
         PowerUp.Instance.BuildUp();
     }
+
+    public void SceneSansyo(string scene)
+    {
+        PowerUp.Instance.SceneName(scene);
+    }
 }
