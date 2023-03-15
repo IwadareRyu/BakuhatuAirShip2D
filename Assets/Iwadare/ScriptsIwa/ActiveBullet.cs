@@ -130,7 +130,7 @@ public class ActiveBullet : MonoBehaviour
     /// (クラスでstateを決めているので他スクリプトのstateの中身は同じ)</param>
     /// <param name="stop">球を止めるか止めないか
     /// (入力しなくても自動で止めない設定にしている)</param>
-    public void BulletAdd(float angle, float speed, BulletTypeClass.BulletSpriteState type,bool stop = false)
+    public void BulletAdd(float angle, float speed, BulletTypeClass.BulletSpriteState type,bool stop = false,bool change = false)
     {
         //入力されてきた変数をそれぞれ代入。
         _angle = angle;

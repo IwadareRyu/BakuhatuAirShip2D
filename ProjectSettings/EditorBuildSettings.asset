@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Iwadare/ScenesIwa/Enemytest.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Iwadare/ScenesIwa/BOSSTest.unity
+    guid: 850e8c2c5aab53649aed151fa65735c9
   - enabled: 1
-    path: Assets/Iwadare/ScenesIwa/Stage1.unity
-    guid: 69b410a86f2c6e84ca40580be77d4eae
+    path: Assets/Kaipon/SceneKai/EnemyTest.unity
+    guid: ebc4f2a0705d8d84497d08896ab6a1e6
   m_configObjects: {}

@@ -1967,7 +1967,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575733515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -990.1, y: -547.84, z: 0}
+  m_LocalPosition: {x: -989.98, y: -548.04, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7835,10 +7835,10 @@ MonoBehaviour:
   _stopdis: 0.8
   _speed: 0
   _danmakuPattern:
-  - {fileID: 231697800}
-  - {fileID: 1678915559}
-  - {fileID: 550781329}
   - {fileID: 396282870}
+  - {fileID: 231697800}
+  - {fileID: 550781329}
+  - {fileID: 1678915559}
   - {fileID: 396461739}
   - {fileID: 71818439}
 --- !u!212 &2119182481
