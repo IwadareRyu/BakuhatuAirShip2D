@@ -24,6 +24,7 @@ public class PigMove : MonoBehaviour
     {
         _rb = this.GetComponent<Rigidbody2D>();
         _rb.velocity = Vector2.down * _speed;
+        _bulletpoint.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,6 +42,7 @@ public class PigMove : MonoBehaviour
     }
     IEnumerator StopTime()
     {
+        _bulletpoint.SetActive(true);
         _rb.velocity *= 0;
         yield return new WaitForSeconds(_stopsec);
         _rb.velocity = Vector2.down * _speed;
