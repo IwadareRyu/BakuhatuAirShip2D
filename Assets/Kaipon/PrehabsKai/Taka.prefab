@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 2
   _minas: 1
-  _radius: 3
+  _radius: 1
   _startCirclePos: 0
 --- !u!114 &5843400208365210487
 MonoBehaviour:
@@ -64,8 +64,8 @@ MonoBehaviour:
   _count: 5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
-  _bulletspeed: 2
+  num: 0
+  _bulletspeed: 4
   _angle: 0
   _danmakuState: 4
   _colorState: 0

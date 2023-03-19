@@ -103,6 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _stopsec: 10
+  _bulletpoint: {fileID: 5813989142920133727}
+  _takatori: 0
 --- !u!50 &-7066121148242084815
 Rigidbody2D:
   serializedVersion: 4
