@@ -3408,7 +3408,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1521183918}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &992017572
 MonoBehaviour:
@@ -3425,7 +3425,7 @@ MonoBehaviour:
   _count: 5
   _angleCount: 1
   _pool: {fileID: 1915144808}
-  num: 20
+  num: 10
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 7
@@ -5651,6 +5651,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1764185831}
   - {fileID: 992017571}
   - {fileID: 1643565557}
   - {fileID: 2002197771}
@@ -6100,7 +6101,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1521183918}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1643565558
 MonoBehaviour:
@@ -6117,7 +6118,7 @@ MonoBehaviour:
   _count: 5
   _angleCount: 1
   _pool: {fileID: 1915144808}
-  num: 25
+  num: 15
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 6
@@ -6825,6 +6826,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1764185830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1764185831}
+  - component: {fileID: 1764185833}
+  - component: {fileID: 1764185832}
+  m_Layer: 0
+  m_Name: AllZikiAttack (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1764185831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764185830}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.020000001, y: -0.010000071, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1521183918}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764185832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764185830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb848a3e597bf2849b7e8877ffaf5155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+  _minas: 1
+  _radius: 1
+  _startCirclePos: 0
+--- !u!114 &1764185833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764185830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b030104bc387d4d9090dfad67c1d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _count: 1.2
+  _angleCount: 1
+  _pool: {fileID: 1915144808}
+  num: 50
+  _bulletspeed: 5
+  _angle: 0
+  _danmakuState: 4
+  _colorState: 3
 --- !u!1 &1770923067
 GameObject:
   m_ObjectHideFlags: 0
@@ -7822,7 +7892,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1521183918}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2002197772
 MonoBehaviour:
@@ -7839,7 +7909,7 @@ MonoBehaviour:
   _count: 5
   _angleCount: 1
   _pool: {fileID: 1915144808}
-  num: 30
+  num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
