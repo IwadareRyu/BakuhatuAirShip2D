@@ -47,28 +47,31 @@ public class BakuhatuScale : MonoBehaviour
             attacklange = Physics2D.OverlapCircleAll(start, _allPower / 2);
         }
 
-        foreach(var a in attacklange)
+        if (!_attack)
         {
-            if(a.gameObject.tag == "Enemy")
+            foreach (var a in attacklange)
             {
-                var dead = a.GetComponent<DestroyEnamy>();
-                dead.Damage();
-            }
-            else if(a.gameObject.tag == "Boss" && !_attack && _pattern == Pattern.Normal)
-            {
-                var boss = a.GetComponent<BossGanerator>();
-                boss.AddBossDamage(-1.0f);
-                _attack = true;
-            }
-            else if(a.gameObject.tag == "EnemyBullet" && _pattern == Pattern.AllAttack)
-            {
-                var rb = a.GetComponent<Rigidbody2D>();
-                if(rb)
+                if (a.gameObject.tag == "Enemy")
                 {
-                    rb.simulated = true;
+                    var dead = a.GetComponent<DestroyEnamy>();
+                    dead.Damage();
                 }
-                a.gameObject.SetActive(false);
+                else if (a.gameObject.tag == "Boss" && !_attack && _pattern == Pattern.Normal)
+                {
+                    var boss = a.GetComponent<BossGanerator>();
+                    boss.AddBossDamage(-1.0f);
+                }
+                else if (a.gameObject.tag == "EnemyBullet" && _pattern == Pattern.AllAttack)
+                {
+                    var rb = a.GetComponent<Rigidbody2D>();
+                    if (rb)
+                    {
+                        rb.simulated = true;
+                    }
+                    a.gameObject.SetActive(false);
+                }
             }
+            _attack = true;
         }
     }
 
