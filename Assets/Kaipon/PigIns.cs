@@ -9,6 +9,8 @@ public class PigIns : MonoBehaviour
     [SerializeField] GameObject _pig;
     [SerializeField] float _insSec;
     bool _instansbool;
+    [SerializeField] float _high = 4f;
+    [SerializeField] float _low = -4f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class PigIns : MonoBehaviour
     IEnumerator Instans()
     {
         yield return new WaitForSeconds(_insSec);
-        _x = Random.Range(-4f, 4f);
+        _x = Random.Range(_low, _high);
         _pos = new Vector2(_x, this.transform.position.y);
         Instantiate(_pig, _pos, Quaternion.identity);
         _instansbool = false;

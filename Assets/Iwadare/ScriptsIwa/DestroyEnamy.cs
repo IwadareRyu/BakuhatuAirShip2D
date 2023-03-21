@@ -14,6 +14,7 @@ public class DestroyEnamy : MonoBehaviour
     [SerializeField] UnityEvent _action;
     [SerializeField] GameObject[] _money;
     [SerializeField] int[] _moneycount;
+    [SerializeField] int _deadcount = -1;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,7 @@ public class DestroyEnamy : MonoBehaviour
             {
                 _action.Invoke();
             }
-            GameManager.Instance.SetDeadEnemy(-1);
+            GameManager.Instance.SetDeadEnemy(_deadcount);
             Instantiate(_hit, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
@@ -50,7 +51,7 @@ public class DestroyEnamy : MonoBehaviour
             Instantiate(_bakuhatu, collision.transform.position, Quaternion.identity);
             var bullet = collision.gameObject.GetComponent<PlayerBullet>();
             bullet.Reset();
-            _enemyHP = _enemyHP - 2;
+            _enemyHP = _enemyHP - 1;
         }
     }
 
@@ -78,6 +79,7 @@ public class DestroyEnamy : MonoBehaviour
 
     public void Damage()
     {
-        _enemyHP = _enemyHP - 2;
+        _enemyHP = _enemyHP - 1;
+        Debug.Log(_enemyHP);
     }
 }
