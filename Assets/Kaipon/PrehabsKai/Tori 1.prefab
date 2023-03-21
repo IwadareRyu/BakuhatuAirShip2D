@@ -97,9 +97,11 @@ GameObject:
   - component: {fileID: 5843400209152136154}
   - component: {fileID: 5513638537850209436}
   - component: {fileID: 8627127244866985828}
+  - component: {fileID: 3157472203943815222}
+  - component: {fileID: 2578930842544287232}
   m_Layer: 0
   m_Name: Tori 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,6 +211,71 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3157472203943815222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5843400209152135972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74f0c2b32a6034faa259607af70bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 100
+  _enemyHP: 10
+  _zangeki: {fileID: 2303163670325522591, guid: eb2c1c916b006b24081be7ccdc909ea8, type: 3}
+  _hit: {fileID: 4435278275579475509, guid: 6cb7335a98c9a78478610d0f703f45a2, type: 3}
+  _bakuhatu: {fileID: 2303163670325522591, guid: eb2c1c916b006b24081be7ccdc909ea8, type: 3}
+  _event: 0
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3157472203943815222}
+        m_TargetAssemblyTypeName: DestroyEnamy, Assembly-CSharp
+        m_MethodName: Money
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _money:
+  - {fileID: 5266786424971502570, guid: cee40d1cb0d8b7143bb6745c668dae03, type: 3}
+  - {fileID: 462419198879544901, guid: 0bad0faa93923b14cab75bcca6d78201, type: 3}
+  - {fileID: 5723529227555643718, guid: 5949e394716248443a307070e269f88b, type: 3}
+  _moneycount: 3c0000005a000000
+  _deadcount: -5
+--- !u!61 &2578930842544287232
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5843400209152135972}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &5843400209242485036
 GameObject:
   m_ObjectHideFlags: 0
