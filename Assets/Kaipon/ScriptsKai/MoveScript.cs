@@ -13,22 +13,25 @@ public class MoveScript : MonoBehaviour
     Rigidbody2D _rb;
     [SerializeField] bool _reset;
     [SerializeField] bool _pattern;
+    [SerializeField] float _angle;
     bool _lock;
     Transform _playerpos;
     GameObject _player;
+    Vector3 _velocity;
     // Start is called before the first frame update
     void Start()
     {
         
         _rb = this?.GetComponent<Rigidbody2D>();
         //移動方向
-        Vector2 dir = new Vector2(_rLMove, _uDMove).normalized;
+        //Vector2 dir = new Vector2(_rLMove, _uDMove).normalized;
         //移動
-        _rb.velocity = dir * _speed;
+        //_rb.velocity = dir * _speed;
         if(_pattern)
         {
             _player = GameObject.FindGameObjectWithTag("Player");
         }
+        AngleMove(_angle);
     }
 
     // Update is called once per frame
@@ -47,15 +50,25 @@ public class MoveScript : MonoBehaviour
         if(_pattern && !_lock)
         {
             _playerpos = _player.GetComponent<Transform>();
-            if(_rLMove == 0 && _playerpos.position.y > transform.position.y )
+            if(_angle == 270 && _playerpos.position.y > transform.position.y )
             {
-                _rLMove = _playerpos.position.x > transform.position.x ? 1 : -1;
-                _uDMove = 0;
-                Vector2 dir = new Vector2(_rLMove,_uDMove ).normalized;
-                //移動
-                _rb.velocity = dir * _speed;
+                //_rLMove = _playerpos.position.x > transform.position.x ? 1 : -1;
+                //_uDMove = 0;
+                //Vector2 dir = new Vector2(_rLMove,_uDMove ).normalized;
+                ////移動
+                //_rb.velocity = dir * _speed;
+                float zAngle = _playerpos.position.x > transform.position.x ? 0 : 180 ;
                 _lock = true;
+                AngleMove(zAngle);
             }
         }
+    }
+    void AngleMove(float angle)
+    {
+        _velocity.x = _speed * Mathf.Cos(angle * Mathf.Deg2Rad);
+        _velocity.y = _speed * Mathf.Sin(angle * Mathf.Deg2Rad);
+        float zAngle = Mathf.Atan2(_velocity.y, _velocity.x) * Mathf.Rad2Deg + 90.0f;
+        transform.rotation = Quaternion.Euler(0, 0, zAngle);
+        _rb.velocity = _velocity;
     }
 }
