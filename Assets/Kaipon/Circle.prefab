@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _angle: 0
   _speed: 3
-  _redFire: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  _blueFire: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  _bluesphere: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  _redsphere: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  _redFire: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
+  _blueFire: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
+  _bluesphere: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
+  _redsphere: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
