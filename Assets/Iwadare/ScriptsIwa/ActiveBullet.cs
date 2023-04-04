@@ -75,7 +75,7 @@ public class ActiveBullet : MonoBehaviour
     /// <summary>‹…‚ÌŒü‚«‚É‰ˆ‚Á‚Ä‚Ü‚Á‚·‚®”ò‚Ô‹…B</summary>
     private void Type0Move()
     {
-        //_rb = GetComponent<Rigidbody2D>();
+        //_angle‚É‚æ‚Á‚ÄA”ò‚Ô•ûŒü‚ÆŒü‚«‚ğ•Ï‚¦‚éB
         _velocity.x = _speed * Mathf.Cos(_angle * Mathf.Deg2Rad);
         _velocity.y = _speed * Mathf.Sin(_angle * Mathf.Deg2Rad);
         float zAngle = Mathf.Atan2(_velocity.y, _velocity.x) * Mathf.Rad2Deg - 90.0f;

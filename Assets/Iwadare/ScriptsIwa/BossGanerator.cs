@@ -15,6 +15,12 @@ public class BossGanerator : MonoBehaviour
     int _youso = 0;
     BossState _stateboss = BossState.Ten;
     bool _oneShot;
+    [Header("体力が4割の時にオーバーモードに突入。")]
+    [Tooltip("体力が4割の時にオーバーモードに突入。")]
+    [SerializeField]bool _overMode;
+    [Header("体力を４割にしたいとき活用してください。")]
+    [SerializeField] bool _testMode;
+    bool _coroutinebreak;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +29,10 @@ public class BossGanerator : MonoBehaviour
             i.SetActive(false);
         }
         _bossHP = _bossMaxHP;
+        if(_testMode)
+        {
+            _bossHP = _bossMaxHP * 0.4f;
+        }
     }
 
     // Update is called once per frame
@@ -78,7 +88,7 @@ public class BossGanerator : MonoBehaviour
                 StartCoroutine(StopTime());
             }
 
-            if(_bossHP / _bossMaxHP < 0.4f)
+            if (_bossHP / _bossMaxHP < 0.4f)
             {
                 BulletReset();
                 _youso = 3;
@@ -87,7 +97,13 @@ public class BossGanerator : MonoBehaviour
         }
         else if (_stateboss == BossState.Four)
         {
-            if (!_oneShot)
+            if (!_oneShot && _overMode)
+            {
+                _oneShot = true;
+                _coroutinebreak = true;
+                Debug.Log("ここには入るね");
+            }
+            else if (!_oneShot)
             {
                 _oneShot = true;
                 StartCoroutine(StopTime());
@@ -97,6 +113,7 @@ public class BossGanerator : MonoBehaviour
             {
                 BulletReset();
                 _youso = 4;
+                _coroutinebreak = false;
                 _stateboss = BossState.Two;
             }
         }
@@ -138,8 +155,12 @@ public class BossGanerator : MonoBehaviour
     IEnumerator StopTime()
     {
         yield return new WaitForSeconds(3f);
+        if(_coroutinebreak)
+        {
+            yield break;
+        }
         _danmakuPattern[_youso].SetActive(true);
-        int ram = (int)Random.Range(0f, 1.9f);
+        //int ram = (int)Random.Range(0f, 1.9f);
     }
 
     enum BossState

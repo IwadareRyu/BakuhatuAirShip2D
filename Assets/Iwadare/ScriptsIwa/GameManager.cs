@@ -33,15 +33,20 @@ public class GameManager : SingletonMonovihair<GameManager>
 
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
-    private void Awake()
+    void Sansyo()
     {
         _scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
         _timeText = GameObject.FindGameObjectWithTag("Time").GetComponent<Text>();
         _totalMoneyText = GameObject.FindGameObjectWithTag("TotalMoney").GetComponent<Text>();
         _deadEnemyText = GameObject.FindGameObjectWithTag("EnemyText").GetComponent<Text>();
     }
-
     void Start()
+    {
+        Sansyo();
+        GameStart();
+    }
+
+    public void GameStart()
     {
         //スコアの初期化
         ShowScore();
@@ -122,9 +127,8 @@ public class GameManager : SingletonMonovihair<GameManager>
     private void OnLevelWasLoaded(int level)
     {
         //if (_isStarted) ShowScore();
-        _score = 1000;
-        Awake();
-        Start();
+        _score = 4000;
+        Sansyo();
         PowerUp.Instance.Start();
     }
 }
