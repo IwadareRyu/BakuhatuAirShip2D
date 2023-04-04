@@ -7,6 +7,7 @@ public class GameStartScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.Sansyo();
         GameManager.Instance.GameStart();
     }
 

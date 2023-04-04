@@ -33,7 +33,7 @@ public class GameManager : SingletonMonovihair<GameManager>
 
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
-    void Sansyo()
+    public void Sansyo()
     {
         _scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
         _timeText = GameObject.FindGameObjectWithTag("Time").GetComponent<Text>();
@@ -128,7 +128,6 @@ public class GameManager : SingletonMonovihair<GameManager>
     {
         //if (_isStarted) ShowScore();
         _score = 4000;
-        Sansyo();
         PowerUp.Instance.Start();
     }
 }
