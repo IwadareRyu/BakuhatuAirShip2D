@@ -37,4 +37,9 @@ public class PigIns : MonoBehaviour
         Instantiate(_pig, _pos, Quaternion.identity);
         _instansbool = false;
     }
+    public void InsSecChange(float num)
+    {
+        _insSec = num;
+    }
+
 }
