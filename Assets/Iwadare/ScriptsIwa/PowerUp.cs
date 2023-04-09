@@ -45,9 +45,9 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     /// <summary>爆発の威力をアップさせる関数</summary>
     public void BakuhatuUp()
     {
-        if (GM._totalMoney >= _bakuhatuPower * 1000)
+        if (GM._totalMoney >= _bakuhatuPower * 500)
         {
-            GM.TotalMoney(-_bakuhatuPower * 1000);
+            GM.TotalMoney(-_bakuhatuPower * 500);
             _bakuhatuPower++;
             AllTextShow();
         }
@@ -55,9 +55,9 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     /// <summary>球のスピードをアップさせる関数</summary>
     public void SpeedUp()
     {
-        if (GM._totalMoney >= _speedUp * 100)
+        if (GM._totalMoney >= _speedUp * 50)
         {
-            GM.TotalMoney(-_speedUp * 100);
+            GM.TotalMoney(-_speedUp * 50);
             _speedUp++;
             AllTextShow();
         }
@@ -65,9 +65,9 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     /// <summary>一度に出す機体を増やす関数</summary>
     public void AirNum()
     {
-        if (GM._totalMoney >= _airnum * 10000)
+        if (GM._totalMoney >= _airnum * 5000)
         {
-            GM.TotalMoney(-_airnum * 10000);
+            GM.TotalMoney(-_airnum * 5000);
             _airnum++;
             AllTextShow();
         }
