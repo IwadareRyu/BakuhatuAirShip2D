@@ -12,6 +12,8 @@ public class Goal : MonoBehaviour
     [SerializeField] GameObject _clearText;
     float _stopdis = 0.5f;
     [SerializeField] float _countDownTime = 60f;
+    bool _goalbool;
+    [SerializeField] RandomManege _enemymanege;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,30 @@ public class Goal : MonoBehaviour
             {
                 Vector3 dir = (_goalPos.position - transform.position).normalized * _speed;
                 transform.Translate(dir * Time.deltaTime);
+            }
+            if (!_goalbool) 
+            {
+                _goalbool = true;
+                if (_enemymanege) 
+                {
+                    _enemymanege.ResetEnemy();
+                }
+                var bullet = GameObject.FindGameObjectsWithTag("EnemyBullet");
+                if (bullet.Length != 0)
+                {
+                    foreach (var i in bullet)
+                    {
+                        i.SetActive(false);
+                    }
+                }
+                var enemy = GameObject.FindGameObjectsWithTag("Enemy");
+                if (enemy.Length != 0)
+                {
+                    foreach (var i in enemy)
+                    {
+                        i.SetActive(false);
+                    }
+                }
             }
         }
     }

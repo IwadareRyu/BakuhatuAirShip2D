@@ -315,9 +315,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _money:
-  - {fileID: 5266786424971502570, guid: cee40d1cb0d8b7143bb6745c668dae03, type: 3}
-  - {fileID: 462419198879544901, guid: 0bad0faa93923b14cab75bcca6d78201, type: 3}
   - {fileID: 5723529227555643718, guid: 5949e394716248443a307070e269f88b, type: 3}
+  - {fileID: 5723529227555643718, guid: d4e3a89ab6e8b444cb8015824b6ea64a, type: 3}
+  - {fileID: 5723529227555643718, guid: 65dbac9326d571d46a1f90de18df06cc, type: 3}
   _moneycount: 3c0000005a000000
   _deadcount: -5
 --- !u!61 &-1070540102586793991
