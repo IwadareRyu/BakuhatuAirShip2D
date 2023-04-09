@@ -37,8 +37,9 @@ public class AirShipController : MonoBehaviour
     private PowerUp _power;
     [Tooltip("プール")]
     [SerializeField] BulletPoolActive _pool;
+    [Header("trueにすれば、当たり判定なくなるから実質無敵。")]
     [Tooltip("無敵時間")]
-    bool _starTime;
+    [SerializeField]bool _starTime;
     [Header("通常時の色")]
     [Tooltip("通常時の色")]
     [SerializeField] Color _normalColor;
@@ -69,7 +70,7 @@ public class AirShipController : MonoBehaviour
         v = Input.GetAxisRaw("Vertical");
 
         //飛行機を飛ばす。
-        if (Input.GetButton("Fire1") && !_starTime)
+        if (Input.GetButton("Fire1"))
         {
             if (!_cooltime)
             {
@@ -97,7 +98,7 @@ public class AirShipController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!_starTime && collision.gameObject.tag == "EnemyBullet" || !_starTime && collision.gameObject.tag == "Enemy")
+        if(!_starTime && collision.gameObject.tag == "EnemyBullet" || !_starTime && collision.gameObject.tag == "Enemy" ||!_starTime && collision.gameObject.tag == "BossFire")
         {
             _gm.AddScore(-500);
             _starTime = true;
@@ -107,6 +108,7 @@ public class AirShipController : MonoBehaviour
 
     IEnumerator AllAtackTime()
     {
+        _cooltime = true;
         var col = GetComponent<SpriteRenderer>();
         col.color = _starColor;
         _airShipOnOff.SetActive(false);
@@ -120,6 +122,7 @@ public class AirShipController : MonoBehaviour
         _starTime = false;
         col.color = _normalColor;
         _airShipOnOff.SetActive(true);
+        _cooltime = false;
     }
 
     IEnumerator BulletCoolTime()
@@ -136,7 +139,7 @@ public class AirShipController : MonoBehaviour
         if (!_starTime)
         {
             _airShipOnOff.SetActive(true);
+            _cooltime = false;
         }
-        _cooltime = false;
     }
 }

@@ -29,6 +29,8 @@ public class ActiveBullet : MonoBehaviour
     bool _stopbool;
     bool _change1;
     bool _change2;
+    [Header("球が消える位置")]
+    [SerializeField]float yup = 8,ydown = -7,xup = 7,xdown = -7;
 
     private void Awake()
     {
@@ -39,8 +41,8 @@ public class ActiveBullet : MonoBehaviour
     private void Update()
     {
         //画面の外に出ると、SetActiveがfalseになるReset関数。
-        if (transform.position.x > 7 || transform.position.x < -7
-            || transform.position.y > 8 || transform.position.y < -7)
+        if (transform.position.x > xup || transform.position.x < xdown
+            || transform.position.y > yup || transform.position.y < ydown)
         {
             Reset();
         }

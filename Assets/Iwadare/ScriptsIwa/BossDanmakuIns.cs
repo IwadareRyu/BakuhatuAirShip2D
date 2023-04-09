@@ -28,6 +28,11 @@ public class BossDanmakuIns : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        _bulletime = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
