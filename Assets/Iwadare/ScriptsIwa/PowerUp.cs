@@ -30,9 +30,9 @@ public class PowerUp : SingletonMonovihair<PowerUp>
         TextShow(_powerText, _bakuhatuPower);
         TextShow(_speedText, _speedUp);
         TextShow(_airNumText, _airnum);
-        TextShow(_powerMoneyText, _bakuhatuPower * 1000);
-        TextShow(_speedMoneyText, _speedUp * 100);
-        TextShow(_airnumMoneyText, _airnum * 10000);
+        TextShow(_powerMoneyText, _bakuhatuPower * 500);
+        TextShow(_speedMoneyText, _speedUp * 50);
+        TextShow(_airnumMoneyText, _airnum * 5000);
     }
 
     void TextShow(Text text, int up)

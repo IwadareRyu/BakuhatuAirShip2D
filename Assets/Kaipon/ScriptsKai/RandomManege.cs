@@ -37,4 +37,12 @@ public class RandomManege : MonoBehaviour
         _current = (_current + 1) % _pattern.Length;
         _random = false;
     }
+    public void ResetEnemy()
+    {
+        foreach (var i in _pattern)
+        {
+            i.SetActive(false);
+        }
+        this.gameObject.SetActive(false);
+    }
 }
