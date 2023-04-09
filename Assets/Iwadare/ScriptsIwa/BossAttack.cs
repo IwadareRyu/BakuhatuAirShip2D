@@ -12,8 +12,11 @@ public class BossAttack : MonoBehaviour
     [SerializeField] Transform[] _idouPoint;
     [SerializeField] float _stopdis = 0.5f;
     [SerializeField] float _speed = 3f;
-    [SerializeField]bool _dragon;
+    [SerializeField] float _attackSpeed = 5f;
+    [SerializeField] float _stopTime = 2f;
+    [SerializeField]BossState _boss;
     [SerializeField]bool _stop;
+    bool _moguraAttackbool;
     int _ram;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +54,11 @@ public class BossAttack : MonoBehaviour
             {
                 _stop = true;
             }
+            if (_moguraAttackbool)
+            {
+                Vector3 dir = Vector3.down.normalized * _attackSpeed;
+                transform.Translate(dir * Time.deltaTime);
+            }
         }
     }
 
@@ -58,27 +66,40 @@ public class BossAttack : MonoBehaviour
     {
         yield return new WaitWhile(() => _stop == false);
         yield return new WaitForSeconds(2f);
-        if(_dragon)
+        if (_attackbool)
         {
-            _longFire.SetActive(true);
-            yield return new WaitForSeconds(0.2f);
-            if(_bullet.Length > 2)
+            if (_boss == BossState.Drgon)
             {
-                var ram = (int)Random.Range(0f,1.9f);
-                for(var i = ram; i < _bullet.Length;i+= 2)
+                _longFire.SetActive(true);
+                yield return new WaitForSeconds(0.2f);
+                if (_bullet.Length > 2)
                 {
-                    _bullet[i].SetActive(true);
+                    var ram = (int)Random.Range(0f, 1.9f);
+                    for (var i = ram; i < _bullet.Length; i += 2)
+                    {
+                        _bullet[i].SetActive(true);
+                    }
                 }
+                yield return new WaitForSeconds(3.5f);
+                if (_bullet.Length != 0)
+                {
+                    foreach (var i in _bullet)
+                    {
+                        i.SetActive(false);
+                    }
+                }
+                _longFire.SetActive(false);
             }
-            yield return new WaitForSeconds(3.5f);
-            if(_bullet.Length != 0)
+            else if (_boss == BossState.MoguraBoss)
             {
-                foreach (var i in _bullet)
-                {
-                    i.SetActive(false);
-                }
+                _longFire.SetActive(true);
+                _moguraAttackbool = true;
+                yield return new WaitForSeconds(_stopTime);
+                _moguraAttackbool = false;
+                yield return new WaitForSeconds(0.1f);
+                _longFire.SetActive(false);
+                yield return new WaitForSeconds(2f);
             }
-            _longFire.SetActive(false);
         }
 
         _oneshot = false;
@@ -95,4 +116,9 @@ public class BossAttack : MonoBehaviour
         _longFire.SetActive(false);
     }
 
+    enum BossState
+    {
+        Drgon,
+        MoguraBoss,
+    }
 }
