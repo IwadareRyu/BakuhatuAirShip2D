@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BossGanerator : MonoBehaviour
 {
+    [SerializeField] BossAttack _bossAttack;
     [SerializeField] Transform[] _targets;
-    int _current;
+    //int _current;
     [SerializeField]float _bossMaxHP = 30;
     float _bossHP;
-    [SerializeField]float _stopdis = 0.5f;
-    [SerializeField] float _speed = 3f;
+    //[SerializeField]float _stopdis = 0.5f;
+    //[SerializeField] float _speed = 3f;
     [Header("使う弾幕パターンを入れていく。")]
     [SerializeField] GameObject[] _danmakuPattern;
     int _youso = 0;
@@ -38,17 +39,17 @@ public class BossGanerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(transform.position,_targets[_current].position);
-        if(distance > _stopdis)
-        {
-            Vector3 dir = (_targets[_current].position - transform.position).normalized * _speed;
-            transform.Translate(dir * Time.deltaTime);
-        }
-        else
-        {
-            _current++;
-            _current = _current % _targets.Length;
-        }
+        //float distance = Vector2.Distance(transform.position,_targets[_current].position);
+        //if(distance > _stopdis)
+        //{
+        //    Vector3 dir = (_targets[_current].position - transform.position).normalized * _speed;
+        //    transform.Translate(dir * Time.deltaTime);
+        //}
+        //else
+        //{
+        //    _current++;
+        //    _current = _current % _targets.Length;
+        //}
 
         if(_stateboss == BossState.Ten)
         {
@@ -101,6 +102,7 @@ public class BossGanerator : MonoBehaviour
             {
                 _oneShot = true;
                 _coroutinebreak = true;
+                _bossAttack.OverMode();
                 Debug.Log("ここには入るね");
             }
             else if (!_oneShot)
@@ -114,6 +116,10 @@ public class BossGanerator : MonoBehaviour
                 BulletReset();
                 _youso = 4;
                 _coroutinebreak = false;
+                if(_overMode)
+                {
+                   _bossAttack.OverMode();
+                }
                 _stateboss = BossState.Two;
             }
         }

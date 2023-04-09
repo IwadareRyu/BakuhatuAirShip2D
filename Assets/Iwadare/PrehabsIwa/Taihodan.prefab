@@ -126,6 +126,10 @@ MonoBehaviour:
   _blueFire: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
   _bluesphere: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
   _redsphere: {fileID: 21300000, guid: f33f577a7ecfc4749a87d61fa62177c6, type: 3}
+  yup: 5
+  ydown: -5
+  xup: 5
+  xdown: -5
 --- !u!58 &3320410397133945843
 CircleCollider2D:
   m_ObjectHideFlags: 0
