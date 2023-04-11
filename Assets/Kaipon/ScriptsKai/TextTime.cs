@@ -22,7 +22,7 @@ public class TextTime : MonoBehaviour
     IEnumerator TimeText()
     {
         yield return new WaitForSeconds(5.0f);
-        _sentence.text = "WASDキーで移動";
+        _sentence.text = "WASDキーで移動\nSHIFTキーで\n低速移動できるぞ！\n細かい移動に\n使ってくれ！";
         yield return new WaitForSeconds(10f);
         _sentence.text = "Fキーで\n自機を飛ばせるぞ！\n自機を飛ばすと\nお金が100yen減るぞ！";
         yield return new WaitForSeconds(5f);
