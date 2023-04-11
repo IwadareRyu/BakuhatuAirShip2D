@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using DG.Tweening;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class GameManager : SingletonMonovihair<GameManager>
 {
+    //[Tooltip("Pauseが始まるときに呼ばれるメソッド")]
+    //public static event Action OnStartPause;
+    //[Tooltip("Pauseが終わるときに呼ばれるメソッド")]
+    //public static event Action OnEndPause;
     private Text _timeText;
     private Text _scoreText;
     private Text _totalMoneyText;
@@ -33,6 +35,16 @@ public class GameManager : SingletonMonovihair<GameManager>
 
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
+    //public static void StartPause()
+    //{
+    //    OnStartPause();
+    //}
+
+    //public static void EndPause()
+    //{
+    //    OnEndPause();
+    //}
+        
     public void Sansyo()
     {
         _scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();

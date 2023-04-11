@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Kaipon/SceneKai/EnemyTest.unity
+    path: Assets/Kaipon/SceneKai/Stage3.unity
     guid: ebc4f2a0705d8d84497d08896ab6a1e6
   - enabled: 1
     path: Assets/Iwadare/ScenesIwa/BOSSTest.unity

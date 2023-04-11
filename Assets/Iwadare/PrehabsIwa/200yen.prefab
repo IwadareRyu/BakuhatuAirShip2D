@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2757377422660122860}
   m_Layer: 0
   m_Name: 200yen
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

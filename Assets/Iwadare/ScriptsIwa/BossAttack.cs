@@ -18,6 +18,7 @@ public class BossAttack : MonoBehaviour
     [SerializeField]bool _stop;
     bool _moguraAttackbool;
     int _ram;
+
     // Start is called before the first frame update
     void Start()
     {

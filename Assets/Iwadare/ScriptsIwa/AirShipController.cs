@@ -83,6 +83,7 @@ public class AirShipController : MonoBehaviour
         {
             _nowSpeed = _lowSpeed;
         }
+
         if(Input.GetButtonUp("Fire3"))
         {
             _nowSpeed = _speed;
@@ -93,7 +94,6 @@ public class AirShipController : MonoBehaviour
         //上下左右に入力されたときの動きの計算。
         Vector2 dir = new Vector2(h, v).normalized;
         _rb.velocity = dir * _nowSpeed;
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -104,6 +104,21 @@ public class AirShipController : MonoBehaviour
             _starTime = true;
             StartCoroutine(AllAtackTime());
         }
+
+        //上のフロアに入ったらお金が自機に吸い寄せられる仕組み
+        if(collision.gameObject.tag == "GetMoneyFloor")
+        {
+            var moneys = GameObject.FindGameObjectsWithTag("Money");
+
+            if(moneys.Length != 0)
+            {
+                foreach(var i in moneys)
+                {
+                    var moneyscript = i.GetComponent<PointMoneyScripts>();
+                    moneyscript.MoneyGet(gameObject);
+                }
+            }
+        }
     }
 
     IEnumerator AllAtackTime()
@@ -113,11 +128,13 @@ public class AirShipController : MonoBehaviour
         col.color = _starColor;
         _airShipOnOff.SetActive(false);
         Instantiate(_bakuhatu, transform.position, Quaternion.identity);
+
         foreach (var i in _allAttackPoints)
         {
             yield return new WaitForSeconds(0.3f);
             Instantiate(_allAttack, i.transform.position, Quaternion.identity);
         }
+
         yield return new WaitForSeconds(4f);
         _starTime = false;
         col.color = _normalColor;
@@ -128,14 +145,17 @@ public class AirShipController : MonoBehaviour
     IEnumerator BulletCoolTime()
     {
         _cooltime = true;
+
         for (var i = 0; i < _power._airnum; i++)
         {
             yield return new WaitForSeconds(0.1f);
             var bullet = _pool.GetBullet();
             bullet.transform.position = _airShipMazzle.transform.position;
         }
+
         _airShipOnOff.SetActive(false);
         yield return new WaitForSeconds(_time);
+
         if (!_starTime)
         {
             _airShipOnOff.SetActive(true);
