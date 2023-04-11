@@ -360,10 +360,10 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  num: 50
   _bulletspeed: 2
   _angle: 0
-  _danmakuState: 3
+  _danmakuState: 0
   _colorState: 0
 --- !u!1 &259172395342697172
 GameObject:
@@ -756,7 +756,9 @@ MonoBehaviour:
   - {fileID: 0}
   _stopdis: 0.1
   _speed: 2
-  _dragon: 1
+  _attackSpeed: 5
+  _stopTime: 2
+  _boss: 0
   _stop: 0
 --- !u!1 &259172395564746417
 GameObject:
@@ -1524,10 +1526,10 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  num: 50
   _bulletspeed: 2
   _angle: 0
-  _danmakuState: 3
+  _danmakuState: 0
   _colorState: 0
 --- !u!1 &259172396327881596
 GameObject:
