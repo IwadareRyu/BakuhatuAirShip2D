@@ -28,6 +28,7 @@ public class ActiveBullet : MonoBehaviour
     BulletTypeClass.BulletSpriteState _state;
     bool _stopbool;
     bool _change1;
+    bool _change1ziki;
     bool _change2;
     [Header("球が消える位置")]
     [SerializeField]float yup = 8,ydown = -7,xup = 7,xdown = -7;
@@ -126,10 +127,20 @@ public class ActiveBullet : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _rb.simulated = false;
         yield return new WaitForSeconds(1f);
-        _sprite.sprite = _bluesphere;
-        _state = BulletTypeClass.BulletSpriteState.LeftSphere;
-        _rb.simulated = true;
-        _speed = 0.2f;
+        if (!_change1ziki)
+        {
+            _sprite.sprite = _bluesphere;
+            _state = BulletTypeClass.BulletSpriteState.LeftSphere;
+            _rb.simulated = true;
+            _speed = 0.2f;
+        }
+        else
+        {
+            _sprite.sprite = _blueFire;
+            _rb.simulated = true;
+            _speed = 5f;
+            Type1Move();
+        }
         if (_change2)
         {
             yield return new WaitForSeconds(2f);
@@ -159,7 +170,7 @@ public class ActiveBullet : MonoBehaviour
     /// (クラスでstateを決めているので他スクリプトのstateの中身は同じ)</param>
     /// <param name="stop">球を止めるか止めないか
     /// (入力しなくても自動で止めない設定にしている)</param>
-    public void BulletAdd(float angle, float speed, BulletTypeClass.BulletSpriteState type, bool stop = false, bool change1 = false, bool change2 = false)
+    public void BulletAdd(float angle, float speed, BulletTypeClass.BulletSpriteState type, bool stop = false, bool change1 = false, bool change2 = false,bool change1ziki = false)
     {
         //入力されてきた変数をそれぞれ代入。
         _angle = angle;
@@ -168,6 +179,7 @@ public class ActiveBullet : MonoBehaviour
         _stop = stop;
         _change1 = change1;
         _change2 = change2;
+        _change1ziki = change1ziki;
         dist = 0;
         //stateによって球の色を変えたり、動きの処理をするswitch文。
         switch(_state)
