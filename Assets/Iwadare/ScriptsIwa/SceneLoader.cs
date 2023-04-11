@@ -13,7 +13,7 @@ public class SceneLoader : SingletonMonovihair<SceneLoader>
         StartCoroutine(SceneLoadTime(sceneName));
     }
 
-    /// <summary>リトライとスコア、ライフのリセットのロード</summary>
+    /// <summary>リトライ</summary>
     public void ActiveSceneLoad()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -23,7 +23,7 @@ public class SceneLoader : SingletonMonovihair<SceneLoader>
     /// <param name="sceneName"></param>
     public void ResultSceneLoad(string sceneName)
     {
-        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
+        GameManager.Instance.ResetScore();
         StartCoroutine(SceneLoadTime(sceneName));
     }
 
