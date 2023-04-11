@@ -126,7 +126,7 @@ MonoBehaviour:
   _blueFire: {fileID: 21300000, guid: 6e65e48fe0585ca4cab33a5aab9fe46b, type: 3}
   _bluesphere: {fileID: 21300000, guid: 29cbaced6e7a0b140bdf73ceb03d5daa, type: 3}
   _redsphere: {fileID: 21300000, guid: 61c30252fa9f4924e8bef023d3e9962a, type: 3}
-  yup: 7
+  yup: 8
   ydown: -6
   xup: 6
   xdown: -6

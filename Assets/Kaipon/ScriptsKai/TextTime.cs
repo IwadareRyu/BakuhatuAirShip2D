@@ -31,6 +31,8 @@ public class TextTime : MonoBehaviour
         _pig.InsSecChange(_sec);
         _sentence.text = "ダメージを受けると\n画面全体の射撃を\n打ち消す\nボムが出るぞ！！";
         yield return new WaitForSeconds(10f);
+        _sentence.text = "上の赤いエリアに\n入るとお金が引き寄せるぞ！！";
+        yield return new WaitForSeconds(10f);
         _pig.enabled = false;
         _sentence.text = "だがダメージを受けると\nお金が500yen減るので\n注意しろ！！";
         yield return new WaitForSeconds(10f);
