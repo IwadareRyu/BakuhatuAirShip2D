@@ -131,9 +131,21 @@ public class GameManager : SingletonMonovihair<GameManager>
     // Update is called once per frame
     void Update()
     {
-        //カウントダウン
-        _timeText.text = String.Format("{0:00.00}", _countDownTime);
-        _countDownTime = Mathf.Max(_countDownTime - Time.deltaTime,0f);
+        if (_isStarted)
+        {
+            if (_timeText)
+            {
+                //カウントダウン
+                _timeText.text = String.Format("{0:00.00}", _countDownTime);
+                _countDownTime = Mathf.Max(_countDownTime - Time.deltaTime, 0f);
+            }
+        }
+    }
+
+    public void ResetScore()
+    {
+        _totalMoney = 0;
+        _isStarted = false;
     }
 
     private void OnLevelWasLoaded(int level)

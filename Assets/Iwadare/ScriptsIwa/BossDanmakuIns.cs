@@ -19,6 +19,7 @@ public class BossDanmakuIns : MonoBehaviour
     [Header("DanmakuStateがRotateの場合、ColorStateを入力してください。")]
     [SerializeField] BulletTypeClass.BulletState _danmakuState;
     [SerializeField] BulletTypeClass.BulletSpriteState _colorState;
+    [SerializeField] bool _zikiMode;
 
     private void Start()
     {
@@ -129,7 +130,14 @@ public class BossDanmakuIns : MonoBehaviour
             //球の動きを設定するメソッドに代入。
             if (_danmakuState == BulletTypeClass.BulletState.ChangeBulletOne)
             {
-                bulletcs.BulletAdd(i, _bulletspeed, _colorState, false, true);
+                if (_zikiMode)
+                {
+                    bulletcs.BulletAdd(i, _bulletspeed, _colorState, false, true,false,true);
+                }
+                else
+                {
+                    bulletcs.BulletAdd(i, _bulletspeed, _colorState, false, true);
+                }
             }
             else if(_danmakuState == BulletTypeClass.BulletState.ChangeBulletTwo)
             {
