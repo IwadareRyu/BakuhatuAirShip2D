@@ -46,6 +46,17 @@ public class AirShipController : MonoBehaviour
     [Header("無敵時の色")]
     [Tooltip("無敵時の色")]
     [SerializeField] Color _starColor;
+    bool _pause;
+
+    private void OnEnable()
+    {
+        PauseManager.OnPauseResume += OnStartPause;
+    }
+
+    private void OnDisable()
+    {
+        PauseManager.OnPauseResume -= OnStartPause;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -62,38 +73,44 @@ public class AirShipController : MonoBehaviour
 
     void Update()
     {
-        //if (!_gm._gameover)
-        //{
-        //プレイヤーの左右の動き。
-        h = Input.GetAxisRaw("Horizontal");
-        //プレイヤーの上下の動き。
-        v = Input.GetAxisRaw("Vertical");
-
-        //飛行機を飛ばす。
-        if (Input.GetButton("Fire1"))
+        if (!_pause)
         {
-            if (!_cooltime)
+            //if (!_gm._gameover)
+            //{
+            //プレイヤーの左右の動き。
+            h = Input.GetAxisRaw("Horizontal");
+            //プレイヤーの上下の動き。
+            v = Input.GetAxisRaw("Vertical");
+
+            //飛行機を飛ばす。
+            if (Input.GetButton("Fire1"))
             {
-                _gm.AddScore(-100);
-                StartCoroutine(BulletCoolTime());
+                if (!_cooltime)
+                {
+                    _gm.AddScore(-100);
+                    StartCoroutine(BulletCoolTime());
+                }
             }
-        }
 
-        if(Input.GetButtonDown("Fire3"))
-        {
-            _nowSpeed = _lowSpeed;
-        }
+            if (Input.GetButtonDown("Fire3"))
+            {
+                _nowSpeed = _lowSpeed;
+            }
 
-        if(Input.GetButtonUp("Fire3"))
-        {
-            _nowSpeed = _speed;
+            if (Input.GetButtonUp("Fire3"))
+            {
+                _nowSpeed = _speed;
+            }
         }
     }
     private void FixedUpdate()
     {
-        //上下左右に入力されたときの動きの計算。
-        Vector2 dir = new Vector2(h, v).normalized;
-        _rb.velocity = dir * _nowSpeed;
+        if (!_pause)
+        {
+            //上下左右に入力されたときの動きの計算。
+            Vector2 dir = new Vector2(h, v).normalized;
+            _rb.velocity = dir * _nowSpeed;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -140,26 +157,43 @@ public class AirShipController : MonoBehaviour
         col.color = _normalColor;
         _airShipOnOff.SetActive(true);
         _cooltime = false;
+
     }
 
     IEnumerator BulletCoolTime()
+        {
+            _cooltime = true;
+
+            for (var i = 0; i < _power._airnum; i++)
+            {
+                yield return new WaitForSeconds(0.1f);
+                var bullet = _pool.GetBullet();
+                bullet.transform.position = _airShipMazzle.transform.position;
+            }
+
+            _airShipOnOff.SetActive(false);
+            yield return new WaitForSeconds(_time);
+
+            if (!_starTime)
+            {
+                _airShipOnOff.SetActive(true);
+                _cooltime = false;
+            }
+    }
+
+    public virtual void OnStartPause(bool pause)
     {
-        _cooltime = true;
-
-        for (var i = 0; i < _power._airnum; i++)
+        if(pause)
         {
-            yield return new WaitForSeconds(0.1f);
-            var bullet = _pool.GetBullet();
-            bullet.transform.position = _airShipMazzle.transform.position;
+            _starTime = true;
+            _pause = true;
+            _rb.Sleep();
         }
-
-        _airShipOnOff.SetActive(false);
-        yield return new WaitForSeconds(_time);
-
-        if (!_starTime)
+        else
         {
-            _airShipOnOff.SetActive(true);
-            _cooltime = false;
+            _starTime = false;
+            _pause = false;
+            _rb.WakeUp();
         }
     }
 }

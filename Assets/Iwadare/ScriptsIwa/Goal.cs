@@ -14,7 +14,19 @@ public class Goal : MonoBehaviour
     [SerializeField] float _countDownTime = 60f;
     bool _goalbool;
     [SerializeField] RandomManege _enemymanege;
+    bool _pause;
     // Start is called before the first frame update
+
+    private void OnEnable()
+    {
+        PauseManager.OnPauseResume += StartPause;
+    }
+
+    private void OnDisable()
+    {
+        PauseManager.OnPauseResume -= StartPause;
+    }
+
     void Start()
     {
         GameManager.Instance.SetDeadEnemy(_deadEnemy);
@@ -25,35 +37,38 @@ public class Goal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.Instance._enemy == 0)
+        if (!_pause)
         {
-            float distance = Vector2.Distance(transform.position, _goalPos.position);
-            if(distance > _stopdis)
+            if (GameManager.Instance._enemy == 0)
             {
-                Vector3 dir = (_goalPos.position - transform.position).normalized * _speed;
-                transform.Translate(dir * Time.deltaTime);
-            }
-            if (!_goalbool) 
-            {
-                _goalbool = true;
-                if (_enemymanege) 
+                float distance = Vector2.Distance(transform.position, _goalPos.position);
+                if (distance > _stopdis)
                 {
-                    _enemymanege.ResetEnemy();
+                    Vector3 dir = (_goalPos.position - transform.position).normalized * _speed;
+                    transform.Translate(dir * Time.deltaTime);
                 }
-                var bullet = GameObject.FindGameObjectsWithTag("EnemyBullet");
-                if (bullet.Length != 0)
+                if (!_goalbool)
                 {
-                    foreach (var i in bullet)
+                    _goalbool = true;
+                    if (_enemymanege)
                     {
-                        i.SetActive(false);
+                        _enemymanege.ResetEnemy();
                     }
-                }
-                var enemy = GameObject.FindGameObjectsWithTag("Enemy");
-                if (enemy.Length != 0)
-                {
-                    foreach (var i in enemy)
+                    var bullet = GameObject.FindGameObjectsWithTag("EnemyBullet");
+                    if (bullet.Length != 0)
                     {
-                        i.SetActive(false);
+                        foreach (var i in bullet)
+                        {
+                            i.SetActive(false);
+                        }
+                    }
+                    var enemy = GameObject.FindGameObjectsWithTag("Enemy");
+                    if (enemy.Length != 0)
+                    {
+                        foreach (var i in enemy)
+                        {
+                            i.SetActive(false);
+                        }
                     }
                 }
             }
@@ -62,9 +77,10 @@ public class Goal : MonoBehaviour
     //trigger,collison関わらず、プレイヤーに当たったらイベントが起こる。
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !_pause)
         {
             _clearText.SetActive(true);
+            PauseManager.PauseResume();
             //_action.Invoke();
         }
     }
@@ -80,5 +96,10 @@ public class Goal : MonoBehaviour
     public void DestroyObject()
     {
         Destroy(gameObject);
+    }
+
+    public void StartPause(bool pause)
+    {
+        _pause = pause;
     }
 }
