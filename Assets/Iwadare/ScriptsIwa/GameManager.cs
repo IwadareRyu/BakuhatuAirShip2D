@@ -19,6 +19,7 @@ public class GameManager : SingletonMonovihair<GameManager>
     int _maxScore = 9999999;
     [SerializeField] float _countDownTime = 60f;
     bool _isStarted;
+    public bool IsStarted => _isStarted;
     [Tooltip("倒す敵の数")]
     int _deadEnemy;
     public int _enemy => _deadEnemy;
@@ -27,7 +28,7 @@ public class GameManager : SingletonMonovihair<GameManager>
     [SerializeField] float _gaugeInterval = 1f;
     [Tooltip("GameOver時")]
     bool _isgameOver;
-    public bool _gameover => _isgameOver;
+    public bool Gameover => _isgameOver;
 
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
