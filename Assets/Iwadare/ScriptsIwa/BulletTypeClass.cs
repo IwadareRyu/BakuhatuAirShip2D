@@ -23,6 +23,8 @@ public class BulletTypeClass
         ChangeBulletTwo,
 
         StartBullet,
+
+        IllusionBullet,
     }
 
     public enum BulletSpriteState
