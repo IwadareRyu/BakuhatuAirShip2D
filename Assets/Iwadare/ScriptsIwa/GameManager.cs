@@ -126,6 +126,10 @@ public class GameManager : SingletonMonovihair<GameManager>
                 _timeText.text = String.Format("{0:00.00}", _countDownTime);
                 _countDownTime = Mathf.Max(_countDownTime - Time.deltaTime, 0f);
             }
+            if(_countDownTime == 0)
+            {
+                SEManager.Instance.SEPlay(SEManager.SE.Lose);
+            }
         }
     }
 
