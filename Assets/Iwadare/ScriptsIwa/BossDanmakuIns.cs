@@ -107,6 +107,50 @@ public class BossDanmakuIns : MonoBehaviour
                 _bulletList.RemoveAt(0);
             }
         }
+        else if(_danmakuState == BulletTypeClass.BulletState.IllusionBullet)
+        {
+            OnePointIns(false, 180, true);
+            OnePointIns(false, 0, true);
+            yield return new WaitForSeconds(_angleCount);
+            if (_bulletList.Count != 0)
+            {
+                for (var i = _bulletList.Count; i >= 0; i--)
+                {
+                    if (_bulletList[0])
+                    {
+                        if (_bulletList[0].active)
+                        {
+                            AllBulletIns(0, true);
+                        }
+                    }
+                    else
+                    {
+                        _bulletList.RemoveAt(0);
+                    }
+                }
+            }
+            yield return new WaitForSeconds(_angleCount);
+            if (_bulletList.Count != 0)
+            {
+                for (var i = _bulletList.Count; i >= 0; i--)
+                {
+                    if (_bulletList[0])
+                    {
+                        if (_bulletList[0].active)
+                        {
+                            AllBulletIns(0, true);
+                        }
+                    }
+                    else
+                    {
+                        _bulletList.RemoveAt(0);
+                    }
+                }
+            }
+            _bulletList.Clear();
+            yield return new WaitForSeconds(_count);
+        }
+
         else
         {
             AllBulletIns(0);
@@ -117,7 +161,7 @@ public class BossDanmakuIns : MonoBehaviour
 
     /// <summary>365度均等に球を出すメソッド。</summary>
     /// <param name="rad">球の間隔</param>
-    private void AllBulletIns(int rad)
+    private void AllBulletIns(int rad ,bool posbool = false)
     {
         //球一つずつに処理を加える。
         for (var i = rad; i < 365; i += num)
@@ -126,7 +170,14 @@ public class BossDanmakuIns : MonoBehaviour
             var bullet = _pool.GetBullet();
             bulletcs = bullet.GetComponent<ActiveBullet>();
             //球の位置をスポーンポイントに移動する。
-            bullet.transform.position = transform.position;
+            if (!posbool)
+            {
+                bullet.transform.position = transform.position;
+            }
+            else if (_bulletList.Count != 0)
+            {
+                bullet.transform.position = _bulletList[0].transform.position;
+            }
             //球の動きを設定するメソッドに代入。
             if (_danmakuState == BulletTypeClass.BulletState.ChangeBulletOne)
             {
@@ -147,6 +198,14 @@ public class BossDanmakuIns : MonoBehaviour
             {
                 bulletcs.BulletAdd(i, _bulletspeed, _colorState);
             }
+            if(posbool)
+            {
+                _bulletList.Add(bullet);
+            }
+        }
+        if (posbool)
+        {
+            _bulletList.RemoveAt(0);
         }
     }
     private void OnePointIns(bool stop = false, float angle = 0, bool listbool = false)
