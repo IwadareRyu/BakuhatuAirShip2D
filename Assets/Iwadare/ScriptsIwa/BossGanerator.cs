@@ -22,6 +22,14 @@ public class BossGanerator : MonoBehaviour
     [Header("体力を４割にしたいとき活用してください。")]
     [SerializeField] bool _testMode;
     bool _coroutinebreak;
+    [Header("落とすお金")]
+    [SerializeField]GameObject[] _moneys;
+    [Tooltip("落とすお金の確率")]
+    [Header("落とすお金の確率")]
+    [SerializeField][Range(0f,100f)] float[] _moneycount;
+    [Tooltip("落とすお金の回数")]
+    [Header("落とすお金の回数")]
+    [SerializeField] int _dropCount = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -145,6 +153,7 @@ public class BossGanerator : MonoBehaviour
         _oneShot = false;
         _danmakuPattern[_youso].SetActive(false);
         var bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
+        DropMoney();
         foreach (var i in bullets)
         {
             var bullet = i.GetComponent<ActiveBullet>();
@@ -180,5 +189,36 @@ public class BossGanerator : MonoBehaviour
         Four,
 
         Two,
+    }
+
+    /// <summary>
+    /// お金を落とすメソッド
+    /// </summary>
+    void DropMoney()
+    {
+        for (var i = 0; i < _dropCount; i++)
+        {
+            int ram = Random.Range(0, 100);
+            if (ram > _moneycount[1])
+            {
+                InsMoney(2);
+            }
+            else if (ram > _moneycount[0])
+            {
+                InsMoney(1);
+            }
+            else
+            {
+                InsMoney(0);
+            }
+        }
+    }
+
+    void InsMoney(int i)
+    {
+        var ram1 = Random.Range(-1f,1f);
+        var ram2 = Random.Range(-1f, 1f);
+        Vector2 vec = new Vector2(transform.position.x + ram1,transform.position.y + ram2);
+        Instantiate(_moneys[i], vec, Quaternion.identity);
     }
 }

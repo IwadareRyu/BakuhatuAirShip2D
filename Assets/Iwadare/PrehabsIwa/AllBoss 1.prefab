@@ -118,6 +118,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395037423731
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +171,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395182826395
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +271,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395230892994
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +324,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395312472687
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +377,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395342697172
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +464,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 7
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395440387996
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +517,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395508238906
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +570,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 2
   _colorState: 3
+  _zikiMode: 0
 --- !u!1 &259172395516117496
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +623,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 0
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395521043236
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +691,14 @@ MonoBehaviour:
   - {fileID: 259172395342697172}
   _overMode: 1
   _testMode: 1
+  _moneys:
+  - {fileID: 462419198879544901, guid: 0bad0faa93923b14cab75bcca6d78201, type: 3}
+  - {fileID: 5723529227555643718, guid: 5949e394716248443a307070e269f88b, type: 3}
+  - {fileID: 5723529227555643718, guid: d4e3a89ab6e8b444cb8015824b6ea64a, type: 3}
+  _moneycount:
+  - 55
+  - 80.6
+  _dropCount: 10
 --- !u!95 &259172395521043242
 Animator:
   serializedVersion: 4
@@ -765,7 +782,9 @@ MonoBehaviour:
   - {fileID: 0}
   _stopdis: 0.1
   _speed: 2
-  _dragon: 1
+  _attackSpeed: 5
+  _stopTime: 2
+  _boss: 0
   _stop: 0
 --- !u!1 &259172395564746417
 GameObject:
@@ -819,6 +838,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 2
   _colorState: 3
+  _zikiMode: 0
 --- !u!1 &259172395574861689
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +925,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395621838783
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,6 +978,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395632993139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,6 +1195,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395897692862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1283,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172395911446940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1389,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 0
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396016054989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,6 +1442,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 1
   _colorState: 1
+  _zikiMode: 0
 --- !u!1 &259172396127317426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1496,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 4
   _colorState: 3
+  _zikiMode: 0
 --- !u!114 &259172396127317431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1538,6 +1565,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396327881596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,6 +1618,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396332080497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1671,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396484381262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,6 +1724,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396487806409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1777,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396513284040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +1830,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 1
   _colorState: 2
+  _zikiMode: 0
 --- !u!1 &259172396515911324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,6 +1972,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396633543449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,6 +2025,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396645824708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,6 +2131,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 0
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396645871695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,6 +2184,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396704296246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,6 +2237,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396728948981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2291,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 4
   _colorState: 3
+  _zikiMode: 0
 --- !u!114 &259172396728948987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2321,6 +2360,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396778860673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,6 +2482,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396857827303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,6 +2535,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 6
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396858073281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2588,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396926403204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,6 +2641,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &259172396947798516
 GameObject:
   m_ObjectHideFlags: 0
@@ -3106,6 +3150,7 @@ MonoBehaviour:
   _angle: 0
   _danmakuState: 3
   _colorState: 0
+  _zikiMode: 0
 --- !u!1 &3673517275208592750
 GameObject:
   m_ObjectHideFlags: 0

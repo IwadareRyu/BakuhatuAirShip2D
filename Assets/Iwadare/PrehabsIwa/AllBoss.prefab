@@ -739,6 +739,14 @@ MonoBehaviour:
   - {fileID: 259172395342697172}
   _overMode: 1
   _testMode: 1
+  _moneys:
+  - {fileID: 5266786424971502570, guid: cee40d1cb0d8b7143bb6745c668dae03, type: 3}
+  - {fileID: 462419198879544901, guid: 0bad0faa93923b14cab75bcca6d78201, type: 3}
+  - {fileID: 5723529227555643718, guid: 5949e394716248443a307070e269f88b, type: 3}
+  _moneycount:
+  - 51.5
+  - 83.2
+  _dropCount: 10
 --- !u!95 &259172395521043242
 Animator:
   serializedVersion: 4
