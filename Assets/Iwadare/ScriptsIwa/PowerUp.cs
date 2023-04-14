@@ -75,6 +75,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     {
         if (GM._totalMoney >= _bakuhatuPower * 500 && _bakuhatuPower < 50)
         {
+            SEManager.Instance.SEPlay(SEManager.SE.PowerUp);
             GM.TotalMoney(-_bakuhatuPower * 500);
             _bakuhatuPower++;
             AllTextShow();
@@ -85,6 +86,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     {
         if (GM._totalMoney >= _speedUp * 50 && _speedUp < 30)
         {
+            SEManager.Instance.SEPlay(SEManager.SE.PowerUp);
             GM.TotalMoney(-_speedUp * 50);
             _speedUp++;
             AllTextShow();
@@ -95,6 +97,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     {
         if (GM._totalMoney >= _airnum * 5000 && _airnum < 8)
         {
+            SEManager.Instance.SEPlay(SEManager.SE.PowerUp);
             GM.TotalMoney(-_airnum * 5000);
             _airnum++;
             AllTextShow();

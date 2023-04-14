@@ -12,11 +12,14 @@ public class PointMoneyScripts : MonoBehaviour
     [SerializeField] float _getSpeed = 5f;
     bool _moneyget;
     [SerializeField] float _y = -5.3f;
+    AudioSource _se;
+    [SerializeField] AudioClip _coin;
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _rb.velocity = Vector2.down * _speed;
+        _se = GameObject.FindGameObjectWithTag("SE").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +48,8 @@ public class PointMoneyScripts : MonoBehaviour
         {
             _gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
             _gm.AddScore(_point);
+            _se.clip = _coin;
+            _se.Play();
             Destroy(gameObject);
         }
     }

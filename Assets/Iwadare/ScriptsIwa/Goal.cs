@@ -79,6 +79,7 @@ public class Goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !_pause)
         {
+            SEManager.Instance.SEPlay(SEManager.SE.Clear);
             _clearText.SetActive(true);
             PauseManager.PauseResume();
             //_action.Invoke();

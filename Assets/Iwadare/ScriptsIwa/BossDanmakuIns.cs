@@ -20,7 +20,7 @@ public class BossDanmakuIns : MonoBehaviour
     [SerializeField] BulletTypeClass.BulletState _danmakuState;
     [SerializeField] BulletTypeClass.BulletSpriteState _colorState;
     [SerializeField] bool _zikiMode;
-
+    [SerializeField] bool _mogura;
     private void Start()
     {
         if(!_pool)
@@ -59,6 +59,15 @@ public class BossDanmakuIns : MonoBehaviour
                     AllBulletIns(i);
                     yield return new WaitForSeconds(_count);
                 }
+
+                if (_mogura)
+                {
+                    SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                }
+                else
+                {
+                    SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                }
                 _interval = true;
             }
             else
@@ -66,6 +75,14 @@ public class BossDanmakuIns : MonoBehaviour
                 for (var i = 15; i >= 0; i -= 5)
                 {
                     AllBulletIns(i);
+                    if (_mogura)
+                    {
+                        SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                    }
+                    else
+                    {
+                        SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                    }
                     yield return new WaitForSeconds(_count);
                 }
                 yield return new WaitForSeconds(0.5f);
@@ -77,6 +94,14 @@ public class BossDanmakuIns : MonoBehaviour
         {
             _colorState = BulletTypeClass.BulletSpriteState.BlueFire;
             OnePointIns();
+            if (_mogura)
+            {
+                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+            }
+            else
+            {
+                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+            }
         }
         else if(_danmakuState == BulletTypeClass.BulletState.AllZiki)
         {
@@ -88,6 +113,14 @@ public class BossDanmakuIns : MonoBehaviour
                 {
                     yield return new WaitForSeconds(0.01f);
                     OnePointIns();
+                    if (_mogura)
+                    {
+                        SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                    }
+                    else
+                    {
+                        SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                    }
                 }
             }
         }
@@ -97,6 +130,14 @@ public class BossDanmakuIns : MonoBehaviour
             {
                 yield return new WaitForSeconds(_angleCount);
                 OnePointIns(true,_angle,true);
+                if (_mogura)
+                {
+                    SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                }
+                else
+                {
+                    SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                }
             }
             yield return new WaitForSeconds(_angleCount);
             var num = _bulletList.Count;
@@ -105,12 +146,28 @@ public class BossDanmakuIns : MonoBehaviour
                 bulletcs = _bulletList[0].GetComponent<ActiveBullet>();
                 bulletcs.StopTrue();
                 _bulletList.RemoveAt(0);
+                if (_mogura)
+                {
+                    SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                }
+                else
+                {
+                    SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                }
             }
         }
         else if(_danmakuState == BulletTypeClass.BulletState.IllusionBullet)
         {
             OnePointIns(false, 180, true);
             OnePointIns(false, 0, true);
+            if (_mogura)
+            {
+                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+            }
+            else
+            {
+                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+            }
             yield return new WaitForSeconds(_angleCount);
             if (_bulletList.Count != 0)
             {
@@ -121,6 +178,14 @@ public class BossDanmakuIns : MonoBehaviour
                         if (_bulletList[0].active)
                         {
                             AllBulletIns(0, true);
+                            if (_mogura)
+                            {
+                                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                            }
+                            else
+                            {
+                                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                            }
                         }
                     }
                     else
@@ -139,6 +204,14 @@ public class BossDanmakuIns : MonoBehaviour
                         if (_bulletList[0].active)
                         {
                             AllBulletIns(0, true);
+                            if (_mogura)
+                            {
+                                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                            }
+                            else
+                            {
+                                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                            }
                         }
                     }
                     else
@@ -150,10 +223,17 @@ public class BossDanmakuIns : MonoBehaviour
             _bulletList.Clear();
             yield return new WaitForSeconds(_count);
         }
-
         else
         {
             AllBulletIns(0);
+            if (_mogura)
+            {
+                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+            }
+            else
+            {
+                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+            }
         }
         yield return new WaitForSeconds(_count);
         _bulletime = false;
@@ -203,6 +283,7 @@ public class BossDanmakuIns : MonoBehaviour
                 _bulletList.Add(bullet);
             }
         }
+
         if (posbool)
         {
             _bulletList.RemoveAt(0);

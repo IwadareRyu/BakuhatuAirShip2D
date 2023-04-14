@@ -32,7 +32,8 @@ public class ActiveBullet : MonoBehaviour
     bool _change2;
     [Header("ãÖÇ™è¡Ç¶ÇÈà íu")]
     [SerializeField]float yup = 8,ydown = -7,xup = 7,xdown = -7;
-
+    AudioSource _se;
+    [SerializeField] AudioClip _fireOrShot; 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
