@@ -15,7 +15,7 @@ public class BakuhatuScale : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SEManager.Instance.SEPlay(0);
+        SEManager.Instance.SEPlay(SEManager.SE.Bakuhatu);
         if (_pattern == Pattern.Normal)
         {
             _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();

@@ -72,6 +72,7 @@ public class BossAttack : MonoBehaviour
             if (_boss == BossState.Drgon)
             {
                 _longFire.SetActive(true);
+                SEManager.Instance.SEPlay(SEManager.SE.BigFire);
                 yield return new WaitForSeconds(0.2f);
                 if (_bullet.Length > 2)
                 {

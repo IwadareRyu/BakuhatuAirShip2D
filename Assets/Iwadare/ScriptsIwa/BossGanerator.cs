@@ -16,6 +16,7 @@ public class BossGanerator : MonoBehaviour
     int _youso = 0;
     BossState _stateboss = BossState.Ten;
     bool _oneShot;
+    Animator _bossAni;
     [Header("体力が4割の時にオーバーモードに突入。")]
     [Tooltip("体力が4割の時にオーバーモードに突入。")]
     [SerializeField]bool _overMode;
@@ -30,9 +31,11 @@ public class BossGanerator : MonoBehaviour
     [Tooltip("落とすお金の回数")]
     [Header("落とすお金の回数")]
     [SerializeField] int _dropCount = 10;
+    bool _downbool;
     // Start is called before the first frame update
     void Start()
     {
+        _bossAni = GetComponent<Animator>();
         foreach(var i in _danmakuPattern)
         {
             i.SetActive(false);
@@ -139,11 +142,20 @@ public class BossGanerator : MonoBehaviour
                 StartCoroutine(StopTime());
             }
 
-            if (_bossHP <= 0f)
+            if (_bossHP <= 0f && !_downbool)
             {
                 BulletReset();
-                GameManager.Instance.SetDeadEnemy(-1);
-                Destroy(gameObject);
+                _oneShot = true;
+                _downbool = true;
+                if (_bossAni)
+                {
+                    _bossAni.Play("DownAni");
+                }
+                else
+                {
+                    GameManager.Instance.SetDeadEnemy(-1);
+                }
+
             }
         }
     }
@@ -212,6 +224,18 @@ public class BossGanerator : MonoBehaviour
                 InsMoney(0);
             }
         }
+    }
+
+    public void DownAudioPlay()
+    {
+        SEManager.Instance.SEPlay(SEManager.SE.Bakuhatu);
+    }
+
+    public void DownEnemy()
+    {
+        SEManager.Instance.SEPlay(SEManager.SE.Bakuhatu);
+        GameManager.Instance.SetDeadEnemy(-1);
+        Destroy(gameObject);
     }
 
     void InsMoney(int i)

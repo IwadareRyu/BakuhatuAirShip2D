@@ -13,6 +13,7 @@ public class PlayerBullet : MonoBehaviour
     private PowerUp _power;
     private Vector3 _trans;
     public bool _bakuhatutime = true;
+    bool _audiobool;
 
     void OnEnable()
     {
@@ -21,6 +22,14 @@ public class PlayerBullet : MonoBehaviour
         //球を出す。
         _rb.velocity = Vector2.down * (_speed +_power._speedUp * 0.1f) * _minas;
         _bakuhatutime = false;
+        if (_audiobool)
+        {
+            SEManager.Instance.SEPlay(SEManager.SE.PlayerShot);
+        }
+        else
+        {
+            _audiobool = true;
+        }
     }
 
     // Update is called once per frame
