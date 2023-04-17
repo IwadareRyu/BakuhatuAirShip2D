@@ -233,7 +233,6 @@ public class BossGanerator : MonoBehaviour
 
     public void DownEnemy()
     {
-        SEManager.Instance.SEPlay(SEManager.SE.Bakuhatu);
         GameManager.Instance.SetDeadEnemy(-1);
         Destroy(gameObject);
     }
