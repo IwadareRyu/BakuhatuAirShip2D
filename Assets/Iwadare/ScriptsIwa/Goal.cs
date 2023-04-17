@@ -84,6 +84,7 @@ public class Goal : MonoBehaviour
             _clearText.SetActive(true);
             PauseManager.PauseResume();
             //_action.Invoke();
+
         }
     }
 

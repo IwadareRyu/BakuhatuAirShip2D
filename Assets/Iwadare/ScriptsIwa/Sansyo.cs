@@ -34,4 +34,9 @@ public class Sansyo : MonoBehaviour
     {
         SceneLoader.Instance.ResultSceneLoad(scene);
     }
+
+    public void PauseOff()
+    {
+        PauseManager.PauseResume();
+    }
 }

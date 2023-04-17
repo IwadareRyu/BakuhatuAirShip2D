@@ -27,7 +27,7 @@ public abstract class SingletonMonovihair<T> : MonoBehaviour where T : MonoBehav
     {
         if (this != Instance)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
             return;
         }
         if (_dontDestroyOnLoad)

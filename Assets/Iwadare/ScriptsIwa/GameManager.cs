@@ -13,7 +13,8 @@ public class GameManager : SingletonMonovihair<GameManager>
     [SerializeField] GameObject _gameOverCanvas;
     string _reScore;
     [Tooltip("現在のスコアの値")]
-    public int _score = 4000;
+    [SerializeField] int _startScore = 4000;
+    [SerializeField] int _score = 4000;
     public int _totalMoney = 0;
     [Tooltip("スコアの限界値")]
     int _maxScore = 9999999;
@@ -49,7 +50,9 @@ public class GameManager : SingletonMonovihair<GameManager>
     public void GameStart()
     {
         //スコアの初期化
+        _score = _startScore;
         ShowScore();
+        _gameOverCanvas.SetActive(false);
         _isStarted = true;
         _scoreText.text = _score.ToString("0000000");
         AddScore(0);
@@ -131,6 +134,8 @@ public class GameManager : SingletonMonovihair<GameManager>
             {
                 _loseBool = true;
                 SEManager.Instance?.SEPlay(SEManager.SE.Lose);
+                _gameOverCanvas.SetActive(true);
+                PauseManager.PauseResume();
             }
         }
     }
@@ -138,13 +143,20 @@ public class GameManager : SingletonMonovihair<GameManager>
     public void ResetScore()
     {
         _totalMoney = 0;
+        PowerUp.Instance.PowerReset();
         _isStarted = false;
+    }
+
+    public void StartScoreTime()
+    {
+        _score = _startScore;
+        _countDownTime = 100;
+        _loseBool = false;
     }
 
     private void OnLevelWasLoaded(int level)
     {
         //if (_isStarted) ShowScore();
-        _score = 4000;
         PowerUp.Instance.Start();
     }
 }
