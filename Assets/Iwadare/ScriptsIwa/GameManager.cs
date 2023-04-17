@@ -28,6 +28,7 @@ public class GameManager : SingletonMonovihair<GameManager>
     [SerializeField] float _gaugeInterval = 1f;
     [Tooltip("GameOver時")]
     bool _isgameOver;
+    bool _loseBool;
     public bool Gameover => _isgameOver;
 
     protected override bool _dontDestroyOnLoad { get { return true; } }
@@ -126,9 +127,10 @@ public class GameManager : SingletonMonovihair<GameManager>
                 _timeText.text = String.Format("{0:00.00}", _countDownTime);
                 _countDownTime = Mathf.Max(_countDownTime - Time.deltaTime, 0f);
             }
-            if(_countDownTime == 0)
+            if(!_loseBool && _countDownTime == 0 || !_loseBool && _score < 0)
             {
-                SEManager.Instance.SEPlay(SEManager.SE.Lose);
+                _loseBool = true;
+                SEManager.Instance?.SEPlay(SEManager.SE.Lose);
             }
         }
     }

@@ -57,16 +57,24 @@ public class BossDanmakuIns : MonoBehaviour
                 for (var i = 0; i <= 15; i += 5)
                 {
                     AllBulletIns(i);
+                    if (_mogura)
+                    {
+                        SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                    }
+                    else
+                    {
+                        SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                    }
                     yield return new WaitForSeconds(_count);
                 }
 
                 if (_mogura)
                 {
-                    SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                    SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
                 }
                 else
                 {
-                    SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                    SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
                 }
                 _interval = true;
             }
@@ -77,11 +85,11 @@ public class BossDanmakuIns : MonoBehaviour
                     AllBulletIns(i);
                     if (_mogura)
                     {
-                        SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                        SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
                     }
                     else
                     {
-                        SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                        SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
                     }
                     yield return new WaitForSeconds(_count);
                 }
@@ -96,11 +104,11 @@ public class BossDanmakuIns : MonoBehaviour
             OnePointIns();
             if (_mogura)
             {
-                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
             }
             else
             {
-                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
             }
         }
         else if(_danmakuState == BulletTypeClass.BulletState.AllZiki)
@@ -115,11 +123,11 @@ public class BossDanmakuIns : MonoBehaviour
                     OnePointIns();
                     if (_mogura)
                     {
-                        SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                        SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
                     }
                     else
                     {
-                        SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                        SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
                     }
                 }
             }
@@ -132,11 +140,11 @@ public class BossDanmakuIns : MonoBehaviour
                 OnePointIns(true,_angle,true);
                 if (_mogura)
                 {
-                    SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                    SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
                 }
                 else
                 {
-                    SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                    SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
                 }
             }
             yield return new WaitForSeconds(_angleCount);
@@ -148,11 +156,11 @@ public class BossDanmakuIns : MonoBehaviour
                 _bulletList.RemoveAt(0);
                 if (_mogura)
                 {
-                    SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                    SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
                 }
                 else
                 {
-                    SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                    SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
                 }
             }
         }
@@ -162,11 +170,11 @@ public class BossDanmakuIns : MonoBehaviour
             OnePointIns(false, 0, true);
             if (_mogura)
             {
-                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
             }
             else
             {
-                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
             }
             yield return new WaitForSeconds(_angleCount);
             if (_bulletList.Count != 0)
@@ -180,11 +188,11 @@ public class BossDanmakuIns : MonoBehaviour
                             AllBulletIns(0, true);
                             if (_mogura)
                             {
-                                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
                             }
                             else
                             {
-                                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
                             }
                         }
                     }
@@ -206,11 +214,11 @@ public class BossDanmakuIns : MonoBehaviour
                             AllBulletIns(0, true);
                             if (_mogura)
                             {
-                                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
                             }
                             else
                             {
-                                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
                             }
                         }
                     }
@@ -228,11 +236,11 @@ public class BossDanmakuIns : MonoBehaviour
             AllBulletIns(0);
             if (_mogura)
             {
-                SEManager.Instance.SEPlay(SEManager.SE.Shot);
+                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
             }
             else
             {
-                SEManager.Instance.SEPlay(SEManager.SE.SmallFire);
+                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
             }
         }
         yield return new WaitForSeconds(_count);

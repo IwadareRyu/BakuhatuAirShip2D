@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameStartScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GameManager.Instance.Sansyo();
         GameManager.Instance.GameStart();

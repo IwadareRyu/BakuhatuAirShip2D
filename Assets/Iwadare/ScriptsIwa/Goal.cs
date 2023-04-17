@@ -15,6 +15,7 @@ public class Goal : MonoBehaviour
     bool _goalbool;
     [SerializeField] RandomManege _enemymanege;
     bool _pause;
+    [SerializeField] AudioClip _audio;
     // Start is called before the first frame update
 
     private void OnEnable()
@@ -79,12 +80,21 @@ public class Goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !_pause)
         {
-            SEManager.Instance.SEPlay(SEManager.SE.Clear);
+            StartCoroutine(AudioPlay());
             _clearText.SetActive(true);
             PauseManager.PauseResume();
             //_action.Invoke();
         }
     }
+
+    IEnumerator AudioPlay()
+    {
+        SEManager.Instance.BGMStop();
+        SEManager.Instance?.SEPlay(SEManager.SE.Clear);
+        yield return new WaitForSeconds(5f);
+        SEManager.Instance.BGMPlay(_audio);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
