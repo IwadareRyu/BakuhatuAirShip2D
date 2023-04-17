@@ -4880,6 +4880,18 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3699869573025555624, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 5531826246782737853}
+    - target: {fileID: 5260026630326429023, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260026630326429023, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: da103137787914d4fb1370662531fc44, type: 3}
     - target: {fileID: 5531826247788354305, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_Name
       value: UI&ClearCanvas
@@ -4988,8 +5000,27 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9112359760113734240, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112359760113734240, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: da103137787914d4fb1370662531fc44, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+--- !u!114 &5531826246782737853 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7398046238838593436, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+  m_PrefabInstance: {fileID: 5531826246782737852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6812166066676977613
 PrefabInstance:
   m_ObjectHideFlags: 0
