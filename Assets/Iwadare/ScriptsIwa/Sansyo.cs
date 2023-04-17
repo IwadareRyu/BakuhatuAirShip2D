@@ -29,4 +29,9 @@ public class Sansyo : MonoBehaviour
     {
         PowerUp.Instance.SceneName(scene);
     }
+
+    public void ResetSceneSansyo(string scene)
+    {
+        SceneLoader.Instance.ResultSceneLoad(scene);
+    }
 }
