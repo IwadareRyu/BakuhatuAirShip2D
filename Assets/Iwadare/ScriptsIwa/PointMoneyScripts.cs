@@ -15,6 +15,8 @@ public class PointMoneyScripts : MonoBehaviour
     AudioSource _se;
     [SerializeField] AudioClip _coin;
     // Start is called before the first frame update
+
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();

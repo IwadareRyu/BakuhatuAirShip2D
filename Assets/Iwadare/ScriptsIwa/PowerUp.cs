@@ -118,4 +118,11 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     {
         SceneLoader.Instance.SceneLoad(_changeScene);
     }
+
+    public void PowerReset()
+    {
+        _bakuhatuPower = 1;
+        _airnum = 1;
+        _speedUp = 1;
+    }
 }
