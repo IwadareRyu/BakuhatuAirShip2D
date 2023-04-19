@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossGanerator : MonoBehaviour
 {
+    [SerializeField] HPBar _hpbar;
     [SerializeField] BossAttack _bossAttack;
     [SerializeField] Transform[] _targets;
     //int _current;
@@ -44,6 +45,10 @@ public class BossGanerator : MonoBehaviour
         if(_testMode)
         {
             _bossHP = _bossMaxHP * 0.4f;
+        }
+        if(_hpbar)
+        {
+            _hpbar.HPSlider(_bossHP / _bossMaxHP);
         }
     }
 
@@ -177,6 +182,10 @@ public class BossGanerator : MonoBehaviour
     {
         _bossHP += damage;
         Debug.Log(_bossHP);
+        if(_hpbar)
+        {
+            _hpbar.HPSlider(_bossHP / _bossMaxHP);
+        }
     }
 
     IEnumerator StopTime()
