@@ -12,8 +12,8 @@ public class SoundOption : MonoBehaviour
 
     private void Start()
     {
-        _bGMSlider.value = SEManager.Instance ? SEManager.Instance.BgmVal:0;
-        _sESlider.value = SEManager.Instance ? SEManager.Instance.SeVal : 0;
+        _bGMSlider.value = SEManager.Instance.BgmVal;
+        _sESlider.value = SEManager.Instance.SeVal;
     }
     public void SetMaster(float volume)
     {
