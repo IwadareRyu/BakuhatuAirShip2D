@@ -4749,15 +4749,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1076212189700790905, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
       propertyPath: _starColor.b
-      value: 0.12272024
-      objectReference: {fileID: 0}
-    - target: {fileID: 1076212189700790905, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
-      propertyPath: _starColor.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1076212189700790905, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
-      propertyPath: _starColor.r
+      propertyPath: _starColor.g
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076212189700790905, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
+      propertyPath: _starColor.r
+      value: 0.9259217
       objectReference: {fileID: 0}
     - target: {fileID: 1076212189700790905, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
       propertyPath: _normalColor.a
@@ -4979,7 +4979,7 @@ PrefabInstance:
       objectReference: {fileID: 1734169056}
     - target: {fileID: 4994506639191379396, guid: 67ea25ec361b5a14ba356c7363a2cc2a, type: 3}
       propertyPath: _startScore
-      value: 100
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 4994506639191379396, guid: 67ea25ec361b5a14ba356c7363a2cc2a, type: 3}
       propertyPath: _totalMoney
