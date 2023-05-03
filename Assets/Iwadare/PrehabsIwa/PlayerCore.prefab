@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.15395617, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d2e9ae4eee159dc4088b85ed81317d4a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -194,7 +194,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 11
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.80784315}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -263,6 +263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe12350d8ebbaf4c8043c2af35dee13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _allAttackPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _allAttack: {fileID: 2303163670325522591, guid: fe87ef86ce5192e428a11bf79aebf9e5, type: 3}
   _bakuhatu: {fileID: 2303163670325522591, guid: eb2c1c916b006b24081be7ccdc909ea8, type: 3}
   _airShipMazzle: {fileID: 1076212189655985229}
   _airShipOnOff: {fileID: 1076212188264068250}
@@ -270,3 +276,6 @@ MonoBehaviour:
   _lowSpeed: 2.5
   _time: 3
   _pool: {fileID: 0}
+  _starTime: 0
+  _normalColor: {r: 1, g: 0, b: 0, a: 1}
+  _starColor: {r: 1, g: 0.9606023, b: 0, a: 1}
