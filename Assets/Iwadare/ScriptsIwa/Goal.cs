@@ -16,7 +16,6 @@ public class Goal : MonoBehaviour
     [SerializeField] RandomManege _enemymanege;
     bool _pause;
     [SerializeField] AudioClip _audio;
-    // Start is called before the first frame update
 
     private void OnEnable()
     {
@@ -35,7 +34,6 @@ public class Goal : MonoBehaviour
         _clearText.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!_pause)
@@ -75,6 +73,7 @@ public class Goal : MonoBehaviour
             }
         }
     }
+
     //trigger,collison関わらず、プレイヤーに当たったらイベントが起こる。
     private void OnTriggerEnter2D(Collider2D collision)
     {

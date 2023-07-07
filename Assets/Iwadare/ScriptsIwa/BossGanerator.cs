@@ -7,11 +7,8 @@ public class BossGanerator : MonoBehaviour
     [SerializeField] HPBar _hpbar;
     [SerializeField] BossAttack _bossAttack;
     [SerializeField] Transform[] _targets;
-    //int _current;
     [SerializeField]float _bossMaxHP = 30;
     float _bossHP;
-    //[SerializeField]float _stopdis = 0.5f;
-    //[SerializeField] float _speed = 3f;
     [Header("使う弾幕パターンを入れていく。")]
     [SerializeField] GameObject[] _danmakuPattern;
     int _youso = 0;
@@ -33,6 +30,18 @@ public class BossGanerator : MonoBehaviour
     [Header("落とすお金の回数")]
     [SerializeField] int _dropCount = 10;
     bool _downbool;
+    bool _pause;
+
+    private void OnEnable()
+    {
+        PauseManager.OnPauseResume += StartPause;
+    }
+
+    private void OnDisable()
+    {
+        PauseManager.OnPauseResume -= StartPause;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,112 +64,103 @@ public class BossGanerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float distance = Vector2.Distance(transform.position,_targets[_current].position);
-        //if(distance > _stopdis)
-        //{
-        //    Vector3 dir = (_targets[_current].position - transform.position).normalized * _speed;
-        //    transform.Translate(dir * Time.deltaTime);
-        //}
-        //else
-        //{
-        //    _current++;
-        //    _current = _current % _targets.Length;
-        //}
-
-        if(_stateboss == BossState.Ten)
+        if (!_pause)
         {
-            if(!_oneShot)
+            if (_stateboss == BossState.Ten)
             {
-                _oneShot = true;
-                _danmakuPattern[_youso].SetActive(true);
-            }
-
-            if(_bossHP / _bossMaxHP < 0.8f)
-            {
-                BulletReset();
-                _youso = 1;
-                _stateboss = BossState.Eight;
-            }
-        }
-        else if(_stateboss == BossState.Eight)
-        {
-            if(!_oneShot)
-            {
-                _oneShot = true;
-                StartCoroutine(StopTime());
-            }
-
-            if(_bossHP / _bossMaxHP < 0.6f)
-            {
-                BulletReset();
-                _youso = 2;
-                _stateboss = BossState.Six;
-            }
-        }
-        else if(_stateboss == BossState.Six)
-        {
-            if (!_oneShot)
-            {
-                _oneShot = true;
-                StartCoroutine(StopTime());
-            }
-
-            if (_bossHP / _bossMaxHP < 0.4f)
-            {
-                BulletReset();
-                _youso = 3;
-                _stateboss = BossState.Four;
-            }
-        }
-        else if (_stateboss == BossState.Four)
-        {
-            if (!_oneShot && _overMode)
-            {
-                _oneShot = true;
-                _coroutinebreak = true;
-                _bossAttack.OverMode();
-                Debug.Log("ここには入るね");
-            }
-            else if (!_oneShot)
-            {
-                _oneShot = true;
-                StartCoroutine(StopTime());
-            }
-
-            if (_bossHP / _bossMaxHP < 0.2f)
-            {
-                BulletReset();
-                _youso = 4;
-                _coroutinebreak = false;
-                if(_overMode)
+                if (!_oneShot)
                 {
-                   _bossAttack.OverMode();
-                }
-                _stateboss = BossState.Two;
-            }
-        }
-        else if (_stateboss == BossState.Two)
-        {
-            if (!_oneShot)
-            {
-                _oneShot = true;
-                StartCoroutine(StopTime());
-            }
-
-            if (_bossHP <= 0f && !_downbool)
-            {
-                BulletReset();
-                _oneShot = true;
-                _downbool = true;
-                if (_bossAni)
-                {
-                    _bossAni.Play("DownAni");
-                }
-                else
-                {
-                    GameManager.Instance.SetDeadEnemy(-1);
+                    _oneShot = true;
+                    _danmakuPattern[_youso].SetActive(true);
                 }
 
+                if (_bossHP / _bossMaxHP < 0.8f)
+                {
+                    BulletReset();
+                    _youso = 1;
+                    _stateboss = BossState.Eight;
+                }
+            }
+            else if (_stateboss == BossState.Eight)
+            {
+                if (!_oneShot)
+                {
+                    _oneShot = true;
+                    StartCoroutine(StopTime());
+                }
+
+                if (_bossHP / _bossMaxHP < 0.6f)
+                {
+                    BulletReset();
+                    _youso = 2;
+                    _stateboss = BossState.Six;
+                }
+            }
+            else if (_stateboss == BossState.Six)
+            {
+                if (!_oneShot)
+                {
+                    _oneShot = true;
+                    StartCoroutine(StopTime());
+                }
+
+                if (_bossHP / _bossMaxHP < 0.4f)
+                {
+                    BulletReset();
+                    _youso = 3;
+                    _stateboss = BossState.Four;
+                }
+            }
+            else if (_stateboss == BossState.Four)
+            {
+                if (!_oneShot && _overMode)
+                {
+                    _oneShot = true;
+                    _coroutinebreak = true;
+                    _bossAttack.OverMode();
+                    Debug.Log("ここには入るね");
+                }
+                else if (!_oneShot)
+                {
+                    _oneShot = true;
+                    StartCoroutine(StopTime());
+                }
+
+                if (_bossHP / _bossMaxHP < 0.2f)
+                {
+                    BulletReset();
+                    _youso = 4;
+                    _coroutinebreak = false;
+                    if (_overMode)
+                    {
+                        _bossAttack.OverMode();
+                    }
+                    _stateboss = BossState.Two;
+                }
+            }
+            else if (_stateboss == BossState.Two)
+            {
+                if (!_oneShot)
+                {
+                    _oneShot = true;
+                    StartCoroutine(StopTime());
+                }
+
+                if (_bossHP <= 0f && !_downbool)
+                {
+                    BulletReset();
+                    _oneShot = true;
+                    _downbool = true;
+                    if (_bossAni)
+                    {
+                        _bossAni.Play("DownAni");
+                    }
+                    else
+                    {
+                        GameManager.Instance.SetDeadEnemy(-1);
+                    }
+
+                }
             }
         }
     }
@@ -252,5 +252,10 @@ public class BossGanerator : MonoBehaviour
         var ram2 = Random.Range(-1f, 1f);
         Vector2 vec = new Vector2(transform.position.x + ram1,transform.position.y + ram2);
         Instantiate(_moneys[i], vec, Quaternion.identity);
+    }
+
+    public void StartPause(bool pause)
+    {
+        _pause = pause;
     }
 }

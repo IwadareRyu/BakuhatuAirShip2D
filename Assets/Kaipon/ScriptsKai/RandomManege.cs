@@ -9,23 +9,35 @@ public class RandomManege : MonoBehaviour
     [SerializeField] GameObject[] _pattern;
     [SerializeField] float _desSec;
     int _current = 0;
+    bool _pause;
     // Start is called before the first frame update
     void Awake()
     {
-         
         foreach (var i in _pattern)
         {
             i.SetActive(false);
         }
     }
+    private void OnEnable()
+    {
+        PauseManager.OnPauseResume += OnStartPause;
+    }   // ポーズ
+
+    private void OnDisable()
+    {
+        PauseManager.OnPauseResume -= OnStartPause;
+    }   // ポーズ解除
 
     // Update is called once per frame
     void Update()
     {
-        if (_random == false)
+        if (!_pause)
         {
-            _random = true;
-            StartCoroutine(Instans());
+            if (_random == false)
+            {
+                _random = true;
+                StartCoroutine(Instans());
+            }
         }
     }
     IEnumerator Instans()
@@ -44,5 +56,10 @@ public class RandomManege : MonoBehaviour
             i.SetActive(false);
         }
         this.gameObject.SetActive(false);
+    }
+
+    public virtual void OnStartPause(bool pause)
+    {
+        _pause = pause;
     }
 }
