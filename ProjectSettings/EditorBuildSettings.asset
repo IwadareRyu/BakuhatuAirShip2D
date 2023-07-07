@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Kaipon/SceneKai/Stage3.unity
     guid: ebc4f2a0705d8d84497d08896ab6a1e6
+  - enabled: 0
+    path: Assets/Iwadare/ScenesIwa/SampleStage4.unity
+    guid: f8521601192bf0343b09e2139ea22b06
   - enabled: 1
     path: Assets/Iwadare/ScenesIwa/Stage4.unity
     guid: aab9b0486cb69e845bf3d85bb377c313
@@ -32,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Iwadare/ScenesIwa/Stage8.unity
     guid: d45194e7ae402cd4186e7c4e4ab72304
+  - enabled: 1
+    path: Assets/Iwadare/ScenesIwa/NobelSample.unity
+    guid: bdfcf03d3227db24fa708ca8fc1af997
   m_configObjects: {}

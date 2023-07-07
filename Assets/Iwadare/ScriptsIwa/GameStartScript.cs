@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class GameStartScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    SceneLoaderAditiveClass sceneLoaderAditiveClass;
+    [SerializeField] string sceneName;
     void Awake()
     {
         GameManager.Instance.Sansyo();
-        GameManager.Instance.GameStart();
+        GameManager.Instance.GameSetting();
+    }
+
+    private void Start()
+    {
+        if (sceneName != "")
+        {
+            PauseManager.PauseResume();
+            sceneLoaderAditiveClass = new SceneLoaderAditiveClass();
+            sceneLoaderAditiveClass.SceneLoaderAditive(sceneName);
+        }
     }
 
     // Update is called once per frame

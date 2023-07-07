@@ -20,7 +20,6 @@ public class GameManager : SingletonMonovihair<GameManager>
     int _maxScore = 9999999;
     [SerializeField] float _countDownTime = 60f;
     bool _isStarted;
-    public bool IsStarted => _isStarted;
     [Tooltip("倒す敵の数")]
     int _deadEnemy;
     public int _enemy => _deadEnemy;
@@ -34,6 +33,22 @@ public class GameManager : SingletonMonovihair<GameManager>
 
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
+    private void OnEnable()
+    {
+        PauseManager.OnPauseResume += OnStartPause;
+    }   // ポーズ
+
+    private void OnDisable()
+    {
+        PauseManager.OnPauseResume -= OnStartPause;
+    }   // ポーズ解除
+
+    void Start()
+    {
+        //Sansyo();
+        //GameSetting();
+    }
+
     public void Sansyo()
     {
         _scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
@@ -41,22 +56,40 @@ public class GameManager : SingletonMonovihair<GameManager>
         _totalMoneyText = GameObject.FindGameObjectWithTag("TotalMoney").GetComponent<Text>();
         _deadEnemyText = GameObject.FindGameObjectWithTag("EnemyText").GetComponent<Text>();
     }
-    void Start()
-    {
-        Sansyo();
-        GameStart();
-    }
 
-    public void GameStart()
+    public void GameSetting()
     {
         //スコアの初期化
         _score = _startScore;
         ShowScore();
         _gameOverCanvas.SetActive(false);
-        _isStarted = true;
         _scoreText.text = _score.ToString("0000000");
         AddScore(0);
+        _isStarted = true;
         _totalMoneyText.text = _totalMoney.ToString("0000000");
+        _timeText.text = String.Format("{0:00.00}", _countDownTime);
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (_isStarted)
+        {
+            if (_timeText)
+            {
+                //カウントダウン
+                _timeText.text = String.Format("{0:00.00}", _countDownTime);
+                _countDownTime = Mathf.Max(_countDownTime - Time.deltaTime, 0f);
+            }
+            if (!_loseBool && _countDownTime == 0 || !_loseBool && _score < 0)
+            {
+                _loseBool = true;
+                SEManager.Instance?.SEPlay(SEManager.SE.Lose);
+                _gameOverCanvas.SetActive(true);
+                PauseManager.PauseResume();
+            }
+        }
     }
 
     /// <summary>強化画面の際、合計金額を表示する。</summary>
@@ -119,27 +152,6 @@ public class GameManager : SingletonMonovihair<GameManager>
         _deadEnemyText.text = _deadEnemy.ToString("00000");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (_isStarted)
-        {
-            if (_timeText)
-            {
-                //カウントダウン
-                _timeText.text = String.Format("{0:00.00}", _countDownTime);
-                _countDownTime = Mathf.Max(_countDownTime - Time.deltaTime, 0f);
-            }
-            if(!_loseBool && _countDownTime == 0 || !_loseBool && _score < 0)
-            {
-                _loseBool = true;
-                SEManager.Instance?.SEPlay(SEManager.SE.Lose);
-                _gameOverCanvas.SetActive(true);
-                PauseManager.PauseResume();
-            }
-        }
-    }
-
     public void ResetScore()
     {
         _totalMoney = 0;
@@ -158,5 +170,10 @@ public class GameManager : SingletonMonovihair<GameManager>
     {
         //if (_isStarted) ShowScore();
         PowerUp.Instance.Start();
+    }
+
+    public virtual void OnStartPause(bool pause)
+    {
+        _isStarted = !pause;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossDanmakuIns : MonoBehaviour
+public class DanmakuIns : MonoBehaviour
 {
     [SerializeField] float _count = 5;
     [SerializeField] float _angleCount = 1f;
@@ -21,6 +21,7 @@ public class BossDanmakuIns : MonoBehaviour
     [SerializeField] BulletTypeClass.BulletSpriteState _colorState;
     [SerializeField] bool _zikiMode;
     [SerializeField] bool _mogura;
+    bool _pause;
     private void Start()
     {
         if(!_pool)
@@ -32,15 +33,25 @@ public class BossDanmakuIns : MonoBehaviour
     private void OnEnable()
     {
         _bulletime = false;
-    }
+        PauseManager.OnPauseResume += OnStartPause;
+    }   // ポーズ
+
+    private void OnDisable()
+    {
+        PauseManager.OnPauseResume -= OnStartPause;
+    }   // ポーズ解除
+
 
     // Update is called once per frame
     void Update()
     {
-        if (!_bulletime)
+        if (!_pause)
         {
-            _bulletime = true;
-            StartCoroutine(BulletTime());
+            if (!_bulletime)
+            {
+                _bulletime = true;
+                StartCoroutine(BulletTime());
+            }
         }
     }
 
@@ -97,7 +108,6 @@ public class BossDanmakuIns : MonoBehaviour
                 _interval = false;
             }
         }
-        //
         else if(_danmakuState == BulletTypeClass.BulletState.Ziki)
         {
             _colorState = BulletTypeClass.BulletSpriteState.BlueFire;
@@ -307,5 +317,10 @@ public class BossDanmakuIns : MonoBehaviour
             _bulletList.Add(bullet);
         }
         bulletcs.BulletAdd(angle, _bulletspeed, _colorState,stop);
+    }
+
+    public virtual void OnStartPause(bool pause)
+    {
+        _pause = pause;
     }
 }
