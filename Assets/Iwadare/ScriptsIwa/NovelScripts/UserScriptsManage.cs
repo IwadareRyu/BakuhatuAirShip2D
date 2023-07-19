@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using Cinemachine;
 
 public class UserScriptsManage : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class UserScriptsManage : MonoBehaviour
     public static UserScriptsManage instance;
     [SerializeField] ImageManager _imageManager;
     [SerializeField] string _sceneName;
+    [SerializeField] CinemachineVirtualCamera _shakeChinemachine;
+    [SerializeField] CinemachineImpulseSource _impulseSource;
+    [SerializeField] float _impulseScale = 5;
 
     List<string> _txtText = new List<string>();
     // Start is called before the first frame update
@@ -27,6 +31,7 @@ public class UserScriptsManage : MonoBehaviour
         }
         if (!instance) instance = this;
         _novelNumber = 0;
+        _shakeChinemachine.enabled = false;
     }
 
     // Update is called once per frame
@@ -45,8 +50,8 @@ public class UserScriptsManage : MonoBehaviour
         }
         else
         {
-            PauseManager.PauseResume();
-            SceneManager.UnloadScene(_sceneName);
+            GameObject.FindObjectOfType<GameStartScript>().Play();
+            SceneManager.UnloadSceneAsync(_sceneName);
         }
         return "";
     }
@@ -82,9 +87,22 @@ public class UserScriptsManage : MonoBehaviour
                 _imageManager.ChangeImage();
                 _novelNumber++;
                 break;
+            case "&LongShakeEvent":
+                LongShake(true);
+                _novelNumber++;
+                break;
+            case "&EndLongShakeEvent":
+                LongShake(false);
+                _novelNumber++;
+                break;
+            case "&ShortShakeEvent":
+                ShortShake();
+                _novelNumber++;
+                break;
+                
 
         }
-        if(_txtText[_novelNumber][0] == '&')
+        if(_novelNumber < _txtText.Count && _txtText[_novelNumber][0] == '&')
         {
             PlayStatement(_txtText[_novelNumber]);
         }
@@ -96,5 +114,15 @@ public class UserScriptsManage : MonoBehaviour
         _novelNumber++;
         _nameText.text = _txtText[_novelNumber];
         _novelNumber++;
+    }
+
+    void LongShake(bool shakebool)
+    {
+        _shakeChinemachine.enabled = shakebool;
+    }
+
+    void ShortShake()
+    {
+        _impulseSource.GenerateImpulseAt(new Vector2(0,0),new Vector2(0,_impulseScale));
     }
 }

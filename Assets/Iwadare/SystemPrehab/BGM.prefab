@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5157b629035644d85271f0ffafb468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startPlay: 1
   _bGMAudio: {fileID: 8300000, guid: da1978025a2a91a4e8d177202e7ebccd, type: 3}

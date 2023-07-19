@@ -1,18 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField] float _speed = 5f;
+    [SerializeField] 
+    float _speed = 5f;
+    
     Rigidbody2D _rb;
-    [SerializeField] GameObject _hit;
-    [SerializeField,Range(-1,1)] float _minas = 1f;
-    [SerializeField] bool _isplayerBullet;
-    [SerializeField] GameObject _bakuhatu;
+    
+    [SerializeField] 
+    GameObject _hit;
+    
+    [SerializeField,Range(-1,1)] 
+    float _minas = 1f;
+    
+    [SerializeField] 
+    bool _isplayerBullet;
+    
+    [SerializeField] 
+    GameObject _bakuhatu;
+    
     private PowerUp _power;
+    
     private Vector3 _trans;
+    
     public bool _bakuhatutime = true;
+    
     bool _audiobool;
 
     void OnEnable()
@@ -24,7 +39,7 @@ public class PlayerBullet : MonoBehaviour
         _bakuhatutime = false;
         if (_audiobool)
         {
-            SEManager.Instance.SEPlay(SEManager.SE.PlayerShot);
+            BGMManager.Instance.SEPlay(BGMManager.SE.PlayerShot);
         }
         else
         {
@@ -62,6 +77,7 @@ public class PlayerBullet : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Bakuhatu();
     }
+
     void Bakuhatu()
     {
         if (_isplayerBullet && _bakuhatu)

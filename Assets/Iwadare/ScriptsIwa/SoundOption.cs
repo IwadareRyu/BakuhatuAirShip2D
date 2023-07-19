@@ -12,8 +12,8 @@ public class SoundOption : MonoBehaviour
 
     private void Start()
     {
-        _bGMSlider.value = SEManager.Instance.BgmVal;
-        _sESlider.value = SEManager.Instance.SeVal;
+        _bGMSlider.value = BGMManager.Instance.BgmVal;
+        _sESlider.value = BGMManager.Instance.SeVal;
     }
     public void SetMaster(float volume)
     {
@@ -24,12 +24,12 @@ public class SoundOption : MonoBehaviour
     public void SetBGM()
     {
         _audioMixer.SetFloat("BGMVol", _bGMSlider.value);
-        SEManager.Instance.BGMValue(_bGMSlider.value);
+        BGMManager.Instance.BGMValue(_bGMSlider.value);
     }
 
     public void SetSE()
     {
         _audioMixer.SetFloat("SEVol", _sESlider.value);
-        SEManager.Instance.SEValue(_bGMSlider.value);
+        BGMManager.Instance.SEValue(_bGMSlider.value);
     }
 }

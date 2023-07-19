@@ -14,13 +14,16 @@
 ドラゴンは炎を吐けるんだ
 ドラーーーーーーーーーーーーーーー！！
 &Stop
+&ShortShakeEvent
 &Blue
 タカヘビ
 なにおう！オイラだって炎を吐けるんだぞ！
 シャーーーーーーーーーーーーーーー！！
 &Stop
 &Image
+&LongShakeEvent
 &Chara
 
 彼らは今日も炎比べをしていた。
 &Stop
+&EndLongShakeEvent

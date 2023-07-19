@@ -6,6 +6,6 @@ public class ClickScript : MonoBehaviour
 {
     public void Click()
     {
-        SEManager.Instance.SEPlay(SEManager.SE.Click);
+        BGMManager.Instance.SEPlay(BGMManager.SE.Click);
     }
 }
