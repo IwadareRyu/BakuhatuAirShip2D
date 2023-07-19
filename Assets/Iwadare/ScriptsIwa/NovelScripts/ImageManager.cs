@@ -5,18 +5,30 @@ using UnityEngine.UI;
 
 public class ImageManager : MonoBehaviour
 {
-    [SerializeField] GameObject _backGeoundObject;
-    [SerializeField] Sprite[] _backGeoundSprites;
-    [SerializeField] Image[] _charaImage;
-    [SerializeField] Color _standCharaColor;
-    int _changeSpritenum = 0;
-    Image _backGroundimage;
+    [SerializeField] 
+    GameObject _backGroundObject;
+    
+    [SerializeField] 
+    Sprite[] _backGroundSprites;
+    
+    [SerializeField] 
+    Image[] _charaImage;
+
+    [SerializeField]
+    Sprite[] _charaSprite;
+    
+    [SerializeField] 
+    Color _standCharaColor;
+    int _changeSpriteNum = 0;
+    
+    Image _backGroundImage;
+    
     Image _tmpImage;
 
     // Start is called before the first frame update
     void Awake()
     {
-        _backGroundimage = _backGeoundObject.GetComponent<Image>();
+        _backGroundImage = _backGroundObject.GetComponent<Image>();
         foreach(var i in _charaImage)
         {
             i.color = _standCharaColor;
@@ -25,13 +37,13 @@ public class ImageManager : MonoBehaviour
 
     private void Start()
     {
-                _backGroundimage.sprite = _backGeoundSprites[_changeSpritenum];
+        _backGroundImage.sprite = _backGroundSprites[_changeSpriteNum];
     }
 
     public void ChangeImage()
     {
-        _changeSpritenum++;
-        _backGroundimage.sprite = _backGeoundSprites[_changeSpritenum];
+        _changeSpriteNum++;
+        _backGroundImage.sprite = _backGroundSprites[_changeSpriteNum];
     }
 
     public void CharaImage(int i)
@@ -43,6 +55,10 @@ public class ImageManager : MonoBehaviour
                 _tmpImage.color = _standCharaColor;
             }
             _tmpImage = _charaImage[i];
+            if(_tmpImage.sprite == null)
+            {
+                _tmpImage.sprite = _charaSprite[i];
+            }
             _tmpImage.color = Color.white;
         }
         else

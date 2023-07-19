@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Cinemachine;
 
 public class BakuhatuScale : MonoBehaviour
 {
@@ -11,11 +12,15 @@ public class BakuhatuScale : MonoBehaviour
     Vector2 start;
     bool _attack;
     [SerializeField] Pattern _pattern;
+    
+    [SerializeField] CinemachineImpulseSource _impulse;
+    [SerializeField] float _impulsePower = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        SEManager.Instance.SEPlay(SEManager.SE.Bakuhatu);
+        BGMManager.Instance.SEPlay(BGMManager.SE.Bakuhatu);
+        _impulse.GenerateImpulseAt(new Vector2(0, 0), new Vector2(0, _impulsePower));
         if (_pattern == Pattern.Normal)
         {
             _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();

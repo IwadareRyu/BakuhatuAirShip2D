@@ -1458,7 +1458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8566060957340018741}
-  - component: {fileID: 8566060957340018738}
+  - component: {fileID: 1854767319189734936}
   m_Layer: 0
   m_Name: SEManager
   m_TagString: SE
@@ -1483,7 +1483,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8566060957340018738
+--- !u!114 &1854767319189734936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1492,14 +1492,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8566060957340018743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0565035c50007e40bb6ef7dad33e7d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6467dd01c3f320241b6e2ad2d006b121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _bGMClip:
   - {fileID: 8300000, guid: da1978025a2a91a4e8d177202e7ebccd, type: 3}
-  - {fileID: 8300000, guid: 17c5e894d659e1e4786c3765f84345a0, type: 3}
   - {fileID: 8300000, guid: 5224d6ba805c09645b4c74cab798644f, type: 3}
-  - {fileID: 8300000, guid: c7433f172d73c0b41858f7d61dd2a690, type: 3}
+  - {fileID: 8300000, guid: 17c5e894d659e1e4786c3765f84345a0, type: 3}
+  - {fileID: 8300000, guid: 721020c6d8a84ec4c91f99c98a7ca4d8, type: 3}
+  - {fileID: 8300000, guid: 544166cb906a0b44cb36a3b2388938c4, type: 3}
   _sEAudio:
   - {fileID: 1013161285532560450}
   - {fileID: 6533802332065198870}

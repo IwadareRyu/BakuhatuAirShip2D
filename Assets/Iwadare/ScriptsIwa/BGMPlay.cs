@@ -6,8 +6,12 @@ public class BGMPlay : MonoBehaviour
 {
     [SerializeField] AudioClip _bGMAudio;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        SEManager.Instance.BGMPlay(_bGMAudio);
+        Play();
+    }
+    public void Play()
+    {
+        BGMManager.Instance.BGMPlay(_bGMAudio);
     }
 }

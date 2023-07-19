@@ -7,22 +7,38 @@ public class TextTime : MonoBehaviour
     [SerializeField] Text _sentence;
     [SerializeField] PigIns _pig;
     [SerializeField] float _sec;
+    bool _startBool = false;
+    bool _textTimeBool = false;
     
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(TimeText());
+        _pig.enabled = false;
     }
+    private void OnEnable()
+    {
+        PauseManager.OnPauseResume += OnStartPause;
+    }   // ポーズ
+
+    private void OnDisable()
+    {
+        PauseManager.OnPauseResume -= OnStartPause;
+    }   // ポーズ解除
 
     // Update is called once per frame
     void Update()
     {
-
+        if(!_startBool && !_textTimeBool)
+        {
+            _textTimeBool = true;
+            StartCoroutine(TimeText());
+        }
     }
     IEnumerator TimeText()
     {
         yield return new WaitForSeconds(5.0f);
         _sentence.text = "WASDキーで移動\nSHIFTキーで\n低速移動できるぞ！\n細かい移動に\n使ってくれ！";
+        _pig.enabled = true;
         yield return new WaitForSeconds(10f);
         _sentence.text = "Fキーで\n自機を飛ばせるぞ！\n自機を飛ばすと\nお金が100yen\n減るぞ！";
         yield return new WaitForSeconds(5f);
@@ -43,5 +59,10 @@ public class TextTime : MonoBehaviour
         _sentence.text = "ゴールに入れば\n終了だ!\n次はさっそく\nボス戦だ！！\nグットラック！";
         GameManager.Instance.SetDeadEnemy(-100);
 
+    }
+
+    void OnStartPause(bool pause)
+    {
+        _startBool = pause;
     }
 }

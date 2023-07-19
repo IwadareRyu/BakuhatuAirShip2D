@@ -70,22 +70,22 @@ public class DanmakuIns : MonoBehaviour
                     AllBulletIns(i);
                     if (_mogura)
                     {
-                        SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                        BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
                     }
                     else
                     {
-                        SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                        BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                     }
                     yield return new WaitForSeconds(_count);
                 }
 
                 if (_mogura)
                 {
-                    SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                    BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
                 }
                 else
                 {
-                    SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                    BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                 }
                 _interval = true;
             }
@@ -96,11 +96,11 @@ public class DanmakuIns : MonoBehaviour
                     AllBulletIns(i);
                     if (_mogura)
                     {
-                        SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                        BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
                     }
                     else
                     {
-                        SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                        BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                     }
                     yield return new WaitForSeconds(_count);
                 }
@@ -114,11 +114,11 @@ public class DanmakuIns : MonoBehaviour
             OnePointIns();
             if (_mogura)
             {
-                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
             }
             else
             {
-                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
             }
         }
         else if(_danmakuState == BulletTypeClass.BulletState.AllZiki)
@@ -133,11 +133,11 @@ public class DanmakuIns : MonoBehaviour
                     OnePointIns();
                     if (_mogura)
                     {
-                        SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                        BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
                     }
                     else
                     {
-                        SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                        BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                     }
                 }
             }
@@ -150,11 +150,11 @@ public class DanmakuIns : MonoBehaviour
                 OnePointIns(true,_angle,true);
                 if (_mogura)
                 {
-                    SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                    BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
                 }
                 else
                 {
-                    SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                    BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                 }
             }
             yield return new WaitForSeconds(_angleCount);
@@ -166,11 +166,11 @@ public class DanmakuIns : MonoBehaviour
                 _bulletList.RemoveAt(0);
                 if (_mogura)
                 {
-                    SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                    BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
                 }
                 else
                 {
-                    SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                    BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                 }
             }
         }
@@ -180,11 +180,11 @@ public class DanmakuIns : MonoBehaviour
             OnePointIns(false, 0, true);
             if (_mogura)
             {
-                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
             }
             else
             {
-                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
             }
             yield return new WaitForSeconds(_angleCount);
             if (_bulletList.Count != 0)
@@ -198,11 +198,11 @@ public class DanmakuIns : MonoBehaviour
                             AllBulletIns(0, true);
                             if (_mogura)
                             {
-                                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                                BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
                             }
                             else
                             {
-                                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                                BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                             }
                         }
                     }
@@ -224,11 +224,11 @@ public class DanmakuIns : MonoBehaviour
                             AllBulletIns(0, true);
                             if (_mogura)
                             {
-                                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                                BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
                             }
                             else
                             {
-                                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                                BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                             }
                         }
                     }
@@ -246,11 +246,11 @@ public class DanmakuIns : MonoBehaviour
             AllBulletIns(0);
             if (_mogura)
             {
-                SEManager.Instance?.SEPlay(SEManager.SE.EnemyShot);
+                BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
             }
             else
             {
-                SEManager.Instance?.SEPlay(SEManager.SE.SmallFire);
+                BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
             }
         }
         yield return new WaitForSeconds(_count);

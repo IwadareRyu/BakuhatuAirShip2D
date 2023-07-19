@@ -8,9 +8,9 @@ public class PigIns : MonoBehaviour
     float _x;
     [SerializeField] GameObject _pig;
     [SerializeField] float _insSec;
-    bool _instansbool;
     [SerializeField] float _high = 4f;
     [SerializeField] float _low = -4f;
+    float _time = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,24 +18,19 @@ public class PigIns : MonoBehaviour
     }
     private void OnEnable()
     {
-        _instansbool = false;
+
     }
     // Update is called once per frame
     void Update()
     {
-        if (_instansbool == false)
+        _time += Time.deltaTime;
+        if (_time > _insSec)
         {
-            _instansbool = true;
-            StartCoroutine(Instans());
+            _x = Random.Range(_low, _high);
+            _pos = new Vector2(_x, this.transform.position.y);
+            Instantiate(_pig, _pos, Quaternion.identity);
+            _time = 0;
         }
-    }
-    IEnumerator Instans()
-    {
-        yield return new WaitForSeconds(_insSec);
-        _x = Random.Range(_low, _high);
-        _pos = new Vector2(_x, this.transform.position.y);
-        Instantiate(_pig, _pos, Quaternion.identity);
-        _instansbool = false;
     }
     public void InsSecChange(float num)
     {

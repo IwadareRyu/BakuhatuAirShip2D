@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SEManager : SingletonMonovihair<SEManager>
+public class BGMManager : SingletonMonovihair<BGMManager>
 {
     [Tooltip("BGM‚Ì‰¹—Ê")]
     float _bgmVal = -10f;
@@ -11,7 +11,9 @@ public class SEManager : SingletonMonovihair<SEManager>
     float _seVal = 0f;
     public float SeVal => _seVal;
     [SerializeField]AudioClip[] _bGMClip;
+    public AudioClip[] BGMClip => _bGMClip;
     [SerializeField] AudioSource[] _sEAudio;
+    public AudioSource[] SEAudio => _sEAudio;
     [SerializeField] SE _se;
     [SerializeField]AudioSource _bGM;
     protected override bool _dontDestroyOnLoad { get { return true; } }
@@ -20,48 +22,48 @@ public class SEManager : SingletonMonovihair<SEManager>
     {
         if(se == SE.Bakuhatu)
         {
-            SEAudio((int)SE.Bakuhatu);
+            SEAudioPlay((int)SE.Bakuhatu);
         }
         else if (se == SE.SmallFire)
         {
-            SEAudio((int)SE.SmallFire, 0.5f);
+            SEAudioPlay((int)SE.SmallFire, 0.5f);
         }
         else if (se == SE.EnemyShot)
         {
-            SEAudio((int)SE.EnemyShot, 0.5f);
+            SEAudioPlay((int)SE.EnemyShot, 0.5f);
         }
         else if (se == SE.Clear)
         {
-            SEAudio((int)SE.Clear, 0.5f);
+            SEAudioPlay((int)SE.Clear, 0.5f);
         }
         else if(se == SE.Click)
         {
-            SEAudio((int)SE.Click, 0.5f);
+            SEAudioPlay((int)SE.Click, 0.5f);
         }
         else if(se == SE.PowerUp)
         {
-            SEAudio((int)SE.PowerUp, 0.5f);
+            SEAudioPlay((int)SE.PowerUp, 0.5f);
         }
         else if(se == SE.Lose)
         {
-            SEAudio((int)SE.Lose);
+            SEAudioPlay((int)SE.Lose);
         }
         else if (se == SE.BigFire)
         {
-            SEAudio((int)SE.BigFire, 0.5f);
+            SEAudioPlay((int)SE.BigFire, 0.5f);
         }
         else if(se == SE.Coin)
         {
-            SEAudio((int)SE.Coin, 0.5f);
+            SEAudioPlay((int)SE.Coin, 0.5f);
         }
         else if (se == SE.PlayerShot)
         {
-            SEAudio((int)SE.PlayerShot, 0.5f);
+            SEAudioPlay((int)SE.PlayerShot, 0.5f);
         }
 
     }
 
-    void SEAudio(int num,float volume = 1f)
+    void SEAudioPlay(int num,float volume = 1f)
     {
         _sEAudio[num].volume = volume;
         _sEAudio[num].Play();
