@@ -1848,7 +1848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5157b629035644d85271f0ffafb468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPlay: 1
   _bGMAudio: {fileID: 8300000, guid: 721020c6d8a84ec4c91f99c98a7ca4d8, type: 3}
 --- !u!1 &1740002995
 GameObject:
@@ -3288,6 +3287,14 @@ PrefabInstance:
       propertyPath: _bGMAudio
       value: 
       objectReference: {fileID: 8300000, guid: 544166cb906a0b44cb36a3b2388938c4, type: 3}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _stageName
+      value: "\u30C9\u30E9\u30B4\u30F3\u306F\u7370\u731B\u30E2\u30B0\u30E9\u306E\u5922\u3092\u898B\u308B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _stageNumber
+      value: Stage2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
 --- !u!1001 &1076212189662076439

@@ -1384,6 +1384,14 @@ PrefabInstance:
       propertyPath: _bGMAudio
       value: 
       objectReference: {fileID: 8300000, guid: 7a6fea54f61213744a38f624970d9979, type: 3}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _stageName
+      value: "\u30B3\u30FC\u30CA\u30FC\u3067\u5DEE\u3092\u3064\u3051\u308D\uFF01"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _stageNumber
+      value: Stage5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
 --- !u!1 &505905275
