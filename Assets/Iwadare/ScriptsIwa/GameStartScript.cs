@@ -59,9 +59,18 @@ public class GameStartScript : MonoBehaviour
     {
 
         _stageNameText.text = "";
-        yield return _stageNameText.DOText($"{_stageNumber}\n{_stageName}", _stageName.Length * 0.3f).WaitForCompletion();
-        yield return new WaitForSeconds(2f);
-        yield return DOTween.ToAlpha(() => _stageNameText.color, a => _stageNameText.color = a, 0.0f, 2f).WaitForCompletion();
+        if (_stageName != "")
+        {
+            yield return _stageNameText.DOText($"{_stageNumber}\n{_stageName}", _stageName.Length * 0.3f).
+                WaitForCompletion();
+            yield return new WaitForSeconds(2f);
+            yield return DOTween.ToAlpha(() => _stageNameText.color, a => _stageNameText.color = a, 0.0f, 2f).
+                WaitForCompletion();
+        }
+        else
+        {
+            yield return null;
+        }
         PauseManager.PauseResume();
     }
 }

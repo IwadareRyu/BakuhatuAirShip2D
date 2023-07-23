@@ -3142,6 +3142,18 @@ PrefabInstance:
       propertyPath: _sceneName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _stageName
+      value: "\u30E2\u30B0\u30ED\u30EF\u3001\u50D5\u306E\u4EC7\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _startPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _stageNumber
+      value: Stage4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
 --- !u!1001 &1076212189662076439
