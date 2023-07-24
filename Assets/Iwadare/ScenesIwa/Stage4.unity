@@ -2007,10 +2007,6 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 259172395521043247, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
-      propertyPath: _movePoint.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 259172395521043247, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
       propertyPath: _idouPoint.Array.data[0]
       value: 
       objectReference: {fileID: 1827438665}
@@ -2020,18 +2016,6 @@ PrefabInstance:
       objectReference: {fileID: 118523785}
     - target: {fileID: 259172395521043247, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
       propertyPath: _idouPoint.Array.data[2]
-      value: 
-      objectReference: {fileID: 1801957090}
-    - target: {fileID: 259172395521043247, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
-      propertyPath: _movePoint.Array.data[0]
-      value: 
-      objectReference: {fileID: 1827438665}
-    - target: {fileID: 259172395521043247, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
-      propertyPath: _movePoint.Array.data[1]
-      value: 
-      objectReference: {fileID: 118523785}
-    - target: {fileID: 259172395521043247, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
-      propertyPath: _movePoint.Array.data[2]
       value: 
       objectReference: {fileID: 1801957090}
     - target: {fileID: 259172395564746423, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}

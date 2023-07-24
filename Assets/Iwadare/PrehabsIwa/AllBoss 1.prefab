@@ -742,7 +742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b923aab067855b0458a40e2362ae0737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hpbar: {fileID: 0}
   _bossAttack: {fileID: 259172395521043247}
   _targets:
   - {fileID: 0}
@@ -825,16 +824,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a9ea233f44ef146b4b6c1640777996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _overAttack: {fileID: 3673517275208592750}
-  _ownFire: {fileID: 259172395564746417}
-  _bulletSpawns: []
-  _movePoint: []
-  _stopDistance: 0.5
-  _moveSpeed: 3
+  _longFire: {fileID: 259172396778860673}
+  _zikiFire: {fileID: 259172395564746417}
+  _bullet:
+  - {fileID: 259172395312472687}
+  - {fileID: 259172396134622912}
+  - {fileID: 259172396791835677}
+  - {fileID: 259172395230892994}
+  - {fileID: 259172395871302405}
+  - {fileID: 259172396332080497}
+  - {fileID: 259172396645871695}
+  - {fileID: 259172395590922547}
+  - {fileID: 259172396704296246}
+  - {fileID: 259172396484381262}
+  - {fileID: 259172395621838783}
+  - {fileID: 259172396574173229}
+  - {fileID: 259172395440387996}
+  - {fileID: 259172396734180188}
+  - {fileID: 259172396487806409}
+  - {fileID: 259172395015276515}
+  _idouPoint:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _stopdis: 0.1
+  _speed: 2
   _attackSpeed: 5
-  _stopAttackTime: 2
-  _bossState: 1
-  _stopBool: 0
+  _stopTime: 2
+  _boss: 0
+  _stop: 0
 --- !u!1 &259172395564746417
 GameObject:
   m_ObjectHideFlags: 0

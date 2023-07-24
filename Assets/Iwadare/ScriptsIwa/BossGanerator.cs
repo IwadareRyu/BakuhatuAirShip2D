@@ -237,7 +237,7 @@ public class BossGanerator : MonoBehaviour
 
     public void DownAudioPlay()
     {
-        BGMManager.Instance.SEPlay(BGMManager.SE.Explosion);
+        BGMManager.Instance.SEPlay(BGMManager.SE.Bakuhatu);
     }
 
     public void DownEnemy()

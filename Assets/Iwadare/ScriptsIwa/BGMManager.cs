@@ -1,139 +1,107 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static BGMManager;
 
-/// <summary>BGMとSEを管理するマネージャークラス</summary>
 public class BGMManager : SingletonMonovihair<BGMManager>
 {
     [Tooltip("BGMの音量")]
-    float _bgmVolume = -10f;
-    public float BgmVolume => _bgmVolume;
-
+    float _bgmVal = -10f;
+    public float BgmVal => _bgmVal;
     [Tooltip("SEの音量")]
-    float _seVolume = 0f;
-    public float SeVolume => _seVolume;
-
-    
-    [SerializeField,Header("BGMのオーディオ一覧"),
-        Tooltip("BGMのオーディオ一覧(スクリプトでは使っていないがなんのBGMがあるか確認用)")] 
-    AudioClip[] _bGMClip;
+    float _seVal = 0f;
+    public float SeVal => _seVal;
+    [SerializeField]AudioClip[] _bGMClip;
     public AudioClip[] BGMClip => _bGMClip;
-
-    
-    [SerializeField,Tooltip("SEのオーディオソース一覧"),Header("SEのオーディオソース一覧")] 
-    AudioSource[] _sESource;
-    public AudioSource[] SEAudio => _sESource;
-    
-    [SerializeField,Tooltip("SEのEnum(列挙)型")] 
-    SE _sEEnum;
-
-    
-    [SerializeField,Header("BGMのオーディオソース"),Tooltip("BGMのオーディオソース")] 
-    AudioSource _bGM;
- 
+    [SerializeField] AudioSource[] _sEAudio;
+    public AudioSource[] SEAudio => _sEAudio;
+    [SerializeField] SE _se;
+    [SerializeField]AudioSource _bGM;
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
-    /// <summary>SEを再生するメソッド</summary>
-    /// <param name="seEnum">seのEnum型</param>
-    public void SEPlay(SE seEnum)
+    public void SEPlay(SE se)
     {
-        // それぞれのSEに対応するオーディオソースを再生
-        // もし、新しいSEを追加した場合は、ここに条件分岐を追加する。
-        if (seEnum == SE.Explosion)
+        if(se == SE.Bakuhatu)
         {
-            SEAudioPlay((int)SE.Explosion);
+            SEAudioPlay((int)SE.Bakuhatu);
         }
-        else if (seEnum == SE.SmallFire)
+        else if (se == SE.SmallFire)
         {
             SEAudioPlay((int)SE.SmallFire, 0.5f);
         }
-        else if (seEnum == SE.EnemyShot)
+        else if (se == SE.EnemyShot)
         {
             SEAudioPlay((int)SE.EnemyShot, 0.5f);
         }
-        else if (seEnum == SE.Clear)
+        else if (se == SE.Clear)
         {
             SEAudioPlay((int)SE.Clear, 0.5f);
         }
-        else if (seEnum == SE.Click)
+        else if(se == SE.Click)
         {
             SEAudioPlay((int)SE.Click, 0.5f);
         }
-        else if (seEnum == SE.PowerUp)
+        else if(se == SE.PowerUp)
         {
             SEAudioPlay((int)SE.PowerUp, 0.5f);
         }
-        else if (seEnum == SE.Lose)
+        else if(se == SE.Lose)
         {
             SEAudioPlay((int)SE.Lose);
         }
-        else if (seEnum == SE.FireBreath)
+        else if (se == SE.BigFire)
         {
-            SEAudioPlay((int)SE.FireBreath, 0.5f);
+            SEAudioPlay((int)SE.BigFire, 0.5f);
         }
-        else if (seEnum == SE.Coin)
+        else if(se == SE.Coin)
         {
             SEAudioPlay((int)SE.Coin, 0.5f);
         }
-        else if (seEnum == SE.PlayerShot)
+        else if (se == SE.PlayerShot)
         {
             SEAudioPlay((int)SE.PlayerShot, 0.5f);
         }
 
     }
 
-    /// <summary>SEを再生するメソッド</summary>
-    /// <param name="enumNumber">列挙型の番号</param>
-    /// <param name="audioVolume">音量</param>
-    void SEAudioPlay(int enumNumber, float audioVolume = 1f)
+    void SEAudioPlay(int num,float volume = 1f)
     {
-        // 指定されたオーディオソースのボリュームを設定し再生
-        _sESource[enumNumber].volume = audioVolume;
-        _sESource[enumNumber].Play();
+        _sEAudio[num].volume = volume;
+        _sEAudio[num].Play();
     }
 
-    /// <summary>BGMを再生するメソッドです。</summary>
-    /// <param name="audioClip">指定されたオーディオクリップ</param>
-    public void BGMPlay(AudioClip audioClip)
+    public void BGMPlay(AudioClip audio)
     {
-        // 指定されたオーディオクリップをオーディオソースに設定し再生
-        _bGM.clip = audioClip;
+        _bGM.clip = audio;
         _bGM.Play();
     }
 
-    /// <summary>BGMを停止するメソッド</summary>
     public void BGMStop()
     {
         _bGM.Stop();
     }
 
-    /// <summary>BGMの音量を設定するメソッド</summary>
-    /// <param name="audioVolume">音量</param>
-    public void BGMValue(float audioVolume)
+    public void BGMValue(float value)
     {
-        _bgmVolume = audioVolume;
+        _bgmVal = value;
     }
 
-    /// <summary>SEの音量を設定するメソッド</summary>
-    /// <param name="audioVolume">音量</param>
-    public void SEValue(float audioVolume)
+    public void SEValue(float value)
     {
-        _seVolume = audioVolume;
+        _seVal = value;
     }
 
-    /// <summary>SEの種類を列挙した列挙型</summary>
     public enum SE
     {
-        Explosion,
+        Bakuhatu,
         SmallFire,
         EnemyShot,
         Clear,
         Click,
         PowerUp,
         Lose,
-        FireBreath,
+        BigFire,
         Coin,
         PlayerShot,
     }
 }
+

@@ -1501,7 +1501,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17c5e894d659e1e4786c3765f84345a0, type: 3}
   - {fileID: 8300000, guid: 721020c6d8a84ec4c91f99c98a7ca4d8, type: 3}
   - {fileID: 8300000, guid: 544166cb906a0b44cb36a3b2388938c4, type: 3}
-  _sESource:
+  _sEAudio:
   - {fileID: 1013161285532560450}
   - {fileID: 6533802332065198870}
   - {fileID: 631455236967918945}
@@ -1512,5 +1512,5 @@ MonoBehaviour:
   - {fileID: 2263288412633839322}
   - {fileID: 5131145692134081786}
   - {fileID: 7610031964472308830}
-  _sEEnum: 0
+  _se: 0
   _bGM: {fileID: 5492492431351309863}
