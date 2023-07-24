@@ -7,7 +7,7 @@ public class TitleAnimation : MonoBehaviour
     // Start is called before the first frame update
     public void TitleAni()
     {
-        BGMManager.Instance.SEPlay(BGMManager.SE.Bakuhatu);
+        BGMManager.Instance.SEPlay(BGMManager.SE.Explosion);
     }
     void Start()
     {

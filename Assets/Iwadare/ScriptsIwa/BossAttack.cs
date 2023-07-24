@@ -4,123 +4,153 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-    bool _attackbool;
-    bool _oneshot;
-    [SerializeField] GameObject _longFire;
-    [SerializeField] GameObject _zikiFire;
-    [SerializeField] GameObject[] _bullet;
-    [SerializeField] Transform[] _idouPoint;
-    [SerializeField] float _stopdis = 0.5f;
-    [SerializeField] float _speed = 3f;
-    [SerializeField] float _attackSpeed = 5f;
-    [SerializeField] float _stopTime = 2f;
-    [SerializeField]BossState _boss;
-    [SerializeField]bool _stop;
-    bool _moguraAttackbool;
-    int _ram;
+    [Tooltip("攻撃フラグ")]
+    bool _attackBool;
+    [Tooltip("一度だけの処理を行うフラグ")]
+    bool _oneShot;
+    [SerializeField,Tooltip("オーバーモード攻撃のオブジェクト")]
+    GameObject _overAttack; 
+    [SerializeField,Tooltip("プレイヤーに向かって発射するオブジェクト")] 
+    GameObject _ownFire;
+    [SerializeField,Tooltip("弾のオブジェクト一覧の配列")] 
+    GameObject[] _bulletSpawns;
+    [SerializeField,Tooltip("移動ポイントのTransform一覧の配列")] 
+    Transform[] _movePoint;
+    [SerializeField,Tooltip("移動停止距離")] 
+    float _stopDistance = 0.5f;
+    [SerializeField,Tooltip("移動速度")] 
+    float _moveSpeed = 3f;
+    [SerializeField,Tooltip("攻撃時の移動速度")]
+    float _attackSpeed = 5f;
+    [SerializeField,Tooltip("攻撃中の時間")]
+    float _attackTime = 2f;
+    [SerializeField,Tooltip("ボスの状態の列挙型")] 
+    BossState _bossState;
+    [Tooltip("移動を停止するフラグ")]
+    bool _stopBool;
+    [Tooltip("モグラの攻撃フラグ")]
+    bool _moleAttackBool;
+    [Tooltip("ランダムな変数")]
+    int _random;
 
     // Start is called before the first frame update
     void Start()
     {
-        _zikiFire.SetActive(false);
-        _longFire.SetActive(false);
-        if(_bullet.Length != 0)
+        // 初期化処理
+        _ownFire.SetActive(false);
+        _overAttack.SetActive(false);
+        if (_bulletSpawns.Length != 0)
         {
-            foreach(var i in _bullet)
+            foreach (var i in _bulletSpawns)
             {
                 i.SetActive(false);
             }
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (_attackbool)
+        //攻撃するとき
+        if (_attackBool)
         {
-            if (!_oneshot)
+            if (!_oneShot)
             {
-                _ram = (int)Random.Range(0, 2.9f);
-                _stop = false;
-                StartCoroutine(AttackTime());
-                _oneshot = true;
-            }
-            float distance = Vector2.Distance(transform.position, _idouPoint[_ram].position);
-            if (distance > _stopdis && !_stop)
+                _random = (int)Random.Range(0, 2.9f);
+                _stopBool = false;
+                StartCoroutine(AttackTime()); 
+                _oneShot = true;
+            }   //移動させて、攻撃処理のコルーチンを呼び出し、Updateで回らないようフラグをtrueにする。
+            float distance = Vector2.Distance(transform.position, _movePoint[_random].position);
+            if (distance > _stopDistance && !_stopBool)
             {
-                Vector3 dir = (_idouPoint[_ram].position - transform.position).normalized * _speed;
+                Vector3 dir = (_movePoint[_random].position - transform.position).normalized * _moveSpeed;
                 transform.Translate(dir * Time.deltaTime);
-            }
+            }   //特定の地点にたどり着くまでその地点に向かって移動
             else
             {
-                _stop = true;
-            }
-            if (_moguraAttackbool)
+                _stopBool = true;
+            }    //特定の地点にたどり着いたら、移動を停止
+            if (_moleAttackBool)
             {
                 Vector3 dir = Vector3.down.normalized * _attackSpeed;
                 transform.Translate(dir * Time.deltaTime);
-            }
+            }   //もぐらの攻撃時に下方向をさせる。
         }
     }
 
+    /// <summary>攻撃のコルーチン</summary>
     IEnumerator AttackTime()
     {
-        yield return new WaitWhile(() => _stop == false);
+        //移動が停止するまで待機
+        yield return new WaitWhile(() => _stopBool == false);
         yield return new WaitForSeconds(2f);
-        if (_attackbool)
+        if (_attackBool)
         {
-            if (_boss == BossState.Drgon)
+            //ボスがドラゴンの時の処理
+            if (_bossState == BossState.Drgon)
             {
-                _longFire.SetActive(true);
-                BGMManager.Instance.SEPlay(BGMManager.SE.BigFire);
+                //オーバー攻撃をアクティブにする。
+                _overAttack.SetActive(true);
+                BGMManager.Instance.SEPlay(BGMManager.SE.FireBreath);
                 yield return new WaitForSeconds(0.2f);
-                if (_bullet.Length > 2)
+                if (_bulletSpawns.Length > 2)
                 {
-                    var ram = (int)Random.Range(0f, 1.9f);
-                    for (var i = ram; i < _bullet.Length; i += 2)
+                    var ram = Random.Range(0, 2);
+                    for (var i = ram; i < _bulletSpawns.Length; i += 2)
                     {
-                        _bullet[i].SetActive(true);
+                        _bulletSpawns[i].SetActive(true);
                     }
-                }
+                }   //2パターンの攻撃からランダムに弾のスポーンポイントを出す。
                 yield return new WaitForSeconds(3.5f);
-                if (_bullet.Length != 0)
+                if (_bulletSpawns.Length != 0)
                 {
-                    foreach (var i in _bullet)
+                    foreach (var i in _bulletSpawns)
                     {
                         i.SetActive(false);
                     }
-                }
-                _longFire.SetActive(false);
-            }
-            else if (_boss == BossState.MoguraBoss)
+                }   //全てのスポーンポイントを非アクティブにする
+                _overAttack.SetActive(false);
+            }   // オーバー攻撃を非アクティブにする
+
+            //モグラのボスの時の処理
+            else if (_bossState == BossState.MoguraBoss)
             {
-                _longFire.SetActive(true);
-                _moguraAttackbool = true;
-                yield return new WaitForSeconds(_stopTime);
-                _moguraAttackbool = false;
+                _overAttack.SetActive(true);
+                //モグラのの攻撃フラグをtrueにする
+                _moleAttackBool = true;
+                //もぐらの攻撃を停止する時間だけ待機
+                yield return new WaitForSeconds(_attackTime);
+                //もぐらの攻撃フラグをfalseにする
+                _moleAttackBool = false;
                 yield return new WaitForSeconds(0.1f);
-                _longFire.SetActive(false);
+                //オーバー攻撃を非アクティブにする
+                _overAttack.SetActive(false);
                 yield return new WaitForSeconds(2f);
             }
         }
 
-        _oneshot = false;
+        _oneShot = false;
     }
 
     public void OverMode()
     {
-        if(_idouPoint.Length > 0)
+        if (_movePoint.Length > 0)
         {
-            transform.position = _idouPoint[0].position;
-        }
-        _attackbool = !_attackbool;
-        _zikiFire.SetActive(_attackbool);
-        _longFire.SetActive(false);
+            transform.position = _movePoint[0].position;
+        }   //最初のポイントに位置を設定
+        //攻撃フラグを切り替え
+        _attackBool = !_attackBool;
+        //プレイヤーに向けた攻撃を切り替え
+        _ownFire.SetActive(_attackBool);
+        //オーバー攻撃を非アクティブにする
+        _overAttack.SetActive(false); 
     }
 
     enum BossState
     {
+        /// <summary>ドラゴン</summary>
         Drgon,
+        /// <summary>モグラ</summary>
         MoguraBoss,
     }
 }
