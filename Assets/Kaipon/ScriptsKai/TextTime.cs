@@ -13,6 +13,7 @@ public class TextTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //piginsのスクリプト無効化
         _pig.enabled = false;
     }
     private void OnEnable()
@@ -32,8 +33,9 @@ public class TextTime : MonoBehaviour
         {
             _textTimeBool = true;
             StartCoroutine(TimeText());
-        }
+        }//ゲーム開始前にテキスト表示
     }
+    //テキストを表示するコルーチン
     IEnumerator TimeText()
     {
         yield return new WaitForSeconds(5.0f);
