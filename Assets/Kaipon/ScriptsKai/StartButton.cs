@@ -11,9 +11,10 @@ public class StartButton : MonoBehaviour
         StartCoroutine(LoadSceneCoroutine());
     }
 
+    //シーンの読み込みを遅延させる
     IEnumerator LoadSceneCoroutine()
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("tutorial");
-    }
+    }//1秒遅延させ、チュートリアルシーンを読み込む
 }
