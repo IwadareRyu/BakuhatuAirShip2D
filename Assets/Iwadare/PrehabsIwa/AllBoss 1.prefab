@@ -829,12 +829,11 @@ MonoBehaviour:
   _ownFire: {fileID: 259172395564746417}
   _bulletSpawns: []
   _movePoint: []
-  _stopDistance: 0.5
+  _stopDistance: 0.1
   _moveSpeed: 3
   _attackSpeed: 5
-  _stopAttackTime: 2
+  _attackTime: 2
   _bossState: 1
-  _stopBool: 0
 --- !u!1 &259172395564746417
 GameObject:
   m_ObjectHideFlags: 0

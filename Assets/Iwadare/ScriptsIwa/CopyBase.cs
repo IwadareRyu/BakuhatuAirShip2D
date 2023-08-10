@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public abstract class CopyBase : MonoBehaviour
 {
     [Tooltip("パリィしたときに音を鳴らす")]
@@ -13,6 +14,7 @@ public abstract class CopyBase : MonoBehaviour
     public bool notHoming = false;
     [SerializeField] GameObject _hit;
     private GameManager GM;
+
     /// <summary>継承</summary>
     public abstract void CopyTech();
 

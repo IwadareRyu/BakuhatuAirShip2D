@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletTypeClass
 {
+    /// <summary>’e–‹‚ÌŽí—Þ</summary>
     public enum BulletState
     {
         Nami,
@@ -27,6 +28,7 @@ public class BulletTypeClass
         IllusionBullet,
     }
 
+    /// <summary>’e‚ÌŽí—Þ</summary>
     public enum BulletSpriteState
     {
         RedFire,
