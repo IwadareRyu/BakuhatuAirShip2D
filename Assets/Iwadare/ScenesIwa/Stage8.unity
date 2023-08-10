@@ -342,7 +342,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 36
+  _num: 20
   _bulletspeed: 0.5
   _angle: 0
   _danmakuState: 3
@@ -663,7 +663,7 @@ MonoBehaviour:
   _count: 1
   _angleCount: 1
   _pool: {fileID: 1915144808}
-  num: 20
+  _num: 20
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 4
@@ -832,7 +832,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 20
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 15
+  _num: 20
   _bulletspeed: 2.5
   _angle: 0
   _danmakuState: 3
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 25
+  _num: 20
   _bulletspeed: 1.5
   _angle: 0
   _danmakuState: 3
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 20
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 36
+  _num: 20
   _bulletspeed: 0.5
   _angle: 0
   _danmakuState: 3
@@ -2065,7 +2065,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 15
+  _num: 20
   _bulletspeed: 2.5
   _angle: 0
   _danmakuState: 3
@@ -2220,7 +2220,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 30
+  _num: 20
   _bulletspeed: 1
   _angle: 0
   _danmakuState: 3
@@ -2422,7 +2422,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 30
+  _num: 20
   _bulletspeed: 1
   _angle: 0
   _danmakuState: 3
@@ -2633,7 +2633,7 @@ MonoBehaviour:
   _count: 1
   _angleCount: 1
   _pool: {fileID: 1915144808}
-  num: 20
+  _num: 20
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 4
@@ -2779,7 +2779,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 744209874}
-  num: 25
+  _num: 20
   _bulletspeed: 1.5
   _angle: 0
   _danmakuState: 3
@@ -3238,11 +3238,11 @@ PrefabInstance:
       objectReference: {fileID: 5531826246782737853}
     - target: {fileID: 259172395521043241, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
       propertyPath: _overMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 259172395521043241, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
       propertyPath: _testMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 259172395521043241, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
       propertyPath: _bossMaxHP
