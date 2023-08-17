@@ -15,6 +15,7 @@ public class DestroyEnamy : MonoBehaviour
     [SerializeField] GameObject[] _money;
     [SerializeField] int[] _moneycount;
     [SerializeField] int _deadcount = -1;
+    [SerializeField] bool _countBool = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,10 @@ public class DestroyEnamy : MonoBehaviour
             {
                 _action.Invoke();
             }
-            GameManager.Instance.SetDeadEnemy(_deadcount);
+            if (_countBool)
+            {
+                GameManager.Instance.SetDeadEnemy(_deadcount);
+            }
             Instantiate(_hit, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

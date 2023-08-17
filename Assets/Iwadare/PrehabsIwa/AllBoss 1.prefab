@@ -47,7 +47,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 4
   _angle: 0
   _danmakuState: 3
@@ -167,7 +167,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -221,7 +221,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 25
+  _num: 20
   _bulletspeed: 3
   _angle: 0
   _danmakuState: 3
@@ -322,7 +322,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 4
   _angle: 0
   _danmakuState: 3
@@ -376,7 +376,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -430,7 +430,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -518,7 +518,7 @@ MonoBehaviour:
   _count: 5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 10
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 7
@@ -572,7 +572,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -626,7 +626,7 @@ MonoBehaviour:
   _count: 1
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 2
@@ -680,7 +680,7 @@ MonoBehaviour:
   _count: 0.2
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 3
   _angle: 0
   _danmakuState: 0
@@ -744,10 +744,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hpbar: {fileID: 0}
   _bossAttack: {fileID: 259172395521043247}
-  _targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   _bossMaxHP: 30
   _danmakuPattern:
   - {fileID: 259172395897692862}
@@ -881,7 +877,7 @@ MonoBehaviour:
   _count: 1
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 2
@@ -971,7 +967,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1025,7 +1021,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1243,7 +1239,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1332,7 +1328,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 30
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1436,12 +1432,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b030104bc387d4d9090dfad67c1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 0.5
+  _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 2
-  _angle: 0
+  _angle: 20
   _danmakuState: 0
   _colorState: 0
   _zikiMode: 0
@@ -1493,7 +1489,7 @@ MonoBehaviour:
   _count: 0.5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 0.15
   _angle: 0
   _danmakuState: 1
@@ -1545,10 +1541,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b030104bc387d4d9090dfad67c1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 1.2
+  _count: 2
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 50
+  _num: 20
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 4
@@ -1618,7 +1614,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1672,7 +1668,7 @@ MonoBehaviour:
   _count: 2
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 3
@@ -1726,7 +1722,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1780,7 +1776,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1834,7 +1830,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -1888,7 +1884,7 @@ MonoBehaviour:
   _count: 0.5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 0.15
   _angle: 0
   _danmakuState: 1
@@ -2032,7 +2028,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -2086,7 +2082,7 @@ MonoBehaviour:
   _count: 5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -2190,12 +2186,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b030104bc387d4d9090dfad67c1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 0.5
+  _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 2
-  _angle: 0
+  _angle: -20
   _danmakuState: 0
   _colorState: 0
   _zikiMode: 0
@@ -2247,7 +2243,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -2301,7 +2297,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -2356,7 +2352,7 @@ MonoBehaviour:
   _count: 1.2
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 50
+  _num: 20
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 4
@@ -2426,7 +2422,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -2549,7 +2545,7 @@ MonoBehaviour:
   _count: 0.3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 180
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -2603,7 +2599,7 @@ MonoBehaviour:
   _count: 5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 15
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 6
@@ -2657,7 +2653,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 15
+  _num: 20
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 3
@@ -2711,7 +2707,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 36
+  _num: 20
   _bulletspeed: 1
   _angle: 0
   _danmakuState: 3
@@ -3483,7 +3479,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 25
+  _num: 20
   _bulletspeed: 3
   _angle: 0
   _danmakuState: 3
@@ -3537,7 +3533,7 @@ MonoBehaviour:
   _count: 1
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 3
   _angle: 0
   _danmakuState: 2
@@ -3591,7 +3587,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 30
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -3846,7 +3842,7 @@ MonoBehaviour:
   _count: 0.05
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 30
+  _num: 40
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -4056,6 +4052,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5528266700640380314}
+  - {fileID: 6408579219599284475}
+  - {fileID: 3246389633631434715}
+  - {fileID: 5439749720052881842}
+  - {fileID: 587761665833944772}
   m_Father: {fileID: 259172395521043243}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4156,10 +4156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b030104bc387d4d9090dfad67c1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 1
+  _count: 1.5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 60
+  _num: 60
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 9
@@ -4297,7 +4297,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 40
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 9
@@ -4351,7 +4351,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 15
+  _num: 20
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 3
@@ -4439,7 +4439,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 36
+  _num: 20
   _bulletspeed: 1
   _angle: 0
   _danmakuState: 3
@@ -4779,10 +4779,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b030104bc387d4d9090dfad67c1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 1
+  _count: 1.5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 60
+  _num: 60
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 9
@@ -4886,10 +4886,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b030104bc387d4d9090dfad67c1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 1
+  _count: 1.5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 60
+  _num: 60
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 9
@@ -4943,7 +4943,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 30
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -4997,7 +4997,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 25
+  _num: 20
   _bulletspeed: 3
   _angle: 0
   _danmakuState: 3
@@ -5051,7 +5051,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 36
+  _num: 20
   _bulletspeed: 1
   _angle: 0
   _danmakuState: 3
@@ -5105,13 +5105,181 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 15
+  _num: 20
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 3
   _colorState: 0
   _zikiMode: 0
   _mogura: 1
+--- !u!1 &8018562878243395975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6408579219599284475}
+  - component: {fileID: 5295186299779327915}
+  m_Layer: 0
+  m_Name: Enemy (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6408579219599284475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018562878243395975}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2, y: 0.1100003, z: 3.0099382}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5335281501985186035}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5295186299779327915
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018562878243395975}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 653cdda9f8c85384090186c9e0edca46, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &8322909760222438897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3246389633631434715}
+  - component: {fileID: 520783296111281053}
+  m_Layer: 0
+  m_Name: Enemy (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3246389633631434715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8322909760222438897}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.2400002, y: 0.1100003, z: 3.0099382}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5335281501985186035}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &520783296111281053
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8322909760222438897}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 653cdda9f8c85384090186c9e0edca46, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &8382463542715645881
 GameObject:
   m_ObjectHideFlags: 0
@@ -5159,7 +5327,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 4
   _angle: 0
   _danmakuState: 3
@@ -5297,7 +5465,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 40
+  _num: 60
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 9
@@ -5352,7 +5520,7 @@ MonoBehaviour:
   _count: 1.2
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 50
+  _num: 20
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 4
@@ -6233,7 +6401,7 @@ MonoBehaviour:
   _count: 1
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 0.5
   _angle: 0
   _danmakuState: 1
@@ -6360,7 +6528,7 @@ MonoBehaviour:
   _count: 1
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 0.5
   _angle: 0
   _danmakuState: 1
@@ -6456,6 +6624,90 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
   m_PrefabInstance: {fileID: 4009818332196955550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4329464963486516993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5335281501985186035}
+    m_Modifications:
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.2400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.10999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.0099382
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246152, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_Name
+      value: SpownCircle (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246154, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: _minas
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246154, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246154, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: _radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 3764304969017246154, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+--- !u!4 &587761665833944772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+  m_PrefabInstance: {fileID: 4329464963486516993}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4666828554584344621
 PrefabInstance:
@@ -6632,4 +6884,91 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1694762836818459332, guid: 4eaaabb8722df7c47986926eacbf2f58, type: 3}
   m_PrefabInstance: {fileID: 5256930097449857867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9169505727311157367
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5335281501985186035}
+    m_Modifications:
+    - target: {fileID: 2528591772397515297, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: _pool
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1100003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.0099382
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246152, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: m_Name
+      value: SpownCircle (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246154, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: _minas
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246154, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764304969017246154, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+      propertyPath: _radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3764304969017246154, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+--- !u!4 &5439749720052881842 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3764304969017246149, guid: 748b56377822d0e44b7f7d6da231c12e, type: 3}
+  m_PrefabInstance: {fileID: 9169505727311157367}
   m_PrefabAsset: {fileID: 0}

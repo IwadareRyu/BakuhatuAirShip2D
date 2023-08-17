@@ -59,7 +59,7 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager GM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        RouinGameManager GM = GameObject.FindGameObjectWithTag("GM").GetComponent<RouinGameManager>();
         //壁か地面に当たったら破壊。
         if (collision.gameObject.tag == "Wall")
         {

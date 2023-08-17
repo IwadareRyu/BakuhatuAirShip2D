@@ -103,7 +103,7 @@ public class DanmakuIns : MonoBehaviour
         // 弾幕のタイプがZiki（単発自機狙い）の場合
         else if (_danmakuState == BulletTypeClass.BulletState.Ziki)
         {
-            SingleZikiBullet();
+            StartCoroutine(SingleZikiBullet());
         }
         // 弾幕のタイプがAllZiki（複数自機狙い）の場合
         else if (_danmakuState == BulletTypeClass.BulletState.AllZiki)
@@ -133,9 +133,10 @@ public class DanmakuIns : MonoBehaviour
             {
                 BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
             }   //弾の音の再生
+            yield return new WaitForSeconds(_count);
+            _bulletTime = false;
         }
-        yield return new WaitForSeconds(_count);
-        _bulletTime = false;
+        yield return null;
     }
 
     /// <summary>NamiBulletの場合の処理</summary>
@@ -161,15 +162,6 @@ public class DanmakuIns : MonoBehaviour
                 }   //SEの再生処理(モグラとドラゴンで音声を分ける。)
                 yield return new WaitForSeconds(_count);
             }
-
-            if (_mogura)
-            {
-                BGMManager.Instance?.SEPlay(BGMManager.SE.EnemyShot);
-            }
-            else
-            {
-                BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
-            }
             _interval = true;
         }
         else
@@ -191,10 +183,12 @@ public class DanmakuIns : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             _interval = false;
         }
+        yield return new WaitForSeconds(_count);
+        _bulletTime = false;
     }
 
     /// <summary>単発の自機狙い弾の場合</summary>
-    void SingleZikiBullet()
+    IEnumerator SingleZikiBullet()
     {
 
         _colorState = BulletTypeClass.BulletSpriteState.BlueFire;
@@ -208,6 +202,8 @@ public class DanmakuIns : MonoBehaviour
         {
             BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
         }
+        yield return new WaitForSeconds(_count);
+        _bulletTime = false;
     }
 
 
@@ -234,6 +230,8 @@ public class DanmakuIns : MonoBehaviour
                 }
             }
         }
+        yield return new WaitForSeconds(_count);
+        _bulletTime = false;
     }
 
     /// <summary>StopBullet(一時停止する弾)の処理</summary>
@@ -272,6 +270,8 @@ public class DanmakuIns : MonoBehaviour
                 BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
             }   //SE再生
         }
+        yield return new WaitForSeconds(_count);
+        _bulletTime = false;
     }
 
     /// <summary>IllusionBullet(分裂弾)の処理</summary>
@@ -293,11 +293,11 @@ public class DanmakuIns : MonoBehaviour
         if (_bulletList.Count != 0)
         {
             //分裂弾(一回目)
-            for (var i = _bulletList.Count; i >= 0; i--)
+            for (var i = _bulletList.Count; i > 0; i--)
             {
-                if (_bulletList[0])
+                if (_bulletList[i - 1])
                 {
-                    if (_bulletList[0].active)
+                    if (_bulletList[i - 1].active)
                     {
                         AllBulletIns(0, true);
                         if (_mogura)
@@ -308,11 +308,12 @@ public class DanmakuIns : MonoBehaviour
                         {
                             BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                         }
+                        _bulletList.RemoveAt(i - 1);
                     }
                 }
                 else
                 {
-                    _bulletList.RemoveAt(0);
+                    _bulletList.RemoveAt(i - 1);
                 }
             }
         }
@@ -320,11 +321,11 @@ public class DanmakuIns : MonoBehaviour
         if (_bulletList.Count != 0)
         {
             //分裂弾(2回目)
-            for (var i = _bulletList.Count; i >= 0; i--)
+            for (var i = _bulletList.Count; i > 0; i--)
             {
-                if (_bulletList[0])
+                if (_bulletList[i - 1])
                 {
-                    if (_bulletList[0].active)
+                    if (_bulletList[i - 1].active)
                     {
                         AllBulletIns(0, true);
                         if (_mogura)
@@ -335,16 +336,18 @@ public class DanmakuIns : MonoBehaviour
                         {
                             BGMManager.Instance?.SEPlay(BGMManager.SE.SmallFire);
                         }
+                        _bulletList.RemoveAt(i - 1);
                     }
                 }
                 else
                 {
-                    _bulletList.RemoveAt(0);
+                    _bulletList.RemoveAt(i - 1);
                 }
             }
         }
         _bulletList.Clear();
         yield return new WaitForSeconds(_count);
+        _bulletTime = false;
     }
 
     /// <summary>365度均等に球を出すメソッド。</summary>
