@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 39551233}
   - component: {fileID: 39551232}
   - component: {fileID: 39551231}
+  - component: {fileID: 39551234}
   m_Layer: 0
   m_Name: hebired (1)
   m_TagString: HomingEnemy
@@ -336,18 +337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a45f1093ee44e346a1eb814f594f342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 100
-  _enemyHP: 1
-  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
-  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
-  _mimikku: {fileID: 0}
-  _mimikkuGekiha: {fileID: 0}
-  _sceneLoad: {fileID: 0}
-  _taiho: 0
-  _event: 0
-  _action:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &39551232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -426,6 +415,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &39551234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39551229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1d7526862505b4f89236b42b4ec21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 100
+  _enemyHP: 1
+  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
+  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
+  _sceneLoad: {fileID: 0}
+  _mimikku: {fileID: 0}
+  _mimikkuGekiha: {fileID: 0}
+  _taiho: 0
+  _event: 0
+  _action:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &65782502
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +681,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -999,6 +1012,7 @@ GameObject:
   - component: {fileID: 306145014}
   - component: {fileID: 306145013}
   - component: {fileID: 306145012}
+  - component: {fileID: 306145015}
   m_Layer: 0
   m_Name: hebired (2)
   m_TagString: HomingEnemy
@@ -1034,18 +1048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a45f1093ee44e346a1eb814f594f342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 100
-  _enemyHP: 1
-  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
-  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
-  _mimikku: {fileID: 0}
-  _mimikkuGekiha: {fileID: 0}
-  _sceneLoad: {fileID: 0}
-  _taiho: 0
-  _event: 0
-  _action:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &306145013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1124,6 +1126,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &306145015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306145010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1d7526862505b4f89236b42b4ec21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 100
+  _enemyHP: 1
+  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
+  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
+  _sceneLoad: {fileID: 0}
+  _mimikku: {fileID: 0}
+  _mimikkuGekiha: {fileID: 0}
+  _taiho: 0
+  _event: 0
+  _action:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &322899709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,7 +1634,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -1981,7 +2007,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1915504458}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_TargetAssemblyTypeName: RouinSceneLoader, Assembly-CSharp
         m_MethodName: SceneLoad
         m_Mode: 5
         m_Arguments:
@@ -2079,7 +2105,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -2159,7 +2185,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0
@@ -2320,6 +2346,7 @@ GameObject:
   - component: {fileID: 702356137}
   - component: {fileID: 702356136}
   - component: {fileID: 702356135}
+  - component: {fileID: 702356138}
   m_Layer: 0
   m_Name: hebimidori (4)
   m_TagString: Enemy
@@ -2355,18 +2382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a45f1093ee44e346a1eb814f594f342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 100
-  _enemyHP: 1
-  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
-  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
-  _mimikku: {fileID: 0}
-  _mimikkuGekiha: {fileID: 0}
-  _sceneLoad: {fileID: 0}
-  _taiho: 0
-  _event: 0
-  _action:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &702356136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2445,6 +2460,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &702356138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702356133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1d7526862505b4f89236b42b4ec21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 100
+  _enemyHP: 1
+  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
+  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
+  _sceneLoad: {fileID: 0}
+  _mimikku: {fileID: 0}
+  _mimikkuGekiha: {fileID: 0}
+  _taiho: 0
+  _event: 0
+  _action:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &705052860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,6 +2713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -3160,7 +3200,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
@@ -3468,7 +3508,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -4111,6 +4151,7 @@ GameObject:
   - component: {fileID: 1074735120}
   - component: {fileID: 1074735119}
   - component: {fileID: 1074735118}
+  - component: {fileID: 1074735121}
   m_Layer: 0
   m_Name: hebimidori (2)
   m_TagString: Enemy
@@ -4146,18 +4187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a45f1093ee44e346a1eb814f594f342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 100
-  _enemyHP: 1
-  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
-  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
-  _mimikku: {fileID: 0}
-  _mimikkuGekiha: {fileID: 0}
-  _sceneLoad: {fileID: 0}
-  _taiho: 0
-  _event: 0
-  _action:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &1074735119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4236,6 +4265,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1074735121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074735116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1d7526862505b4f89236b42b4ec21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 100
+  _enemyHP: 1
+  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
+  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
+  _sceneLoad: {fileID: 0}
+  _mimikku: {fileID: 0}
+  _mimikkuGekiha: {fileID: 0}
+  _taiho: 0
+  _event: 0
+  _action:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1085845401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4743,6 +4796,7 @@ GameObject:
   - component: {fileID: 1222569573}
   - component: {fileID: 1222569572}
   - component: {fileID: 1222569571}
+  - component: {fileID: 1222569575}
   m_Layer: 0
   m_Name: hebimidori (1)
   m_TagString: Enemy
@@ -4762,18 +4816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a45f1093ee44e346a1eb814f594f342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 100
-  _enemyHP: 1
-  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
-  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
-  _mimikku: {fileID: 0}
-  _mimikkuGekiha: {fileID: 0}
-  _sceneLoad: {fileID: 0}
-  _taiho: 0
-  _event: 0
-  _action:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &1222569572
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4868,6 +4910,30 @@ Transform:
   m_Father: {fileID: 1268604508}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1222569575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222569570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1d7526862505b4f89236b42b4ec21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 100
+  _enemyHP: 1
+  _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
+  _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
+  _sceneLoad: {fileID: 0}
+  _mimikku: {fileID: 0}
+  _mimikkuGekiha: {fileID: 0}
+  _taiho: 0
+  _event: 0
+  _action:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1232649224
 GameObject:
   m_ObjectHideFlags: 0
@@ -5845,6 +5911,7 @@ GameObject:
   - component: {fileID: 1511504197}
   - component: {fileID: 1511504196}
   - component: {fileID: 1511504199}
+  - component: {fileID: 1511504200}
   m_Layer: 0
   m_Name: hebimidori
   m_TagString: Enemy
@@ -5958,13 +6025,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a45f1093ee44e346a1eb814f594f342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1511504200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511504195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1d7526862505b4f89236b42b4ec21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _score: 100
   _enemyHP: 1
   _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
   _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
+  _sceneLoad: {fileID: 0}
   _mimikku: {fileID: 0}
   _mimikkuGekiha: {fileID: 0}
-  _sceneLoad: {fileID: 0}
   _taiho: 0
   _event: 0
   _action:
@@ -6509,16 +6588,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1912476799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a45f1093ee44e346a1eb814f594f342, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c1d7526862505b4f89236b42b4ec21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 100
   _enemyHP: 1
   _zangeki: {fileID: 2674248802821844076, guid: 3621c77ea763c7d47b9a61f44ee736ce, type: 3}
   _hit: {fileID: 7812170106659806327, guid: c590cb316364d614097e6b7009343f2a, type: 3}
+  _sceneLoad: {fileID: 0}
   _mimikku: {fileID: 0}
   _mimikkuGekiha: {fileID: 0}
-  _sceneLoad: {fileID: 0}
   _taiho: 0
   _event: 0
   _action:
@@ -6586,7 +6665,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1915504455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6688a6a1cca3ecb4ba989621595d9f79, type: 3}
+  m_Script: {fileID: 11500000, guid: 493f9c37130054345a62455f188cd612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1920983893
@@ -7120,7 +7199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
+      value: RouinSceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -7252,7 +7331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7412374648102568771, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
+      value: RouinSceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7412374648102568771, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7457,7 +7536,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -7537,7 +7616,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0

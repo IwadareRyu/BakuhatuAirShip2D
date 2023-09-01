@@ -136,4 +136,9 @@ public class BGMManager : SingletonMonovihair<BGMManager>
         Coin,
         PlayerShot,
     }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        BGMStop();
+    }
 }

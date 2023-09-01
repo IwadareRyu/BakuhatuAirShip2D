@@ -975,8 +975,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915504458}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+      - m_Target: {fileID: 1915504459}
+        m_TargetAssemblyTypeName: RouinSceneLoader, Assembly-CSharp
         m_MethodName: SceneLoad
         m_Mode: 5
         m_Arguments:
@@ -1205,8 +1205,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915504458}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+      - m_Target: {fileID: 1915504459}
+        m_TargetAssemblyTypeName: RouinSceneLoader, Assembly-CSharp
         m_MethodName: SceneLoad
         m_Mode: 5
         m_Arguments:
@@ -1649,7 +1649,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -2586,7 +2586,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0
@@ -2810,7 +2810,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -2921,7 +2921,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0
@@ -3471,7 +3471,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -4063,8 +4063,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1915504457}
-  - component: {fileID: 1915504456}
   - component: {fileID: 1915504458}
+  - component: {fileID: 1915504456}
+  - component: {fileID: 1915504459}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GM
@@ -4117,6 +4118,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6688a6a1cca3ecb4ba989621595d9f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1915504459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915504455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493f9c37130054345a62455f188cd612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1920574061
@@ -4265,6 +4278,11 @@ Transform:
   m_Father: {fileID: 1003882051}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1966687078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 755438685861821426, guid: 4ccdeeeeca6a413489c8194084c9060b, type: 3}
+  m_PrefabInstance: {fileID: 5149096537873230776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1973216473
 GameObject:
   m_ObjectHideFlags: 0
@@ -5003,6 +5021,22 @@ PrefabInstance:
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5462699633027614353, guid: 4ccdeeeeca6a413489c8194084c9060b, type: 3}
+      propertyPath: _event
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5462699633027614353, guid: 4ccdeeeeca6a413489c8194084c9060b, type: 3}
+      propertyPath: _enemyHP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5462699633027614353, guid: 4ccdeeeeca6a413489c8194084c9060b, type: 3}
+      propertyPath: _mimikku
+      value: 
+      objectReference: {fileID: 1966687078}
+    - target: {fileID: 5462699633027614353, guid: 4ccdeeeeca6a413489c8194084c9060b, type: 3}
+      propertyPath: _sceneLoad
+      value: 
+      objectReference: {fileID: 981679665}
     - target: {fileID: 6421365259924775463, guid: 4ccdeeeeca6a413489c8194084c9060b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5071,7 +5105,7 @@ PrefabInstance:
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1915504458}
+      objectReference: {fileID: 1915504459}
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -5086,7 +5120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResultSceneLoad
+      value: SceneLoad
       objectReference: {fileID: 0}
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -5094,7 +5128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
+      value: RouinSceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -5219,7 +5253,7 @@ PrefabInstance:
     - target: {fileID: 7412374648102568771, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1915504458}
+      objectReference: {fileID: 1915504459}
     - target: {fileID: 7412374648102568771, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -5230,7 +5264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7412374648102568771, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
+      value: RouinSceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7412374648102568771, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

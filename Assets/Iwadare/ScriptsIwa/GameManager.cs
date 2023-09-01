@@ -169,7 +169,7 @@ public class GameManager : SingletonMonovihair<GameManager>
     private void OnLevelWasLoaded(int level)
     {
         //if (_isStarted) ShowScore();
-        PowerUp.Instance.Start();
+        if (PowerUp.Instance) PowerUp.Instance.Start();
     }
 
     public virtual void OnStartPause(bool pause)

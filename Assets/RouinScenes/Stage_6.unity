@@ -1517,7 +1517,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1915504458}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_TargetAssemblyTypeName: RouinSceneLoader, Assembly-CSharp
         m_MethodName: SceneLoad
         m_Mode: 5
         m_Arguments:
@@ -1907,7 +1907,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0
@@ -2164,6 +2164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -3060,7 +3061,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -3156,7 +3157,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -4214,7 +4215,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
@@ -4942,7 +4943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
+      value: RouinSceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7412374647396639784, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -5070,7 +5071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7412374648102568771, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
+      value: RouinSceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7412374648102568771, guid: a85c79e3213c55a4299d7f3fefc75baf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5235,7 +5236,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e05a250cfab9f3642a12f8ed9ab3b750, type: 3}
+    m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -5643,7 +5644,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1915504455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6688a6a1cca3ecb4ba989621595d9f79, type: 3}
+  m_Script: {fileID: 11500000, guid: 493f9c37130054345a62455f188cd612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1917713789 stripped
@@ -6142,6 +6143,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2140703912538547136, guid: 7e2df3ec42cda6f4f9d1176607ca16e8, type: 3}
+      propertyPath: _zangeki
+      value: 
+      objectReference: {fileID: 2674248802821844076, guid: 0b96236193da9b74eb8a45d19938adf5, type: 3}
     - target: {fileID: 2488132988317825814, guid: 7e2df3ec42cda6f4f9d1176607ca16e8, type: 3}
       propertyPath: m_Name
       value: Taiho
