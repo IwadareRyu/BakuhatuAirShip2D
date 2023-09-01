@@ -610,7 +610,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 8814df1b56b50704f82897117a9ec6ae, type: 3}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _sceneName
-      value: NobelSample
+      value: NobelScene1
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageName

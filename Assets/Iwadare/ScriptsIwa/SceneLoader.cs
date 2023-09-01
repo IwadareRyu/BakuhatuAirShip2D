@@ -39,4 +39,10 @@ public class SceneLoader : SingletonMonovihair<SceneLoader>
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(sceneName);
     }
+
+    public void MoveManagerSceneLoad(string sceneName)
+    {
+        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
+        StartCoroutine(SceneLoadTime(sceneName));
+    }
 }

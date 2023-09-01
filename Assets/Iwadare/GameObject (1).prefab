@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3764304969017246149}
   - component: {fileID: 3764304969017246154}
-  - component: {fileID: 3764304969017246155}
+  - component: {fileID: 2528591772397515297}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -49,7 +49,7 @@ MonoBehaviour:
   _minas: 1
   _radius: 3
   _startCirclePos: 0
---- !u!114 &3764304969017246155
+--- !u!114 &2528591772397515297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,11 +61,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b030104bc387d4d9090dfad67c1d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 5
+  _count: 1
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
-  _bulletspeed: 1
-  _angle: 45
-  _danmakuState: 5
-  _colorState: 0
+  _num: 20
+  _bulletspeed: 5
+  _angle: 0
+  _danmakuState: 4
+  _colorState: 3
+  _zikiMode: 0
+  _mogura: 0
