@@ -6,18 +6,44 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using Cinemachine;
+using Unity.VisualScripting;
 
 public class UserScriptsManage : MonoBehaviour
 {
-    [SerializeField] TextAsset _textFile;
-    [SerializeField] Text _nameText;
-    [System.NonSerialized] public int _novelNumber;
+    [Tooltip("ノベルテキストのtxt"),Header("ノベルテキストのtxtを入れる")]
+    [SerializeField]
+    TextAsset _textFile;
+    
+    [Tooltip("名前を表示するText"),Header("名前を表示するTextを入れる")]
+    [SerializeField] 
+    Text _nameText;
+    
+    [Tooltip("現在の番号")]
+    [System.NonSerialized]
+    public int _novelNumber;
+    
+    [Tooltip("UserScriptManageのインスタンス")]
+    [System.NonSerialized]
     public static UserScriptsManage instance;
-    [SerializeField] ImageManager _imageManager;
-    [SerializeField] string _sceneName;
-    [SerializeField] CinemachineVirtualCamera _shakeChinemachine;
-    [SerializeField] CinemachineImpulseSource _impulseSource;
-    [SerializeField] float _impulseScale = 5;
+    
+    [Tooltip("ImageManagerのスクリプト"),Header("ImageManagerのづスクリプトのついたオブジェクトをアタッチ")]
+    [SerializeField] 
+    ImageManager _imageManager;
+    
+    [Tooltip("上書きするシーンの名前")]
+    [SerializeField]
+    string _sceneName;
+
+    [Tooltip("CinemaChineコンポーネント"),Header("ChinemaChineコンポーネントのついたオブジェクト")]
+    [SerializeField] 
+    CinemachineVirtualCamera _shakeChinemachine;
+    [Tooltip("CinemachineImpulseSourceコンポーネント"),Header("CinemachineImpulseSourceコンポーネントのついたオブジェクト")]
+    [SerializeField] 
+    CinemachineImpulseSource _impulseSource;
+
+    [Tooltip("カメラのゆらす衝撃の大きさ")]
+    [SerializeField] 
+    float _impulseScale = 5;
 
     List<string> _txtText = new List<string>();
     // Start is called before the first frame update
@@ -71,6 +97,14 @@ public class UserScriptsManage : MonoBehaviour
     {
         switch(sentence)
         {
+            case "&CharaIn":
+
+                break;
+            case "&CharaOut":
+                break;
+            case "&ChangeChara":
+
+                break;
             case "&Chara":
                 CharaChange(-1);
                 break;
