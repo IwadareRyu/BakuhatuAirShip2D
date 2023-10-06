@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -6,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using Cinemachine;
-using Unity.VisualScripting;
+using System;
 
 public class UserScriptsManage : MonoBehaviour
 {
@@ -98,12 +97,36 @@ public class UserScriptsManage : MonoBehaviour
         switch(sentence)
         {
             case "&CharaIn":
-
+                _novelNumber++;
+                if (_txtText[_novelNumber] == "&Blue")
+                {
+                    CharaChange(0,true);
+                }
+                else
+                {
+                    CharaChange(1,true);
+                }
                 break;
             case "&CharaOut":
+                if (_txtText[_novelNumber] == "&Blue")
+                {
+                    CharaChange(0,charaOut:true);
+                }
+                else
+                {
+                    CharaChange(1,charaOut:true);
+                }
                 break;
             case "&ChangeChara":
-
+                _novelNumber++;
+                if (_txtText[_novelNumber] == "&Blue")
+                {
+                    CharaChange(0, true,true);
+                }
+                else
+                {
+                    CharaChange(1, true,true);
+                }
                 break;
             case "&Chara":
                 CharaChange(-1);
@@ -133,7 +156,9 @@ public class UserScriptsManage : MonoBehaviour
                 ShortShake();
                 _novelNumber++;
                 break;
-                
+            case "":
+                _novelNumber++;
+                break;
 
         }
         if(_novelNumber < _txtText.Count && _txtText[_novelNumber][0] == '&')
@@ -142,9 +167,17 @@ public class UserScriptsManage : MonoBehaviour
         }
     }
 
-    public void CharaChange(int i)
+    /// <summary>キャラのイラストのみを変えるメソッド</summary>
+    /// <param name="i"></param>
+    public void CharaChange(int i = -1,bool charaIn = false, bool charaOut = false)
     {
-        _imageManager.CharaImage(i);
+        ImageState image = ImageState.BlueNormal;
+        if (i != -1)
+        {
+            _novelNumber++;
+            image = Enum.Parse<ImageState>(_txtText[_novelNumber]);
+        }
+        _imageManager.CharaImage(i,image);
         _novelNumber++;
         _nameText.text = _txtText[_novelNumber];
         _novelNumber++;
