@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ImageManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ImageManager : MonoBehaviour
     [SerializeField] 
     Sprite[] _backGroundSprites;
     
-    [SerializeField] 
+    [SerializeField]
     Image[] _charaImage;
 
     [SerializeField]
@@ -46,7 +47,7 @@ public class ImageManager : MonoBehaviour
         _backGroundImage.sprite = _backGroundSprites[_changeSpriteNum];
     }
 
-    public void CharaImage(int i)
+    public void CharaImage(int i,ImageState image)
     {
         if (i != -1)
         {
@@ -55,10 +56,7 @@ public class ImageManager : MonoBehaviour
                 _tmpImage.color = _standCharaColor;
             }
             _tmpImage = _charaImage[i];
-            if(_tmpImage.sprite == null)
-            {
-                _tmpImage.sprite = _charaSprite[i];
-            }
+            _tmpImage.sprite = _charaSprite[(int)image];
             _tmpImage.color = Color.white;
         }
         else
@@ -70,5 +68,13 @@ public class ImageManager : MonoBehaviour
             }
         }
         
+    }
+
+    public void ChangeCharaImage(int i, bool charaIn, bool charaOut)
+    {
+        if(charaIn && charaOut)
+        {
+
+        }
     }
 }
