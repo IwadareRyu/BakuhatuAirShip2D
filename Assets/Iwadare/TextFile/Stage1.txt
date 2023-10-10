@@ -12,6 +12,7 @@
 世界に出現し、大混乱を招いていた…
 &Stop
 &Image
+&CharaIn
 &Blue
 BlueNormal
 ブルスラ
@@ -23,10 +24,11 @@ BlueNormal
 追い詰めていた
 &Stop
 &Blue
-BlueNormal
+BlueAngry
 ブルスラ
 この剣の錆にしてくれる…
 &Stop
+&CharaIn
 &Gen
 Pig
 バルーンピッグ
@@ -51,9 +53,14 @@ BlueNormal
 ブルスラは懐からラジコンのコントローラー
 見たいな物を取り出し、操作する。
 &Stop
+&ChangeChara
+&Blue
+Ship
+
 すると、空が大きな物体で隠れる。
 現れたのは大型飛空艇だった…
 &Stop
+&ChangeChara
 &Blue
 BlueHappy
 ブルスラ

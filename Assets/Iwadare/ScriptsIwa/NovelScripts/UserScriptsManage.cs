@@ -36,8 +36,8 @@ public class UserScriptsManage : MonoBehaviour
     [Tooltip("CinemaChineコンポーネント"),Header("ChinemaChineコンポーネントのついたオブジェクト")]
     [SerializeField] 
     CinemachineVirtualCamera _shakeChinemachine;
+
     [Tooltip("CinemachineImpulseSourceコンポーネント"),Header("CinemachineImpulseSourceコンポーネントのついたオブジェクト")]
-    [SerializeField] 
     CinemachineImpulseSource _impulseSource;
 
     [Tooltip("カメラのゆらす衝撃の大きさ")]
@@ -57,6 +57,8 @@ public class UserScriptsManage : MonoBehaviour
         if (!instance) instance = this;
         _novelNumber = 0;
         _shakeChinemachine.enabled = false;
+
+        _impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     // Update is called once per frame
@@ -177,7 +179,16 @@ public class UserScriptsManage : MonoBehaviour
             _novelNumber++;
             image = Enum.Parse<ImageState>(_txtText[_novelNumber]);
         }
+        float waitTime = 0f;
+        if(charaOut)
+        {
+            _imageManager.CharaOut(i);
+        }
         _imageManager.CharaImage(i,image);
+        if(charaIn) 
+        {
+            _imageManager.CharaIn(i);
+        }
         _novelNumber++;
         _nameText.text = _txtText[_novelNumber];
         _novelNumber++;
