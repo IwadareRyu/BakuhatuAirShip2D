@@ -26,6 +26,14 @@ public class ImageManager : MonoBehaviour
     
     Image _tmpImage;
 
+
+    [SerializeField]
+    Transform[] _charainPos;
+
+    [SerializeField]
+    Transform[] _charaOutPos;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -70,11 +78,13 @@ public class ImageManager : MonoBehaviour
         
     }
 
-    public void ChangeCharaImage(int i, bool charaIn, bool charaOut)
+    public void CharaOut(int i)
     {
-        if(charaIn && charaOut)
-        {
+        _charaImage[i].transform.position = _charaOutPos[i].position;
+    }
 
-        }
+    public void CharaIn(int i)
+    {
+        _charaImage[i].transform.DOMove(_charainPos[i].position,0.5f);
     }
 }
