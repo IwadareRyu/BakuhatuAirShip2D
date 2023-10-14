@@ -11,7 +11,6 @@
 そんな対立の中で、突如として『魔王』が
 世界に出現し、大混乱を招いていた…
 &Stop
-&Image
 &CharaIn
 &Blue
 BlueNormal
@@ -34,8 +33,9 @@ Pig
 バルーンピッグ
 ブゥーーーーーーーーーーーーーーーー
 (コノ小僧、ナンカ悪役ミタイナセリフヲ
-イッテルーーーーーーーーーーーーー⁉）
+イッテルーーーーーーーーーーーーー⁉
 &Stop
+&Image
 ブゥーーーーーーーーーーーーーーーー
 (ダガ、オイラワ空ヲ飛ベルノダ！)
 &Stop
@@ -53,6 +53,7 @@ BlueNormal
 ブルスラは懐からラジコンのコントローラー
 見たいな物を取り出し、操作する。
 &Stop
+&LongShakeEvent
 &ChangeChara
 &Blue
 Ship
@@ -60,6 +61,7 @@ Ship
 すると、空が大きな物体で隠れる。
 現れたのは大型飛空艇だった…
 &Stop
+&EndLongShakeEvent
 &ChangeChara
 &Blue
 BlueHappy

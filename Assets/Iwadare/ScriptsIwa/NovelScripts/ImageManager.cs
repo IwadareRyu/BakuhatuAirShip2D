@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +7,12 @@ public class ImageManager : MonoBehaviour
 {
     [SerializeField] 
     GameObject _backGroundObject;
+
+    [SerializeField]
+    Image _fadeBackGroundObject;
+
+    [SerializeField]
+    Color _fadeColor;
     
     [SerializeField] 
     Sprite[] _backGroundSprites;
@@ -47,12 +52,20 @@ public class ImageManager : MonoBehaviour
     private void Start()
     {
         _backGroundImage.sprite = _backGroundSprites[_changeSpriteNum];
+        _fadeBackGroundObject.color = _fadeColor;
     }
 
     public void ChangeImage()
     {
         _changeSpriteNum++;
-        _backGroundImage.sprite = _backGroundSprites[_changeSpriteNum];
+        _fadeBackGroundObject.sprite = _backGroundSprites[_changeSpriteNum];
+        _fadeBackGroundObject.DOFade(1f,1f).OnComplete(() =>
+        {
+
+            _fadeBackGroundObject.color = _fadeColor;
+            _backGroundImage.sprite = _backGroundSprites[_changeSpriteNum];
+        });
+      
     }
 
     public void CharaImage(int i,ImageState image)
