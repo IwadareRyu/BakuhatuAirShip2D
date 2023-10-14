@@ -3,7 +3,6 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using DG.Tweening;
 using Cinemachine;
 using System;
 
@@ -25,8 +24,8 @@ public class UserScriptsManage : MonoBehaviour
     [System.NonSerialized]
     public static UserScriptsManage instance;
     
-    [Tooltip("ImageManagerのスクリプト"),Header("ImageManagerのづスクリプトのついたオブジェクトをアタッチ")]
-    [SerializeField] 
+    [Tooltip("ImageManagerのスクリプト"),Header("ImageManagerのスクリプトがついたオブジェクトをアタッチ")]
+    [SerializeField]
     ImageManager _imageManager;
     
     [Tooltip("上書きするシーンの名前")]
@@ -174,7 +173,7 @@ public class UserScriptsManage : MonoBehaviour
     public void CharaChange(int i = -1,bool charaIn = false, bool charaOut = false)
     {
         ImageState image = ImageState.BlueNormal;
-        if (i != -1)
+        if (i != -1 || _txtText[_novelNumber][0] != '&')
         {
             _novelNumber++;
             image = Enum.Parse<ImageState>(_txtText[_novelNumber]);
@@ -190,8 +189,11 @@ public class UserScriptsManage : MonoBehaviour
             _imageManager.CharaIn(i);
         }
         _novelNumber++;
-        _nameText.text = _txtText[_novelNumber];
-        _novelNumber++;
+        if (_txtText[_novelNumber][0] != '&')
+        {
+            _nameText.text = _txtText[_novelNumber];
+            _novelNumber++;
+        }
     }
 
     void LongShake(bool shakebool)
