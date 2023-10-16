@@ -15,4 +15,5 @@ public enum ImageState
     Mogura = 12,
     Takatori = 13,
     Ship = 14,
+    Mouse = 15,
 }
