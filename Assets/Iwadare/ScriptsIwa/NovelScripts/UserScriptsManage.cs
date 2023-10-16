@@ -43,6 +43,12 @@ public class UserScriptsManage : MonoBehaviour
     [SerializeField] 
     float _impulseScale = 5;
 
+    [SerializeField]
+    bool _isPlay = true;
+
+    [SerializeField]
+    bool _isEnd = false;
+
     List<string> _txtText = new List<string>();
     // Start is called before the first frame update
     void Awake()
@@ -74,9 +80,14 @@ public class UserScriptsManage : MonoBehaviour
             }
             return text[0] + text[1] + text[2];
         }
-        else
+        else if(_isPlay)
         {
             GameObject.FindObjectOfType<GameStartScript>().Play();
+            SceneManager.UnloadSceneAsync(_sceneName);
+        }
+        else
+        {
+            GameObject.FindObjectOfType<Goal>().IsEndMethod();
             SceneManager.UnloadSceneAsync(_sceneName);
         }
         return "";
@@ -109,6 +120,7 @@ public class UserScriptsManage : MonoBehaviour
                 }
                 break;
             case "&CharaOut":
+                _novelNumber++;
                 if (_txtText[_novelNumber] == "&Blue")
                 {
                     CharaChange(0,charaOut:true);
@@ -189,7 +201,7 @@ public class UserScriptsManage : MonoBehaviour
             _imageManager.CharaIn(i);
         }
         _novelNumber++;
-        if (_txtText[_novelNumber][0] != '&')
+        if (_txtText[_novelNumber] == "" || _txtText[_novelNumber][0] != '&')
         {
             _nameText.text = _txtText[_novelNumber];
             _novelNumber++;

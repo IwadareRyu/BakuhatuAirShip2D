@@ -1,21 +1,43 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 public class Goal : MonoBehaviour
 {
-    [SerializeField] UnityEvent _action;
-    [SerializeField] int _deadEnemy = 100;
-    [SerializeField] Transform _goalPos;
-    [SerializeField] float _speed = 1f;
-    [SerializeField] GameObject _clearText;
+    SceneLoaderAditiveClass _sceneLoaderAditiveClass;
+    
+    [SerializeField]
+    string _nobelSceneName;
+    
+    [SerializeField] 
+    int _deadEnemy = 100;
+    
+    [SerializeField] 
+    Transform _goalPos;
+    
+    [SerializeField] 
+    float _speed = 1f;
+    
+    [SerializeField] 
+    GameObject _clearText;
+    
     float _stopdis = 0.5f;
-    [SerializeField] float _countDownTime = 60f;
+    
+    [SerializeField] 
+    float _countDownTime = 60f;
+    
     bool _goalbool;
-    [SerializeField] RandomManege _enemymanege;
+    
+    [SerializeField] 
+    RandomManege _enemymanege;
+    
     bool _pause;
-    [SerializeField] AudioClip _audio;
+    
+    [SerializeField] 
+    AudioClip _audio;
+
+    [SerializeField]
+    Canvas _uI;
 
     private void OnEnable()
     {
@@ -25,6 +47,11 @@ public class Goal : MonoBehaviour
     private void OnDisable()
     {
         PauseManager.OnPauseResume -= StartPause;
+    }
+
+    private void Awake()
+    {
+        _uI = GameObject.FindGameObjectWithTag("GameUI").GetComponent<Canvas>();
     }
 
     void Start()
@@ -79,12 +106,25 @@ public class Goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !_pause)
         {
-            StartCoroutine(AudioPlay());
-            _clearText.SetActive(true);
             PauseManager.PauseResume();
-            //_action.Invoke();
-
+            if (_nobelSceneName != "")
+            {
+                if (_uI.enabled) { _uI.enabled = false; }
+                _sceneLoaderAditiveClass = new SceneLoaderAditiveClass();
+                _sceneLoaderAditiveClass.SceneLoaderAditive(_nobelSceneName);
+            }
+            else
+            {
+                IsEndMethod();
+            }
         }
+    }
+
+    public void IsEndMethod()
+    {
+        StartCoroutine(AudioPlay());
+        _clearText.SetActive(true);
+        if (!_uI.enabled) { _uI.enabled = true; }
     }
 
     IEnumerator AudioPlay()
