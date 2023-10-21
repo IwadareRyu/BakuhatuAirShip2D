@@ -437,12 +437,20 @@ PrefabInstance:
       value: "\u3068\u3047\u3059\u3066\u3059\u30C6\u30B9\u30C8"
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
+      propertyPath: _isEnd
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
+      propertyPath: _isPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _textFile
       value: 
-      objectReference: {fileID: 4900000, guid: db576dc339e721646982ff08e43c4418, type: 3}
+      objectReference: {fileID: 4900000, guid: f8a2ed79fa9455747a32706d0d76747e, type: 3}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _sceneName
-      value: NobelScene1
+      value: Nobel3
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charainPos.Array.size
@@ -498,7 +506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.size
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charainPos.Array.data[0]
@@ -577,8 +585,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d2e9ae4eee159dc4088b85ed81317d4a, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
+      propertyPath: _charaSprite.Array.data[15]
+      value: 
+      objectReference: {fileID: 21300000, guid: d6b3fb461d8f89044ac2ce3747b48dd3, type: 3}
+    - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _backGroundSprites.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _backGroundSprites.Array.data[0]
@@ -591,7 +603,7 @@ PrefabInstance:
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _backGroundSprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 5a853b4364d9455419371373fe0d400e, type: 3}
+      objectReference: {fileID: 21300000, guid: 1c72c74762e066d4781df3049d5d3b50, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _backGroundSprites.Array.data[3]
       value: 

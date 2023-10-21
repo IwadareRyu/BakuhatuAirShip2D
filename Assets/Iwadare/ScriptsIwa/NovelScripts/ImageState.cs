@@ -7,7 +7,7 @@ public enum ImageState
     GenNormal = 4,
     GenHappy = 5,
     GenCry = 6,
-    GenAngry = 7,
+    GenWorry = 7,
     GenPain = 8,
     Drgon = 9,
     Pig = 10,

@@ -12,6 +12,6 @@ public class BGMPlay : MonoBehaviour
     }
     public void Play()
     {
-        BGMManager.Instance.BGMPlay(_bGMAudio);
+        BGMManager.Instance.ClipBGMPlay(_bGMAudio);
     }
 }

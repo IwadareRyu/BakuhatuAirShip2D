@@ -48,7 +48,7 @@ public class GameStartScript : MonoBehaviour
 
     public void Play()
     {
-        BGMManager.Instance.BGMPlay(_bGMAudio);
+        BGMManager.Instance.ClipBGMPlay(_bGMAudio);
 
 
         if (!_uI.enabled) { _uI.enabled = true; }

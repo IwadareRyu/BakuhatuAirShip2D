@@ -173,7 +173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 983656006}
   - component: {fileID: 983656005}
-  - component: {fileID: 983656004}
   - component: {fileID: 983656007}
   m_Layer: 0
   m_Name: Main Camera
@@ -182,14 +181,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &983656004
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983656003}
-  m_Enabled: 1
 --- !u!20 &983656005
 Camera:
   m_ObjectHideFlags: 0
@@ -456,7 +447,7 @@ PrefabInstance:
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _textFile
       value: 
-      objectReference: {fileID: 4900000, guid: e23e02653fa161a49b1ed9e0fe1024bf, type: 3}
+      objectReference: {fileID: 4900000, guid: 713420994437b7a45806b556457adbeb, type: 3}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _sceneName
       value: Nobel2End

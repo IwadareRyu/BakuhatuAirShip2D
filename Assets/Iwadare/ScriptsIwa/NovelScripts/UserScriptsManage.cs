@@ -169,6 +169,15 @@ public class UserScriptsManage : MonoBehaviour
                 ShortShake();
                 _novelNumber++;
                 break;
+            case "&BGMPlay":
+                NobelBGMPlay();
+                break;
+            case "&BGMStop":
+                BGMManager.Instance.BGMStop();
+                break;
+            case "SEPlay":
+                NobelSEPlay();
+                break;
             case "":
                 _novelNumber++;
                 break;
@@ -190,17 +199,21 @@ public class UserScriptsManage : MonoBehaviour
             _novelNumber++;
             image = Enum.Parse<ImageState>(_txtText[_novelNumber]);
         }
-        float waitTime = 0f;
+
         if(charaOut)
         {
             _imageManager.CharaOut(i);
         }
+
         _imageManager.CharaImage(i,image);
+        
         if(charaIn) 
         {
             _imageManager.CharaIn(i);
         }
+        
         _novelNumber++;
+        
         if (_txtText[_novelNumber] == "" || _txtText[_novelNumber][0] != '&')
         {
             _nameText.text = _txtText[_novelNumber];
@@ -216,5 +229,27 @@ public class UserScriptsManage : MonoBehaviour
     void ShortShake()
     {
         _impulseSource.GenerateImpulseAt(new Vector2(0,0),new Vector2(0,_impulseScale));
+    }
+
+    void NobelBGMPlay()
+    {
+        _novelNumber++;
+        var state = Enum.Parse<NobelBGM>(_txtText[_novelNumber]);
+        if (state != null)
+        {
+            BGMManager.Instance.StateBGMPlay(state);
+            _novelNumber++;
+        }
+    }
+
+    void NobelSEPlay()
+    {
+        _novelNumber++;
+        var state = Enum.Parse<SE>(_txtText[_novelNumber]);
+        if(state != null)
+        {
+            BGMManager.Instance.SEPlay(state);
+            _novelNumber++;
+        }
     }
 }

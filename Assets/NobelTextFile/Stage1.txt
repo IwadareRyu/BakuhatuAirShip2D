@@ -1,3 +1,5 @@
+&BGMPlay
+Clear
 &Chara
 
 天災によって人間の人口が減少して数百年。

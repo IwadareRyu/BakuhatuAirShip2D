@@ -30,7 +30,7 @@ public class BakuhatuScale : MonoBehaviour
     void Start()
     {
         // 爆発音を再生し、カメラを振動させる
-        BGMManager.Instance.SEPlay(BGMManager.SE.Explosion);
+        BGMManager.Instance.SEPlay(SE.Explosion);
         _impulse.GenerateImpulseAt(new Vector2(0, 0), new Vector2(0, _impulsePower));
 
         // 攻撃パターンの分岐

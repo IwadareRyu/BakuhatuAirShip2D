@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1604599052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1604599053}
+  - component: {fileID: 1604599054}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1604599053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604599052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8566060957340018741}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1604599054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604599052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5157b629035644d85271f0ffafb468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bGMAudio: {fileID: 8300000, guid: 721020c6d8a84ec4c91f99c98a7ca4d8, type: 3}
 --- !u!1 &1005979305744073164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,7 +1505,7 @@ GameObject:
   - component: {fileID: 8566060957340018741}
   - component: {fileID: 1854767319189734936}
   m_Layer: 0
-  m_Name: SEManager
+  m_Name: AudioManager
   m_TagString: SE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1480,6 +1525,7 @@ Transform:
   m_Children:
   - {fileID: 5956757221692877994}
   - {fileID: 1780177435334617721}
+  - {fileID: 1604599053}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1495,12 +1541,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6467dd01c3f320241b6e2ad2d006b121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bGMClip:
+  _bgmClip:
   - {fileID: 8300000, guid: da1978025a2a91a4e8d177202e7ebccd, type: 3}
   - {fileID: 8300000, guid: 5224d6ba805c09645b4c74cab798644f, type: 3}
   - {fileID: 8300000, guid: 17c5e894d659e1e4786c3765f84345a0, type: 3}
   - {fileID: 8300000, guid: 721020c6d8a84ec4c91f99c98a7ca4d8, type: 3}
   - {fileID: 8300000, guid: 544166cb906a0b44cb36a3b2388938c4, type: 3}
+  - {fileID: 8300000, guid: 8814df1b56b50704f82897117a9ec6ae, type: 3}
   _sESource:
   - {fileID: 1013161285532560450}
   - {fileID: 6533802332065198870}
@@ -1513,4 +1560,4 @@ MonoBehaviour:
   - {fileID: 5131145692134081786}
   - {fileID: 7610031964472308830}
   _sEEnum: 0
-  _bGM: {fileID: 5492492431351309863}
+  _bgm: {fileID: 5492492431351309863}

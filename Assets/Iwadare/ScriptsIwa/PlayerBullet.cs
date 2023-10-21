@@ -39,7 +39,7 @@ public class PlayerBullet : MonoBehaviour
         _bakuhatutime = false;
         if (_audiobool)
         {
-            BGMManager.Instance.SEPlay(BGMManager.SE.PlayerShot);
+            BGMManager.Instance.SEPlay(SE.PlayerShot);
         }
         else
         {
