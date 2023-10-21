@@ -91,7 +91,7 @@ public class BossAttack : MonoBehaviour
             {
                 //オーバー攻撃をアクティブにする。
                 _overAttack.SetActive(true);
-                BGMManager.Instance.SEPlay(BGMManager.SE.FireBreath);
+                BGMManager.Instance.SEPlay(SE.FireBreath);
                 yield return new WaitForSeconds(0.2f);
                 if (_bulletSpawns.Length > 2)
                 {

@@ -285,7 +285,7 @@ public class BossGanerator : MonoBehaviour
     /// <summary>ボスが倒された時の音再生</summary>
     public void DownAudioPlay()
     {
-        BGMManager.Instance.SEPlay(BGMManager.SE.Explosion);
+        BGMManager.Instance.SEPlay(SE.Explosion);
     }
 
     /// <summary>ボスを倒す処理</summary>

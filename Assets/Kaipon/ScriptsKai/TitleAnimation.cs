@@ -8,7 +8,7 @@ public class TitleAnimation : MonoBehaviour
     public void TitleAni()
     {
         // BGMManagerのインスタンスを取得し、SEを再生
-        BGMManager.Instance.SEPlay(BGMManager.SE.Explosion);
+        BGMManager.Instance.SEPlay(SE.Explosion);
     }
     void Start()
     {

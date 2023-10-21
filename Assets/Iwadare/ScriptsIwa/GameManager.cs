@@ -85,7 +85,7 @@ public class GameManager : SingletonMonovihair<GameManager>
             if (!_loseBool && _countDownTime == 0 || !_loseBool && _score < 0)
             {
                 _loseBool = true;
-                BGMManager.Instance?.SEPlay(BGMManager.SE.Lose);
+                BGMManager.Instance?.SEPlay(SE.Lose);        
                 _gameOverCanvas.SetActive(true);
                 PauseManager.PauseResume();
             }

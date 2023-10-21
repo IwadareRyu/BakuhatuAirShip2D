@@ -1248,7 +1248,7 @@ RectTransform:
   m_Children:
   - {fileID: 575733516}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1320,11 +1320,15 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 17c5e894d659e1e4786c3765f84345a0, type: 3}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _sceneName
-      value: 
+      value: Nobel3
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageName
       value: "\u81EA\u7206\u306F\u653B\u6483\u624B\u6BB5\u3060\uFF01"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _startPlay
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageNumber
@@ -1609,21 +1613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a5869943af903448283c89ccb10ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _nobelSceneName: 
   _deadEnemy: 100
   _goalPos: {fileID: 274895284}
   _speed: 2
@@ -1631,6 +1621,7 @@ MonoBehaviour:
   _countDownTime: 300
   _enemymanege: {fileID: 665501467}
   _audio: {fileID: 8300000, guid: 8814df1b56b50704f82897117a9ec6ae, type: 3}
+  _uI: {fileID: 0}
 --- !u!61 &575733518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3031,7 +3022,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1451027965
 GameObject:
@@ -3732,7 +3723,7 @@ Transform:
   - {fileID: 1427765837}
   - {fileID: 1369207572}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1810232129
 PrefabInstance:
@@ -3845,6 +3836,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1854767319189734936, guid: bff0724bbb19817469152e52de02e670, type: 3}
+      propertyPath: _bgmClip.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854767319189734936, guid: bff0724bbb19817469152e52de02e670, type: 3}
+      propertyPath: _bgmClip.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8814df1b56b50704f82897117a9ec6ae, type: 3}
     - target: {fileID: 4070697734001068953, guid: bff0724bbb19817469152e52de02e670, type: 3}
       propertyPath: _bGMAudio
       value: 
@@ -4080,7 +4079,7 @@ Transform:
   m_Children:
   - {fileID: 151337307}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2130774402
 GameObject:
@@ -4254,7 +4253,7 @@ PrefabInstance:
       objectReference: {fileID: 1184918528}
     - target: {fileID: 1076212189700790906, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1076212189700790906, guid: 140378aa8b5101e4391f883b238c1929, type: 3}
       propertyPath: m_LocalPosition.x

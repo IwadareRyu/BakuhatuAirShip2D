@@ -130,9 +130,9 @@ public class Goal : MonoBehaviour
     IEnumerator AudioPlay()
     {
         BGMManager.Instance.BGMStop();
-        BGMManager.Instance?.SEPlay(BGMManager.SE.Clear);
+        BGMManager.Instance?.SEPlay(SE.Clear);       
         yield return new WaitForSeconds(5f);
-        BGMManager.Instance.BGMPlay(_audio);
+        BGMManager.Instance.ClipBGMPlay(_audio);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

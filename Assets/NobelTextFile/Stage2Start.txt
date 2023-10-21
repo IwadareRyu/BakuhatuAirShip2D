@@ -1,3 +1,5 @@
+&BGMPlay
+Clear
 &CharaIn
 &Blue
 BlueNormal
@@ -23,7 +25,7 @@ GenNormal
 BlueNormal
 &CharaOut
 &Gen
-BlueNormal
+GenNormal
 &Image
 &Chara
 

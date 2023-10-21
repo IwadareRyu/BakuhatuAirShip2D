@@ -50,7 +50,7 @@ public class PointMoneyScripts : MonoBehaviour
         {
             _gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
             _gm.AddScore(_point);
-            BGMManager.Instance?.SEPlay(BGMManager.SE.Coin);
+            BGMManager.Instance?.SEPlay(SE.Coin);
             Destroy(gameObject);
         }
     }

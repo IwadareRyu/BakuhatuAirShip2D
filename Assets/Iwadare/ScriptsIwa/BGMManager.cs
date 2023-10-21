@@ -17,8 +17,7 @@ public class BGMManager : SingletonMonovihair<BGMManager>
     
     [SerializeField,Header("BGMのオーディオ一覧"),
         Tooltip("BGMのオーディオ一覧(スクリプトでは使っていないがなんのBGMがあるか確認用)")] 
-    AudioClip[] _bGMClip;
-    public AudioClip[] BGMClip => _bGMClip;
+    AudioClip[] _bgmClip;
 
     
     [SerializeField,Tooltip("SEのオーディオソース一覧"),Header("SEのオーディオソース一覧")] 
@@ -30,7 +29,7 @@ public class BGMManager : SingletonMonovihair<BGMManager>
 
     
     [SerializeField,Header("BGMのオーディオソース"),Tooltip("BGMのオーディオソース")] 
-    AudioSource _bGM;
+    AudioSource _bgm;
  
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
@@ -95,17 +94,23 @@ public class BGMManager : SingletonMonovihair<BGMManager>
 
     /// <summary>BGMを再生するメソッドです。</summary>
     /// <param name="audioClip">指定されたオーディオクリップ</param>
-    public void BGMPlay(AudioClip audioClip)
+    public void ClipBGMPlay(AudioClip audioClip)
     {
         // 指定されたオーディオクリップをオーディオソースに設定し再生
-        _bGM.clip = audioClip;
-        _bGM.Play();
+        _bgm.clip = audioClip;
+        _bgm.Play();
+    }
+
+    public void StateBGMPlay(NobelBGM bgm)
+    {
+        _bgm.clip = _bgmClip[(int)bgm];
+        _bgm.Play();
     }
 
     /// <summary>BGMを停止するメソッド</summary>
     public void BGMStop()
     {
-        _bGM.Stop();
+        _bgm.Stop();
     }
 
     /// <summary>BGMの音量を設定するメソッド</summary>
@@ -122,23 +127,34 @@ public class BGMManager : SingletonMonovihair<BGMManager>
         _seVolume = audioVolume;
     }
 
-    /// <summary>SEの種類を列挙した列挙型</summary>
-    public enum SE
-    {
-        Explosion,
-        SmallFire,
-        EnemyShot,
-        Clear,
-        Click,
-        PowerUp,
-        Lose,
-        FireBreath,
-        Coin,
-        PlayerShot,
-    }
-
     private void OnLevelWasLoaded(int level)
     {
         BGMStop();
     }
+}
+
+/// <summary>SEの種類を列挙した列挙型</summary>
+public enum SE
+{
+    Explosion,
+    SmallFire,
+    EnemyShot,
+    Clear,
+    Click,
+    PowerUp,
+    Lose,
+    FireBreath,
+    Coin,
+    PlayerShot,
+}
+
+/// <summary>ノベルで使うBGMの種類を列挙した列挙型</summary>
+public enum NobelBGM
+{
+    Title,
+    Field1,
+    Field2,
+    Boss1,
+    Boss2,
+    Clear,
 }
