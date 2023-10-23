@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 1076212189700790887}
   - component: {fileID: 1076212189700790904}
   - component: {fileID: 1076212189700790905}
+  - component: {fileID: 1220338479621223811}
   m_Layer: 0
   m_Name: PlayerCore
   m_TagString: Player
@@ -279,3 +280,33 @@ MonoBehaviour:
   _starTime: 0
   _normalColor: {r: 1, g: 0, b: 0, a: 1}
   _starColor: {r: 1, g: 0.9606023, b: 0, a: 1}
+--- !u!114 &1220338479621223811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076212189700790908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9b53122d589cdc44bb1bb7e2018f88ba, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

@@ -80,6 +80,15 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SlowMove"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""279e7b5a-a954-4754-a489-58a3df439d01"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -89,7 +98,7 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": ""Hold"",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -211,6 +220,17 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66290f2f-7e09-4bea-bddb-c425859f3c7c"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -421,6 +441,28 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ff33a37-e07c-43e2-ab52-583c85779c78"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SlowMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6af2e0f9-0e2c-4784-92d4-bb53ccee1825"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SlowMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1014,6 +1056,7 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Retry = m_Player.FindAction("Retry", throwIfNotFound: true);
         m_Player_Reset = m_Player.FindAction("Reset", throwIfNotFound: true);
+        m_Player_SlowMove = m_Player.FindAction("SlowMove", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1091,6 +1134,7 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Retry;
     private readonly InputAction m_Player_Reset;
+    private readonly InputAction m_Player_SlowMove;
     public struct PlayerActions
     {
         private @PlayerControlActions m_Wrapper;
@@ -1101,6 +1145,7 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Retry => m_Wrapper.m_Player_Retry;
         public InputAction @Reset => m_Wrapper.m_Player_Reset;
+        public InputAction @SlowMove => m_Wrapper.m_Player_SlowMove;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1128,6 +1173,9 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
                 @Reset.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReset;
                 @Reset.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReset;
                 @Reset.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReset;
+                @SlowMove.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlowMove;
+                @SlowMove.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlowMove;
+                @SlowMove.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlowMove;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1150,6 +1198,9 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
                 @Reset.started += instance.OnReset;
                 @Reset.performed += instance.OnReset;
                 @Reset.canceled += instance.OnReset;
+                @SlowMove.started += instance.OnSlowMove;
+                @SlowMove.performed += instance.OnSlowMove;
+                @SlowMove.canceled += instance.OnSlowMove;
             }
         }
     }
@@ -1312,6 +1363,7 @@ public partial class @PlayerControlActions : IInputActionCollection2, IDisposabl
         void OnJump(InputAction.CallbackContext context);
         void OnRetry(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
+        void OnSlowMove(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
