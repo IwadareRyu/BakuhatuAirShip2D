@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using Steamworks;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AirShipController : MonoBehaviour
 {
@@ -21,6 +23,8 @@ public class AirShipController : MonoBehaviour
     float minas = 1;
     float h;
     float v;
+    [Tooltip("移動の向き")]
+    Vector2 _move;
     [Tooltip("プレイヤーのスピード")]
     [SerializeField] float _speed = 3f;
     [Tooltip("プレイヤーの低速スピード")]
@@ -47,7 +51,22 @@ public class AirShipController : MonoBehaviour
     [Header("無敵時の色")]
     [Tooltip("無敵時の色")]
     [SerializeField] Color _starColor;
-    bool _pause;
+    [Tooltip("弾を出すフラグ")]
+    private bool _fire;
+    [Tooltip("移動を遅くするフラグ")]
+    private bool _slowMove;
+    [Tooltip("ポーズフラグ")]
+    private bool _pause;
+
+    /// InputSystem処理  
+    /// <summary>移動処理</summary>
+    public void OnMove(InputValue value) => _move = value.Get<Vector2>();
+    
+    /// <summary>弾を出す処理</summary>
+    public void OnFire(InputValue value) => _fire = value.Get<float>() > 0;
+
+    /// <summary>移動を遅くする処理</summary>
+    public void OnSlowMove(InputValue value) => _slowMove = value.Get<float>() > 0;
 
     private void Awake()
     {
@@ -75,10 +94,8 @@ public class AirShipController : MonoBehaviour
     {
         if (!_pause)
         {
-            h = Input.GetAxisRaw("Horizontal");
-            v = Input.GetAxisRaw("Vertical");
 
-            if (Input.GetButton("Fire1"))
+            if (_fire)
             {
                 if (!_cooltime)
                 {
@@ -87,15 +104,18 @@ public class AirShipController : MonoBehaviour
                 }
             }   // 攻撃ボタンを押した場合、クールタイムを確認し、攻撃を行う
 
-            if (Input.GetButtonDown("Fire3"))
+            if (_slowMove)
             {
                 _nowSpeed = _lowSpeed;
             }   // 低速ボタンを押した場合、速度を低速モードに切り替える
-
-            if (Input.GetButtonUp("Fire3"))
+            else
             {
                 _nowSpeed = _speed;
             }   // 低速ボタンを離した場合、速度を元に戻す
+        }
+        else
+        {
+            _move = new Vector2(0,0);
         }
     }
 
@@ -103,7 +123,7 @@ public class AirShipController : MonoBehaviour
     {
         if (!_pause)
         {
-            Vector2 dir = new Vector2(h, v).normalized;
+            Vector2 dir = _move.normalized;
             _rb.velocity = dir * _nowSpeed;
         }// プレイヤーの移動処理
     }
