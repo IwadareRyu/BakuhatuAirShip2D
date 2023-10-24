@@ -16,4 +16,5 @@ public enum ImageState
     Takatori = 13,
     Ship = 14,
     Mouse = 15,
+    Scratch = 16,
 }

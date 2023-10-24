@@ -2278,7 +2278,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: adecce449e3c8b24bb2f3a03d92251ce, type: 3}
-    m_FontSize: 200
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2289,7 +2289,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u7206\u767A\u98DB\u7A7A\u8247\uFF01"
+  m_Text: Explosion of BlueWing!
 --- !u!222 &1958726978
 CanvasRenderer:
   m_ObjectHideFlags: 0
