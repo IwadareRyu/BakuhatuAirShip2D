@@ -438,19 +438,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _isEnd
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _isPlay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _textFile
       value: 
-      objectReference: {fileID: 4900000, guid: c5f11b4cb3b93524db543820426042ba, type: 3}
+      objectReference: {fileID: 4900000, guid: 245c049cffcc3684a93f83308c4faeea, type: 3}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _sceneName
-      value: Nobel4
+      value: Nobel4End
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charainPos.Array.size
