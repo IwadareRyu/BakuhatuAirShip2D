@@ -176,7 +176,7 @@ public class UserScriptsManage : MonoBehaviour
                 BGMManager.Instance.BGMStop();
                 _novelNumber++;
                 break;
-            case "SEPlay":
+            case "&SEPlay":
                 NobelSEPlay();
                 break;
             case "":
