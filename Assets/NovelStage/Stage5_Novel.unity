@@ -1385,8 +1385,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 7a6fea54f61213744a38f624970d9979, type: 3}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _sceneName
+      value: Nobel5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageName
       value: "\u30B3\u30FC\u30CA\u30FC\u3067\u5DEE\u3092\u3064\u3051\u308D\uFF01"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _startPlay
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageNumber
@@ -1671,21 +1679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a5869943af903448283c89ccb10ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _nobelSceneName: 
   _deadEnemy: 150
   _goalPos: {fileID: 274895284}
   _speed: 2
@@ -1693,6 +1687,7 @@ MonoBehaviour:
   _countDownTime: 300
   _enemymanege: {fileID: 665501467}
   _audio: {fileID: 8300000, guid: 8814df1b56b50704f82897117a9ec6ae, type: 3}
+  _uI: {fileID: 0}
 --- !u!61 &575733518
 BoxCollider2D:
   m_ObjectHideFlags: 0
