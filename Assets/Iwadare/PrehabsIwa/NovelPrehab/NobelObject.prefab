@@ -1764,6 +1764,8 @@ MonoBehaviour:
   _sceneName: NobelSample
   _shakeChinemachine: {fileID: 8200409799528952173}
   _impulseScale: 5
+  _isPlay: 1
+  _isEnd: 0
 --- !u!114 &8200409799898782030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,19 +1864,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backGroundObject: {fileID: 4257755834512674495}
-  _fadeBackGroundObject: {fileID: 0}
+  _fadeBackGroundObject: {fileID: 1059102516980103975}
+  _fadeColor: {r: 1, g: 1, b: 1, a: 0}
   _backGroundSprites:
-  - {fileID: 21300000, guid: 1c72c74762e066d4781df3049d5d3b50, type: 3}
-  - {fileID: 21300000, guid: 00b11f0523874934f8320569176778c5, type: 3}
+  - {fileID: 21300000, guid: 4994da5019a25b445b0ec2c0d76400ba, type: 3}
+  - {fileID: 21300000, guid: df78c929f798bbb40a0903496e6aaf4d, type: 3}
   _charaImage:
   - {fileID: 8200409798578831837}
   - {fileID: 8200409798034109053}
   _charaSprite:
-  - {fileID: 21300000, guid: 653cdda9f8c85384090186c9e0edca46, type: 3}
-  - {fileID: 21300000, guid: 5a853b4364d9455419371373fe0d400e, type: 3}
+  - {fileID: 327250731, guid: 8b51169e3ad53a440a71b642b836286f, type: 3}
+  - {fileID: 327250731, guid: 8b51169e3ad53a440a71b642b836286f, type: 3}
+  - {fileID: 116660664, guid: 2c6a89cc26f0aa14b864731cb92f833c, type: 3}
+  - {fileID: -1133296922, guid: 7fe055e609e3949458f13f4c38fb26a1, type: 3}
+  - {fileID: 21300000, guid: 28cc3ac232508de4ab49b50483bdb29b, type: 3}
+  - {fileID: 21300000, guid: a8c4ff1a93f63b84a92737543c0f9254, type: 3}
+  - {fileID: 21300000, guid: 9ccff0feede30ee489257fb608185d77, type: 3}
+  - {fileID: 21300000, guid: 0f6fd7dfd2356dc41961788c80f4a595, type: 3}
+  - {fileID: 21300000, guid: f53d286eb0b8cd7499c715acb298882f, type: 3}
+  - {fileID: 989369338, guid: 5a853b4364d9455419371373fe0d400e, type: 3}
+  - {fileID: 249038067, guid: 88cc453111f0c76429ea8acb5ba75dad, type: 3}
+  - {fileID: 415970113, guid: 0c4b9f0c565985c4ea35f74ffc855bef, type: 3}
+  - {fileID: -139605501, guid: ea0dbbb57551f8f469eddd2475dc5a9e, type: 3}
+  - {fileID: 2100832841, guid: 653cdda9f8c85384090186c9e0edca46, type: 3}
+  - {fileID: 21300000, guid: d2e9ae4eee159dc4088b85ed81317d4a, type: 3}
   _standCharaColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
-  _charainPos: []
-  _charaOutPos: []
+  _charainPos:
+  - {fileID: 2621277776887417829}
+  - {fileID: 5786718893772588866}
+  _charaOutPos:
+  - {fileID: 6292817138375572623}
+  - {fileID: 8663641938399827829}
 --- !u!1 &8585175567561626088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,6 +2165,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4118761282541310100, guid: c5ea3584662e5fe4bacc9e651dd02307, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c5ea3584662e5fe4bacc9e651dd02307, type: 3}
+--- !u!114 &1059102516980103975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8594139743754300236, guid: c5ea3584662e5fe4bacc9e651dd02307, type: 3}
+  m_PrefabInstance: {fileID: 8788269655691661419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6731158881928595559 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2639063097155344396, guid: c5ea3584662e5fe4bacc9e651dd02307, type: 3}
