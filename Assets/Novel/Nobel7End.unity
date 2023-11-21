@@ -447,10 +447,10 @@ PrefabInstance:
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _textFile
       value: 
-      objectReference: {fileID: 4900000, guid: b63036375334f6b4db2ba28c232c2e23, type: 3}
+      objectReference: {fileID: 4900000, guid: 92651b7fd3ababf4aa9e9d0deaf5e32e, type: 3}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _sceneName
-      value: Nobel6End
+      value: Nobel7End
       objectReference: {fileID: 0}
     - target: {fileID: 8200409799898782028, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charainPos.Array.size
@@ -595,11 +595,11 @@ PrefabInstance:
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _backGroundSprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 4994da5019a25b445b0ec2c0d76400ba, type: 3}
+      objectReference: {fileID: 21300000, guid: 28fdfe55784470c46abcab32bf5b096b, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _backGroundSprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 28fdfe55784470c46abcab32bf5b096b, type: 3}
+      objectReference: {fileID: 21300000, guid: df78c929f798bbb40a0903496e6aaf4d, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _backGroundSprites.Array.data[2]
       value: 
