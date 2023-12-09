@@ -80,11 +80,13 @@ MonoBehaviour:
   _count: 2
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 2
   _colorState: 0
+  _zikiMode: 0
+  _mogura: 0
 --- !u!1 &5843400209152135972
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,12 +165,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 653cdda9f8c85384090186c9e0edca46, type: 3}
+  m_Sprite: {fileID: 147097881, guid: 653cdda9f8c85384090186c9e0edca46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.07, y: 1.0214286}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -250,6 +252,7 @@ MonoBehaviour:
   - {fileID: 5723529227555643718, guid: 65dbac9326d571d46a1f90de18df06cc, type: 3}
   _moneycount: 3c0000005a000000
   _deadcount: -5
+  _countBool: 1
 --- !u!61 &6824683529159553074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -268,7 +271,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.07, y: 1.0214286}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2.07, y: 1.0214286}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -323,8 +326,10 @@ MonoBehaviour:
   _count: 0.5
   _angleCount: 1
   _pool: {fileID: 0}
-  num: 20
+  _num: 20
   _bulletspeed: 0.5
   _angle: 0
   _danmakuState: 1
   _colorState: 2
+  _zikiMode: 0
+  _mogura: 0
