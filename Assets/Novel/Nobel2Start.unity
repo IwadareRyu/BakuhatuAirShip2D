@@ -535,23 +535,23 @@ PrefabInstance:
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[4]
       value: 
-      objectReference: {fileID: 21300000, guid: 28cc3ac232508de4ab49b50483bdb29b, type: 3}
+      objectReference: {fileID: -1873134666, guid: 32435a4a43ddd3c44b34c4cda9b3a107, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[5]
       value: 
-      objectReference: {fileID: 21300000, guid: a8c4ff1a93f63b84a92737543c0f9254, type: 3}
+      objectReference: {fileID: 162830843, guid: a1f3122cc76cad74d870bd2ba143c1d5, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[6]
       value: 
-      objectReference: {fileID: 21300000, guid: 9ccff0feede30ee489257fb608185d77, type: 3}
+      objectReference: {fileID: -1449061463, guid: 01c08a81d40cb3d48b4b54c09dfba639, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[7]
       value: 
-      objectReference: {fileID: 21300000, guid: 0f6fd7dfd2356dc41961788c80f4a595, type: 3}
+      objectReference: {fileID: -1449061463, guid: 01c08a81d40cb3d48b4b54c09dfba639, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[8]
       value: 
-      objectReference: {fileID: 21300000, guid: f53d286eb0b8cd7499c715acb298882f, type: 3}
+      objectReference: {fileID: -1873134666, guid: 32435a4a43ddd3c44b34c4cda9b3a107, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[9]
       value: 
@@ -567,7 +567,7 @@ PrefabInstance:
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[12]
       value: 
-      objectReference: {fileID: 21300000, guid: ea0dbbb57551f8f469eddd2475dc5a9e, type: 3}
+      objectReference: {fileID: -900243690, guid: ea0dbbb57551f8f469eddd2475dc5a9e, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[13]
       value: 
@@ -579,7 +579,7 @@ PrefabInstance:
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[15]
       value: 
-      objectReference: {fileID: 21300000, guid: d6b3fb461d8f89044ac2ce3747b48dd3, type: 3}
+      objectReference: {fileID: -1148816918, guid: fda25a57116b3714599a9213c2aaafe2, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _backGroundSprites.Array.size
       value: 3
