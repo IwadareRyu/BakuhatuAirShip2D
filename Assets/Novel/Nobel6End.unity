@@ -587,7 +587,7 @@ PrefabInstance:
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _charaSprite.Array.data[15]
       value: 
-      objectReference: {fileID: 21300000, guid: d6b3fb461d8f89044ac2ce3747b48dd3, type: 3}
+      objectReference: {fileID: -1148816918, guid: fda25a57116b3714599a9213c2aaafe2, type: 3}
     - target: {fileID: 8200409799989211860, guid: b6939fba3d9cd1b4da4b4362716a97a4, type: 3}
       propertyPath: _backGroundSprites.Array.size
       value: 2

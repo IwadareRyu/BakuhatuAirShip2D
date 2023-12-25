@@ -17,4 +17,5 @@ public enum ImageState
     Ship = 14,
     Mouse = 15,
     Scratch = 16,
+    Moguu = 17,
 }
