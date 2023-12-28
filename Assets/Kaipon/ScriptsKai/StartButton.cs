@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
+    [SerializeField] string _loadScene = "tutorial";
     // Start is called before the first frame update
     public void OnClickStartButton()
     {
@@ -15,6 +16,6 @@ public class StartButton : MonoBehaviour
     IEnumerator LoadSceneCoroutine()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("tutorial");
+        SceneManager.LoadScene(_loadScene);
     }//1秒遅延させ、チュートリアルシーンを読み込む
 }
