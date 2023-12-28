@@ -10,26 +10,52 @@ public class GameStartScript : MonoBehaviour
     [SerializeField] string _sceneName;
     [SerializeField] bool _startPlay = true;
     [SerializeField] AudioClip _bGMAudio;
-    bool _dummyPause;
     [SerializeField] string _stageNumber = "Stage";
     [SerializeField] string _stageName;
+    [SerializeField] float _pageTime = 3f;
     Text _stageNameText;
+    [Header("エンディング用設定。")]
+    [SerializeField] bool _ending = false;
+    [SerializeField] Canvas _endCanvas;
+    [SerializeField] Image _backPanel;
+    [SerializeField] RectTransform[] _endingText;
+    [SerializeField]Color _initialColor = Color.black;
 
     Canvas _uI;
     void Awake()
     {
-        _uI = GameObject.FindGameObjectWithTag("GameUI").GetComponent<Canvas>();
-        _stageNameText = GameObject.FindGameObjectWithTag("StageNameUI").GetComponent<Text>();
-        GameManager.Instance.Sansyo();
-        GameManager.Instance.GameSetting();
+        if (!_ending)
+        {
+            _uI = GameObject.FindGameObjectWithTag("GameUI").GetComponent<Canvas>();
+            _stageNameText = GameObject.FindGameObjectWithTag("StageNameUI").GetComponent<Text>();
+            GameManager.Instance.Sansyo();
+            GameManager.Instance.GameSetting();
+        }
+        else
+        {
+            _endCanvas.enabled = false;
+            _backPanel.color = _initialColor;
+            foreach (var text in _endingText)
+            {
+                text.gameObject.SetActive(false);
+            }
+        }
     }
+
+    private void OnDisable()
+    {
+        PauseManager.OnPauseResume -= Dummy;
+    }
+
+    void Dummy(bool dummy) { }
 
     private void Start()
     {
+        PauseManager.OnPauseResume += Dummy;
         PauseManager.PauseResume();
         if (_sceneName != "")
         {
-            _uI.enabled = false;
+            if (_uI != null) { _uI.enabled = false; }
             _sceneLoaderAditiveClass = new SceneLoaderAditiveClass();
             _sceneLoaderAditiveClass.SceneLoaderAditive(_sceneName);
         }
@@ -48,16 +74,20 @@ public class GameStartScript : MonoBehaviour
 
     public void Play()
     {
-        BGMManager.Instance.ClipBGMPlay(_bGMAudio);
+        BGMManager.Instance?.ClipBGMPlay(_bGMAudio);
 
-
+        if (_ending)
+        {
+            StartCoroutine(EndingTime());
+            return;
+        }
         if (!_uI.enabled) { _uI.enabled = true; }
         StartCoroutine(StartTime());
     }
 
+    /// <summary>ゲームスタート時の処理</summary>
     IEnumerator StartTime()
     {
-
         _stageNameText.text = "";
         if (_stageName != "")
         {
@@ -72,5 +102,24 @@ public class GameStartScript : MonoBehaviour
             yield return null;
         }
         PauseManager.PauseResume();
+    }
+
+    /// <summary>エンディング時の処理</summary>
+    IEnumerator EndingTime()
+    {
+        _endCanvas.enabled = true;
+        yield return new WaitForSeconds(2f);
+        yield return _backPanel.DOFade(0.5f, 1f);
+        _endingText[0].gameObject.SetActive(true);
+        yield return new WaitForSeconds(_pageTime);
+        for(var i = 1;i < _endingText.Length;i++)
+        {
+            _endingText[i - 1].gameObject.SetActive(false);
+            _endingText[i].gameObject.SetActive(true);
+            for(var time = 0f;time < _pageTime;time += Time.deltaTime)
+            {
+                yield return null;
+            }
+        }
     }
 }
