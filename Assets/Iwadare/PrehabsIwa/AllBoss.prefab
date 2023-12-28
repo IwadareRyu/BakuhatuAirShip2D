@@ -221,7 +221,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  _num: 20
+  _num: 25
   _bulletspeed: 3
   _angle: 0
   _danmakuState: 3
@@ -738,15 +738,13 @@ MonoBehaviour:
   _bossAttack: {fileID: 259172395521043247}
   _bossMaxHP: 30
   _danmakuPattern:
-  - {fileID: 259172395897692862}
-  - {fileID: 259172395009705445}
-  - {fileID: 259172395182826395}
-  - {fileID: 259172395803119490}
   - {fileID: 259172396947798516}
-  - {fileID: 259172395009132728}
-  - {fileID: 259172395342697172}
-  _overMode: 1
-  _testMode: 1
+  - {fileID: 259172395009705445}
+  - {fileID: 8580981331841449056}
+  - {fileID: 259172395803119490}
+  - {fileID: 578556025739605466}
+  _overMode: 0
+  _testMode: 0
   _moneys:
   - {fileID: 5266786424971502570, guid: cee40d1cb0d8b7143bb6745c668dae03, type: 3}
   - {fileID: 462419198879544901, guid: 0bad0faa93923b14cab75bcca6d78201, type: 3}
@@ -754,7 +752,7 @@ MonoBehaviour:
   _moneycount:
   - 51.5
   - 83.2
-  _dropCount: 10
+  _dropCount: 5
 --- !u!95 &259172395521043242
 Animator:
   serializedVersion: 4
@@ -832,7 +830,10 @@ MonoBehaviour:
   - {fileID: 259172396734180188}
   - {fileID: 259172396487806409}
   - {fileID: 259172395015276515}
-  _movePoint: []
+  _movePoint:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _stopDistance: 0.1
   _moveSpeed: 3
   _attackSpeed: 5
@@ -1334,7 +1335,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  _num: 20
+  _num: 30
   _bulletspeed: 2
   _angle: 0
   _danmakuState: 3
@@ -2658,7 +2659,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  _num: 20
+  _num: 15
   _bulletspeed: 5
   _angle: 0
   _danmakuState: 3
@@ -2712,7 +2713,7 @@ MonoBehaviour:
   _count: 3
   _angleCount: 1
   _pool: {fileID: 0}
-  _num: 20
+  _num: 36
   _bulletspeed: 1
   _angle: 0
   _danmakuState: 3
@@ -2895,7 +2896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3126567690958192770
 Transform:
   m_ObjectHideFlags: 0
@@ -3836,7 +3837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7359863242738931318
 Transform:
   m_ObjectHideFlags: 0
@@ -4475,7 +4476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3440533288284233702
 Transform:
   m_ObjectHideFlags: 0

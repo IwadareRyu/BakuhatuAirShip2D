@@ -2056,7 +2056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259172395521043241, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
       propertyPath: _testMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 259172395521043241, guid: 69c6571b3ca45a04da6679f58cc67d1a, type: 3}
       propertyPath: _bossMaxHP
