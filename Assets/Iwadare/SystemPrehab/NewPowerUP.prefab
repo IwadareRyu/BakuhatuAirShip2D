@@ -2368,6 +2368,7 @@ MonoBehaviour:
   _powerMoneyText: {fileID: 6812166065776441642}
   _speedMoneyText: {fileID: 6812166065337090373}
   _airnumMoneyText: {fileID: 6812166065140177093}
+  _powerUpCanvas: {fileID: 0}
 --- !u!114 &1466257289059744025
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,7 +36,6 @@ public class Goal : MonoBehaviour
     [SerializeField] 
     AudioClip _audio;
 
-    [SerializeField]
     Canvas _uI;
 
     private void OnEnable()

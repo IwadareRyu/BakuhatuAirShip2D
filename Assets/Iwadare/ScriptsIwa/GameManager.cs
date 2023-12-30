@@ -21,7 +21,7 @@ public class GameManager : SingletonMonovihair<GameManager>
     [SerializeField] float _countDownTime = 60f;
     bool _isStarted;
     [Tooltip("倒す敵の数")]
-    int _deadEnemy;
+    [SerializeField] int _deadEnemy;
     public int _enemy => _deadEnemy;
     [Tooltip("デバック用")]
     [SerializeField] bool _godmode;
