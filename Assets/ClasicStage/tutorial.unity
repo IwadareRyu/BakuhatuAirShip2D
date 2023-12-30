@@ -2162,12 +2162,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6812166064778345203, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 973460481}
+    - target: {fileID: 6812166064778345203, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166064778345203, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166064778345203, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6812166065501265201, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812166066168192628, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_RootOrder
@@ -2234,6 +2246,11 @@ PrefabInstance:
 --- !u!1 &973460480 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6812166065080835629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+  m_PrefabInstance: {fileID: 973460479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &973460481 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6812166065501265101, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
   m_PrefabInstance: {fileID: 973460479}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018004954

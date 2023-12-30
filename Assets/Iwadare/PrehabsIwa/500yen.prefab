@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8692208148672730893}
   - component: {fileID: -5412650644384989716}
   - component: {fileID: 8357416502249141373}
-  - component: {fileID: 7195455681098332785}
   - component: {fileID: -817352877573074424}
   m_Layer: 0
   m_Name: 500yen
@@ -125,19 +124,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7195455681098332785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462419198879544901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0955331baebd3e4e873b47e99bbba99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_deadtime: 10
 --- !u!114 &-817352877573074424
 MonoBehaviour:
   m_ObjectHideFlags: 0

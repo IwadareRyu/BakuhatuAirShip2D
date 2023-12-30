@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,11 @@ using static BGMManager;
 public class BGMManager : SingletonMonovihair<BGMManager>
 {
     [Tooltip("BGM‚Ì‰¹—Ê")]
-    float _bgmVolume = -10f;
+    [SerializeField,Range(-10,-80)]float _bgmVolume = -10f;
     public float BgmVolume => _bgmVolume;
 
     [Tooltip("SE‚Ì‰¹—Ê")]
-    float _seVolume = 0f;
+    [SerializeField,Range(-10,-80)]float _seVolume = 0f;
     public float SeVolume => _seVolume;
 
     
@@ -32,6 +33,12 @@ public class BGMManager : SingletonMonovihair<BGMManager>
     AudioSource _bgm;
  
     protected override bool _dontDestroyOnLoad { get { return true; } }
+
+
+    private void Start()
+    {
+        
+    }
 
     /// <summary>SE‚ğÄ¶‚·‚éƒƒ\ƒbƒh</summary>
     /// <param name="seEnum">se‚ÌEnumŒ^</param>

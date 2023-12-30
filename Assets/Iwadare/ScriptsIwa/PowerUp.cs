@@ -11,7 +11,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     [Range(1, 30)] public int _speedUp = 1;
     [Tooltip("一度に出せる弾の総数")]
     [Range(1, 8)] public int _airnum = 1;
-
+    
     [Tooltip("GameManagerのインスタンス")]
     private GameManager GM;
 
@@ -22,6 +22,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     [SerializeField] Text _powerMoneyText;
     [SerializeField] Text _speedMoneyText;
     [SerializeField] Text _airnumMoneyText;
+    [SerializeField] Canvas _powerUpCanvas;
 
     [Tooltip("シーン遷移先の名前を保持する変数")]
     string _changeScene;
@@ -37,6 +38,8 @@ public class PowerUp : SingletonMonovihair<PowerUp>
 
         // UIテキストを更新する関数
         AllTextShow();
+
+        _powerUpCanvas.enabled = false;
     }
 
     /// <summary>全てのUIテキストを更新する処理</summary>
@@ -134,8 +137,7 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     /// <summary>強化画面を表示する処理</summary>
     public void BuildUp()
     {
-        GameObject _build = transform.GetChild(0).gameObject;
-        _build.SetActive(true);
+        _powerUpCanvas.enabled = true;
     }
 
     /// <summary>シーン遷移先の名前を設定する処理</summary>
