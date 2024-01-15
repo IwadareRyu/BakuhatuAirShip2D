@@ -86,6 +86,14 @@ public class BGMManager : SingletonMonovihair<BGMManager>
         {
             SEAudioPlay((int)SE.PlayerShot, 0.5f);
         }
+        else if(seEnum == SE.NobelQuake)
+        {
+            SEAudioPlay((int)SE.NobelQuake, 0.5f);
+        }
+        else if(seEnum == SE.Pig)
+        {
+            SEAudioPlay((int)SE.Pig, 0.5f);
+        }
 
     }
 
@@ -153,6 +161,8 @@ public enum SE
     FireBreath,
     Coin,
     PlayerShot,
+    NobelQuake,
+    Pig,
 }
 
 /// <summary>ƒmƒxƒ‹‚ÅŽg‚¤BGM‚ÌŽí—Þ‚ð—ñ‹“‚µ‚½—ñ‹“Œ^</summary>
@@ -164,4 +174,11 @@ public enum NobelBGM
     Boss1,
     Boss2,
     Clear,
+    NobelBattle1,
+    NobelBattle2,
+    NobelBoss1,
+    NobelBoss2,
+    NobelRelax1,
+    NobelRelax2,
+    NobelCastle,
 }

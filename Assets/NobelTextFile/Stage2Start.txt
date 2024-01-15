@@ -1,5 +1,5 @@
 &BGMPlay
-Clear
+NobelRelax1
 &CharaIn
 &Blue
 BlueNormal
@@ -32,6 +32,9 @@ GenNormal
 ある朝ブルスラは地上王国国王のムース王に
 呼び出される。
 &Stop
+&BGMStop
+&BGMPlay
+NobelCastle
 &CharaIn
 &Blue
 BlueNormal
@@ -47,6 +50,8 @@ Mouse
 お主に協力して欲しいことがあって今日
 来て貰った。
 &Stop
+&Reaction
+Blue Question
 &Blue
 BlueNormal
 ブルスラ
@@ -110,11 +115,15 @@ Mouse
 お主の縁者である"あの者"の罪状を軽くして
 やろう。
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueNormal
 ブルスラ
 引き受けましょう。
 &Stop
+&Reaction
+Gen Surprised
 &Gen
 Mouse
 ムース王
@@ -131,12 +140,13 @@ BlueNormal
 &CharaOut
 &Blue
 BlueNormal
+&Reaction
+Gen Surprised
 &Gen
 Mouse
 ムース王
 早い、早い！！！
 ちょっと待て、ブルスラーーーーーーー!
-
 &Stop
 &CharaOut
 &Gen

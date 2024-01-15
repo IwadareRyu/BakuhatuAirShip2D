@@ -1,5 +1,5 @@
 &BGMPlay
-Clear
+NobelRelax1
 &Chara
 
 天災によって人間の人口が減少して数百年。
@@ -13,6 +13,7 @@ Clear
 そんな対立の中で、突如として『魔王』が
 世界に出現し、大混乱を招いていた…
 &Stop
+&BGMStop
 &CharaIn
 &Blue
 BlueNormal
@@ -24,11 +25,15 @@ BlueNormal
 少年ブルスラはあるモンスターを
 追い詰めていた
 &Stop
+&BGMPlay
+NobelBattle1
 &Blue
 BlueAngry
 ブルスラ
 この剣の錆にしてくれる…
 &Stop
+&SEPlay
+Pig
 &CharaIn
 &Gen
 Pig
@@ -41,6 +46,11 @@ Pig
 ブゥーーーーーーーーーーーーーーーー
 (ダガ、オイラワ空ヲ飛ベルノダ！)
 &Stop
+&SEPlay
+Pig
+&Gen
+Pig
+バルーンピッグ
 ブゥ、ブブゥーーーーーーーーーーー
 (ワハッハッハ！！マヌケナヤツメ！)
 &Stop
@@ -55,6 +65,8 @@ BlueNormal
 ブルスラは懐からラジコンのコントローラー
 見たいな物を取り出し、操作する。
 &Stop
+&SEPlay
+NobelQuake
 &LongShakeEvent
 &ChangeChara
 &Blue
@@ -78,6 +90,11 @@ Pig
 ブーーーーーーーーーーーーーーー！?
 (ソンナノアリカ⁉ダガ逃ゲ切ッテヤル！！)
 &Stop
+&SEPlay
+Pig
+&Gen
+Pig
+バルーンピッグ
 ブゥーーーーーーーーーーーーーーーーー
 (他ノ犠牲ヲ出シテモオイラダケワ、
 生キ残ルノダ！！！)

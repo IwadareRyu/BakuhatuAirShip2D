@@ -179,6 +179,9 @@ public class UserScriptsManage : MonoBehaviour
             case "&SEPlay":
                 NobelSEPlay();
                 break;
+            case "&Reaction":
+                ReactionPlay();
+                break;
             case "":
                 _novelNumber++;
                 break;
@@ -220,6 +223,16 @@ public class UserScriptsManage : MonoBehaviour
             _nameText.text = _txtText[_novelNumber];
             _novelNumber++;
         }
+    }
+
+    public void ReactionPlay()
+    {
+        _novelNumber++;
+        string[] data = _txtText[_novelNumber].Split();
+        var reaction = (int)Enum.Parse<ReactionState>(data[1]);
+        
+        _imageManager.Reaction(data[0] == "Blue" ? 0 : 1,reaction);
+        _novelNumber++;
     }
 
     void LongShake(bool shakebool)

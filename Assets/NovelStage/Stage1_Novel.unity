@@ -495,6 +495,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1854767319189734936, guid: bff0724bbb19817469152e52de02e670, type: 3}
+      propertyPath: _seVolume
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 8566060957340018741, guid: bff0724bbb19817469152e52de02e670, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1792,7 +1796,6 @@ MonoBehaviour:
   _countDownTime: 999
   _enemymanege: {fileID: 665501467}
   _audio: {fileID: 8300000, guid: 8814df1b56b50704f82897117a9ec6ae, type: 3}
-  _uI: {fileID: 0}
 --- !u!61 &575733518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1871,6 +1874,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!223 &581977849 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6812166065501265101, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+  m_PrefabInstance: {fileID: 973460479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &634209124
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,7 +2171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812166065501265201, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812166066168192628, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_RootOrder
@@ -2221,6 +2229,10 @@ PrefabInstance:
       propertyPath: _bakuhatuPower
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _powerUpCanvas
+      value: 
+      objectReference: {fileID: 581977849}
     - target: {fileID: 6812166066168192634, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_Name
       value: NewPowerUP
@@ -2512,7 +2524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531826246719351854, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
-      value: BOSSStage2
+      value: Stage2_Novel
       objectReference: {fileID: 0}
     - target: {fileID: 5531826247788354305, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_Name
