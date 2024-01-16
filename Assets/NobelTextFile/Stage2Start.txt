@@ -148,6 +148,7 @@ Mouse
 早い、早い！！！
 ちょっと待て、ブルスラーーーーーーー!
 &Stop
+&BGMStop
 &CharaOut
 &Gen
 BlueNormal
@@ -158,6 +159,8 @@ BlueNormal
 向かうのだった…
 &Stop
 &Image
+&BGMPlay
+Boss2
 &CharaIn
 &Blue
 BlueNormal

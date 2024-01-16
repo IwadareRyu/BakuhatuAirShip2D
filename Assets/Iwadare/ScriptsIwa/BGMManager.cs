@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using static BGMManager;
 
@@ -94,6 +95,14 @@ public class BGMManager : SingletonMonovihair<BGMManager>
         {
             SEAudioPlay((int)SE.Pig, 0.5f);
         }
+        else if(seEnum == SE.Harpey)
+        {
+            SEAudioPlay((int)SE.Harpey, 0.4f);
+        }
+        else if (seEnum == SE.Snake)
+        {
+            SEAudioPlay((int)SE.Snake, 0.5f);
+        }
 
     }
 
@@ -111,9 +120,12 @@ public class BGMManager : SingletonMonovihair<BGMManager>
     /// <param name="audioClip">指定されたオーディオクリップ</param>
     public void ClipBGMPlay(AudioClip audioClip)
     {
-        // 指定されたオーディオクリップをオーディオソースに設定し再生
-        _bgm.clip = audioClip;
-        _bgm.Play();
+        if (_bgm.clip != audioClip)
+        {
+            // 指定されたオーディオクリップをオーディオソースに設定し再生
+            _bgm.clip = audioClip;
+            _bgm.Play();
+        }   // clipが同じなら何もしない。
     }
 
     public void StateBGMPlay(NobelBGM bgm)
@@ -163,6 +175,8 @@ public enum SE
     PlayerShot,
     NobelQuake,
     Pig,
+    Harpey,
+    Snake,
 }
 
 /// <summary>ノベルで使うBGMの種類を列挙した列挙型</summary>

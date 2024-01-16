@@ -1,5 +1,5 @@
 &BGMPlay
-Title
+NobelRelax1
 &Chara
 
 『3ヶ月前。』
@@ -13,7 +13,7 @@ GenNormal
 その要因に魔王復活が関係しており、なんと
 チンギスは”機械人間”だったのである。
 &Stop
-”機械人間”は人間に魔遺伝子を投与して
+"機械人間"は人間に魔遺伝子を投与して
 誕生した後天的な魔物種だ。チンギス曰く、
 2年前に誘拐された時に体を弄られたという。
 &Stop
@@ -36,6 +36,8 @@ GenNormal
 みたいな感覚が根底にあったんだ。それが
 今回の事件で判明したっていうのが真相よ
 &Stop
+&Reaction
+Blue Question
 &Blue
 BlueNormal
 ブルスラ
@@ -49,13 +51,23 @@ GenNormal
 あの日は散歩で城前を通っていたら後ろから
 ドーンって襲われたからな・・・
 &Stop
+&Reaction
+Gen Surprised
+&Gen
+GenNormal
 あっ、でもちょっと待って。そういえば顔は
 見えなかったけど気を失う直前にフードを
 かぶった鼻の長い動物がいたわ。
 &Stop
+&BGMStop
+&Gen
+GenNormal
+チンギス
 断言はちょっとできなけど、あの動物
 "モグラ"かもしれない！！
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueAngry
 ブルスラ
@@ -74,11 +86,15 @@ BlueNormal
 魔物種を増やすこと自体が目的だったんじゃ
 ないのか。
 &Stop
+&Reaction
+Gen Question
 &Gen
 GenNormal
 チンギス
 えっ、どういうこと？
 &Stop
+&BGMPlay
+NobelBoss1
 &Blue
 BlueNormal
 ブルスラ
@@ -100,12 +116,15 @@ GenNormal
 あと犯人がモグラ団関係者なら人間を減らす
 ことも可能で一石二鳥という訳か・・・
 &Stop
+&BGMStop
 &Blue
 BlueNormal
 ブルスラ
 何にしても、モグラ団を探る必要がある訳
 だな。
 &Stop
+&BGMPlay
+NobelRelax1
 &Gen
 GenNormal
 チンギス
@@ -126,6 +145,7 @@ GenNormal
 アタシは牢から出れないから、
 任せたよ、親友！！
 &Stop
+&BGMStop
 &Gen
 GenPain
 チンギス
@@ -158,12 +178,16 @@ BlueNormal
 王様からの依頼を遂行するため魔物達が
 集まっている場所をブルスラは回る。
 &Stop
+&BGMPlay
+Field2
 &Blue
 BlueNormal
 ブルスラ
 そういう訳で、お前ら無駄にケガしたくなけ
 れば、さっさと魔王の情報を吐け。
 &Stop
+&SEPlay
+Snake
 &CharaIn
 &Gen
 Takatori
@@ -171,6 +195,8 @@ Takatori
 シャーーーーーーーーーーーーーーーーー
 (イキナリ現ワレテ、何言ッテヤガル！！）
 &Stop
+&SEPlay
+Harpey
 &ChangeChara
 &Gen
 Harppy
@@ -179,6 +205,8 @@ Harppy
 (アタイラ二喧嘩ヲ売ロウダナンテ、
 イイ度胸ダ！！)
 &Stop
+&SEPlay
+Pig
 &ChangeChara
 &Gen
 Pig
