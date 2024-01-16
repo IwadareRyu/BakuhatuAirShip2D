@@ -1,5 +1,3 @@
-&BGMPlay
-Clear
 &CharaIn
 &Gen
 Drgon
@@ -14,6 +12,7 @@ BlueNormal
 さっきまで片言喋りだったのに…
 (もしや、魔王の洗脳が解けかけているのか)
 &Stop
+&BGMStop
 &CharaOut
 &Gen
 Drgon

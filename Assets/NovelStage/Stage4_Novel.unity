@@ -743,7 +743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531826246719351854, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
-      value: Stage5
+      value: Stage5_Novel
       objectReference: {fileID: 0}
     - target: {fileID: 5531826247788354305, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_Name
@@ -2725,7 +2725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _sceneName
-      value: 
+      value: Nobel4Start
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageName
@@ -2733,7 +2733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _startPlay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageNumber
@@ -2990,6 +2990,10 @@ PrefabInstance:
     - target: {fileID: 4303414215095292377, guid: 1913c2656dceda54e8fbca7f9fa0e58f, type: 3}
       propertyPath: _deadEnemy
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303414215095292377, guid: 1913c2656dceda54e8fbca7f9fa0e58f, type: 3}
+      propertyPath: _nobelSceneName
+      value: Nobel4End
       objectReference: {fileID: 0}
     - target: {fileID: 4303414215095292377, guid: 1913c2656dceda54e8fbca7f9fa0e58f, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target

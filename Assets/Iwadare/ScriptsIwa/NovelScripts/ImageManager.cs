@@ -1,11 +1,10 @@
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class ImageManager : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     GameObject _backGroundObject;
 
     [SerializeField]
@@ -13,10 +12,10 @@ public class ImageManager : MonoBehaviour
 
     [SerializeField]
     Color _fadeColor;
-    
-    [SerializeField] 
+
+    [SerializeField]
     Sprite[] _backGroundSprites;
-    
+
     [SerializeField]
     Image[] _charaImage;
 
@@ -31,13 +30,13 @@ public class ImageManager : MonoBehaviour
 
     [SerializeField]
     Sprite[] _charaSprite;
-    
-    [SerializeField] 
+
+    [SerializeField]
     Color _standCharaColor;
     int _changeSpriteNum = 0;
-    
+
     Image _backGroundImage;
-    
+
     Image _tmpImage;
 
 
@@ -52,7 +51,7 @@ public class ImageManager : MonoBehaviour
     void Awake()
     {
         _backGroundImage = _backGroundObject.GetComponent<Image>();
-        foreach(var i in _charaImage)
+        foreach (var i in _charaImage)
         {
             i.color = _standCharaColor;
         }
@@ -62,23 +61,23 @@ public class ImageManager : MonoBehaviour
     {
         _backGroundImage.sprite = _backGroundSprites[_changeSpriteNum];
         _fadeBackGroundObject.color = _fadeColor;
-        foreach(var i in _charaReactionImage) { i.color = _fadeColor; }
+        foreach (var i in _charaReactionImage) { i.color = _fadeColor; }
     }
 
     public void ChangeImage()
     {
         _changeSpriteNum++;
         _fadeBackGroundObject.sprite = _backGroundSprites[_changeSpriteNum];
-        _fadeBackGroundObject.DOFade(1f,1f).OnComplete(() =>
+        _fadeBackGroundObject.DOFade(1f, 1f).OnComplete(() =>
         {
 
             _fadeBackGroundObject.color = _fadeColor;
             _backGroundImage.sprite = _backGroundSprites[_changeSpriteNum];
         });
-      
+
     }
 
-    public void CharaImage(int i,ImageState image)
+    public void CharaImage(int i, ImageState image)
     {
         if (i != -1)
         {
@@ -98,10 +97,10 @@ public class ImageManager : MonoBehaviour
                 _tmpImage = null;
             }
         }
-        
+
     }
 
-    public void Reaction(int chara,int reaction)
+    public void Reaction(int chara, int reaction)
     {
         var sequence = DOTween.Sequence();
         _charaReactionImage[chara].color = Color.white;
@@ -110,14 +109,14 @@ public class ImageManager : MonoBehaviour
         var initialScale = tmpscale;
         initialScale.y = 0f;
         _charaReactionImage[chara].transform.localScale = initialScale;
-        if((ReactionState)reaction == ReactionState.Surprised)
+        if ((ReactionState)reaction == ReactionState.Surprised)
         {
-            var tmptrans = _charaReactionImage[chara].transform.localPosition;
+            var tmptrans = _charaReactionImage[chara].transform.position;
             sequence.Append(_charaReactionImage[chara].transform.DOScaleY(tmpscale.y, _reactionTime))
-                .Join(_charaReactionImage[chara].transform.DOMoveY(tmptrans.y + 5, _reactionTime))
+                .Join(_charaReactionImage[chara].transform.DOMoveY(tmptrans.y + 50, _reactionTime))
                 .Append(_charaReactionImage[chara].transform.DOMoveY(tmptrans.y, _reactionTime));
         }   // ビックリはぴょんと飛ぶイメージ
-        else if((ReactionState)reaction == ReactionState.Question)
+        else
         {
             sequence.Append(_charaReactionImage[chara].transform.DORotate(new Vector3(0, 0, 15), _reactionTime / 2f))
                 .Join(_charaReactionImage[chara].transform.DOScaleY(tmpscale.y, _reactionTime / 2f))
@@ -134,12 +133,12 @@ public class ImageManager : MonoBehaviour
 
     public void CharaIn(int i)
     {
-        _charaImage[i].transform.DOMove(_charainPos[i].position,0.5f);
+        _charaImage[i].transform.DOMove(_charainPos[i].position, 0.5f);
     }
 }
 
 public enum ReactionState
 {
     Surprised,
-    Question
+    Question,
 }
