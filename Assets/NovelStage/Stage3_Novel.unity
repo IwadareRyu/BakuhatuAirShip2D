@@ -3846,6 +3846,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1854767319189734936, guid: bff0724bbb19817469152e52de02e670, type: 3}
       propertyPath: _seVolume
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854767319189734936, guid: bff0724bbb19817469152e52de02e670, type: 3}
+      propertyPath: _bgmVolume
       value: -20.8
       objectReference: {fileID: 0}
     - target: {fileID: 8566060957340018741, guid: bff0724bbb19817469152e52de02e670, type: 3}

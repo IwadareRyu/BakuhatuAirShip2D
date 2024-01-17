@@ -1,4 +1,6 @@
-﻿&Chara
+﻿&BGMPlay
+NobelRelax3
+&Chara
 
 ネラゴンの件でブルスラは考えてしまう。
 魔王復活前までは穏やかに暮らしていた魔物
@@ -9,7 +11,7 @@
 かかる。
 &Stop
 &BGMPlay
-Title
+NobelCastle
 &CharaIn
 &Blue
 BlueNormal
@@ -24,6 +26,8 @@ Mouse
 更に暴走の沈静化。ご苦労であった。
 街にもそんな被害なく済んで、感謝する。
 &Stop
+&Reaction
+Blue Question
 &Blue
 BlueNormal
 ブルスラ
@@ -37,6 +41,8 @@ Mouse
 当たってくれたお陰で勇者たちは魔王城に
 侵入でき今魔王と対峙する直前らしい。
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueNormal
 ブルスラ
@@ -56,24 +62,30 @@ BlueNormal
 はい。行く先々でモグラ団配下の魔物達や
 モグラ団が現れていました・・・
 &Stop
+&BGMStop
 &Gen
 Mouse
 ムース王
 そのモグラ団のボスに関して少し気になる
 話があるんじゃ・・・
 &Stop
+&Reaction
+Blue Question
 &Blue
 BlueNormal
 ブルスラ
 気になる話ですか？
 (もしや、魔物を先導しているという話か）
 &Stop
+&BGMPlay
+NobelBoss1
 &Gen
 Mouse
 ムース王
 魔王城に侵入した勇者達からの書簡に記載
 されていたんだが、
 &Stop
+&BGMStop
 &Blue
 BlueNormal
 ブルスラ
@@ -81,6 +93,8 @@ BlueNormal
 勇者たち魔王城からどうやって書簡届けたん
 ですか？しかもこんなに早く。
 &Stop
+&BGMPlay
+NobelRelax1
 &Gen
 Mouse
 ムース王
@@ -88,6 +102,8 @@ Mouse
 魔法で届けられた。詳しい方法はワシも
 よく知らん！
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueNormal
 ブルスラ
@@ -102,6 +118,7 @@ Mouse
 奥方自身がその意見を一蹴しておったよ。
 さすがフェニックスの異名を持つ魔法使い。
 &Stop
+&BGMStop
 &Blue
 BlueNormal
 ブルスラ
@@ -116,10 +133,17 @@ Mouse
 まあ、よい。先程も言った通り勇者たちから
 届いた書簡についてだ。
 &Stop
+&BGMPlay
+NobelBoss1
+&Gen
+Mouse
+ムース王
 魔王城の内部には魔王に従う魔物および、
 モグラ団の雑兵もチラホラいるそうじゃ。
 だが、一番気になったのが城のとある部屋。
 &Stop
+&Reaction
+Blue Question
 &Blue
 BlueNormal
 ブルスラ
@@ -133,10 +157,21 @@ Mouse
 悪魔との契約に関する書物が見つかったと
 書簡にある。
 &Stop
+&BGMStop
+&Gen
+Mouse
+ムース王
 もしかしたら、モグラ団にはワシらが思いも
 しない恐ろしい計画があるやもしれない。
 そこでブルスラ、お主に頼みがある。
 &Stop
+&BGMPlay
+NobelBattle2
+&Reaction
+Gen Surprised
+&Gen
+Mouse
+ムース王
 お主にはモグラ団の目的を探りつつ、
 勇者たちの魔王討伐の障害となり得る
 モグラ団の掃討をするのだ！
@@ -160,6 +195,8 @@ BlueNormal
 翌日、ブルスラはネラゴンと合流するため
 彼の住処であるフィアマネラ山を訪れた。
 &Stop
+&Reaction
+Blue Surprised
 &CharaIn
 &Blue
 Drgon
@@ -175,11 +212,16 @@ BlueNormal
 共に協力してモグラ団の計画を何としても
 阻止しましょう。
 &Stop
+&BGMStop
 &Chara
 
 そんな、ブルスラとネラゴン達の前に空気を
 読まずにいつもの魔物達が乱入してくる。
 &Stop
+&BGMPlay
+Field1
+&SEPlay
+Snake
 &ChangeChara
 &Blue
 Takatori
@@ -188,6 +230,8 @@ Takatori
 シャーーーーーーーーーーーーーーーーー
 (ココデ会ッタガ！！！！！！ーーーーー)
 &Stop
+&SEPlay
+Harpey
 &ChangeChara
 &Blue
 Harppy
@@ -195,6 +239,8 @@ Harppy
 ピュイーーーーーーーーーーーーーーーーー
 (百年目ェ！！！！ーーーーーーーー)
 &Stop
+&SEPlay
+Pig
 &ChangeChara
 &Blue
 Pig
@@ -210,6 +256,8 @@ BlueNormal
 (おとぎ話ジャーパン国に描かれている
 ゴキブリ並の生命力だな...)
 &Stop
+&Reaction
+Gen Surprised
 &Gen
 BlueAngry
 ブルスラ

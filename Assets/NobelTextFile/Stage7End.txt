@@ -1,5 +1,5 @@
-﻿&BGMPlay
-Field1
+﻿&Reaction
+Blue Surprised
 &CharaIn
 &Blue
 BlueNormal
@@ -7,6 +7,8 @@ BlueNormal
 ネラゴン、邪魔が入ったが僕を奴らの下まで
 連れていってくれ！
 &Stop
+&Reaction
+Gen Surprised
 &CharaIn
 &Gen
 Drgon
@@ -15,6 +17,7 @@ Drgon
 吾輩の速さに振り落とされてくれるなよ！
 &Stop
 &Image
+&BGMStop
 &Chara
 
 ブルスラを背に乗せ、ネラゴンは空へと

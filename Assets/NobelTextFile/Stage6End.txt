@@ -4,6 +4,7 @@
 倒れこむ。ブルスラは慌てて駆け寄っていく
 ネラゴンは先程と違い穏やかな様子だった。
 &Stop
+&BGMStop
 &CharaIn
 &Gen
 Drgon
@@ -20,7 +21,7 @@ BlueHappy
 呼び戻すことに成功できたとも言える。
 &Stop
 &BGMPlay
-Clear
+NobelRelax3
 &Gen
 Drgon
 ネラゴン
@@ -28,6 +29,8 @@ Drgon
 回復した際にはお主の力になろう。魔王や
 モグラ団には腹を据えかねていたのだ！！
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueHappy
 ブルスラ
@@ -35,6 +38,8 @@ BlueHappy
 モグラ団との戦いがのこっているから、
 あなたの力を借りられるのは心強い...
 &Stop
+&Reaction
+Gen Surprised
 &Gen
 Drgon
 ネラゴン

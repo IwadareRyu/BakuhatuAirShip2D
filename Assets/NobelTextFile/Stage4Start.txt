@@ -1,5 +1,5 @@
 ﻿&BGMPlay
-Title
+NobelBoss1
 &CharaIn
 &Blue
 BlueNormal
@@ -18,6 +18,8 @@ Scratch
 モグラを見たブルスラは幼少期のトラウマが
 フラッシュバックされた
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueAngry
 ブルスラ
@@ -45,6 +47,7 @@ BlueHappy
 いた。まさかの敵討ちと親友の手助けが
 まとめて行えるなんて運がいい)
 &Stop
+&BGMStop
 &Gen
 Harppy
 &Chara
@@ -60,6 +63,8 @@ BlueHappy
 お前ら、モグラ団の関係者で合ってるかな？
 抵抗せずに僕の話を聞いてもらえる？
 &Stop
+&BGMPlay
+MoguraBoss
 &ChangeChara
 &Gen
 Mogura

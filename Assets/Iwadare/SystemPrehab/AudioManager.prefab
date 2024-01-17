@@ -1884,7 +1884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bgmVolume: -29.8
-  _seVolume: -29.8
+  _seVolume: -19.2
   _bgmClip:
   - {fileID: 8300000, guid: da1978025a2a91a4e8d177202e7ebccd, type: 3}
   - {fileID: 8300000, guid: 5224d6ba805c09645b4c74cab798644f, type: 3}
@@ -1899,6 +1899,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 92152e8a3feaa404aab9ff691d350680, type: 3}
   - {fileID: 8300000, guid: dcde1d8ed156ff1458883cbddf2056a2, type: 3}
   - {fileID: 8300000, guid: 339990df7a02e89498d11f71460d626a, type: 3}
+  - {fileID: 8300000, guid: c7433f172d73c0b41858f7d61dd2a690, type: 3}
+  - {fileID: 8300000, guid: 7a6fea54f61213744a38f624970d9979, type: 3}
+  - {fileID: 8300000, guid: 5dc2a476a00e0224b85452d3c41edcea, type: 3}
+  - {fileID: 8300000, guid: eb531faf4e9e98a43bf3192f1518fba1, type: 3}
+  - {fileID: 8300000, guid: a015607d07879b042bb416693a61513b, type: 3}
   _sESource:
   - {fileID: 1013161285532560450}
   - {fileID: 6533802332065198870}

@@ -5,6 +5,8 @@ Mogura
 まさか、我らがここまで深手を負わせられる
 なんて・・・
 &Stop
+&Reaction
+Gen Surprised
 &CharaIn
 &Gen
 BlueAngry
@@ -21,6 +23,9 @@ Mogura
 この力を温存したままにしたかったが、
 仕方あるまい・・・
 &Stop
+&BGMStop
+&SEPlay
+NobelQuake
 &LongShakeEvent
 &ChangeChara
 &Blue
@@ -31,11 +36,15 @@ Ship
 飛行する飛行艇ブルーウィング号が出現する
 &Stop
 &EndLongShakeEvent
+&Reaction
+Gen Surprised
 &Gen
 BlueAngry
 ブルスラ
 なっ、なんで！！
 &Stop
+&BGMPlay
+NobelBoss3
 &Chara
 
 先程までブルスラが遠隔操作を行っていた
@@ -71,6 +80,8 @@ Mogura
 そう、ブルスラに言い残し飛行艇へ乗り込ん
 でいく。
 &Stop
+&Reaction
+Gen Surprised
 &ChangeChara
 &Gen
 BlueAngry
@@ -80,6 +91,7 @@ BlueAngry
 罪を償え！この卑怯者！！ーーー
 &Stop
 &Image
+&BGMStop
 &CharaOut
 &Blue
 Ship

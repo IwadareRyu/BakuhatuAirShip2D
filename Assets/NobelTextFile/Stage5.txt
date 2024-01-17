@@ -1,5 +1,5 @@
 ﻿&BGMPlay
-Title
+NobelRelax2
 &Chara
 
 モグロワクローン撃破したブルスラ。
@@ -32,7 +32,7 @@ BlueHappy
 BlueNormal
 ブルスラ
 (勇者たちも順調に進めているようで良かった
-けれでも、チンギスの件もあるからか魔物と
+けれども、チンギスの件もあるからか魔物と
 一括りにされると複雑な気持ちになるな…）
 &Stop
 &Chara
@@ -55,6 +55,8 @@ Drgon
 目をやると、そこには数日前にブルスラが
 退けたはずのネラゴンがいた。
 &Stop
+&BGMPlay
+NobelBattle1
 &Blue
 BlueAngry
 ブルスラ
@@ -99,12 +101,16 @@ BlueAngry
 ブルスラ
 お前ら、邪魔するな！
 &Stop
+&SEPlay
+Snake
 &Gen
 Takatori
 タカヘビ
 シャーーーーーーーーーーーーーーーーー
 (魔王様ト、ボスノ邪魔ワサセナイ！！）
 &Stop
+&SEPlay
+Harpey
 &ChangeChara
 &Gen
 Harppy
@@ -112,6 +118,8 @@ Harppy
 ピュイーーーーーーーーーーーーーーーーー
 (ナントシテモ勝利ヲ我等ノ手二！！—－ー)
 &Stop
+&SEPlay
+Pig
 &ChangeChara
 &Gen
 Pig
@@ -119,6 +127,8 @@ Pig
 ブゥーーーーーーーーーーーーーーーーー
 (積年ノ恨ミィ！ーーーーーーーーーーー）
 &Stop
+&BGMPlay
+Field3
 &Blue
 BlueNormal
 ブルスラ
