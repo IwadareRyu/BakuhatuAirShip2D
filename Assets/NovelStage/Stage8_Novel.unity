@@ -838,7 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a5869943af903448283c89ccb10ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nobelSceneName: 
+  _nobelSceneName: Nobel8End
   _deadEnemy: 1
   _goalPos: {fileID: 1920351826}
   _speed: 2
@@ -846,7 +846,6 @@ MonoBehaviour:
   _countDownTime: 500
   _enemymanege: {fileID: 0}
   _audio: {fileID: 8300000, guid: 8814df1b56b50704f82897117a9ec6ae, type: 3}
-  _uI: {fileID: 0}
 --- !u!61 &575733518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2419,6 +2418,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 692956271046666796, guid: bbe506c2ed4bd364598d19de0e62c76f, type: 3}
   m_PrefabInstance: {fileID: 822146567}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1751528395 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6812166065501265101, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+  m_PrefabInstance: {fileID: 6812166066676977613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1770923067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,8 +3272,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: c7433f172d73c0b41858f7d61dd2a690, type: 3}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _sceneName
+      value: Nobel8Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageName
-      value: 
+      value: "\u6700\u7D42\u6C7A\u6226\u30E2\u30B0\u30ED\u30EF\uFF01"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
+      propertyPath: _startPlay
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageNumber
@@ -3753,7 +3765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531826246719351854, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Title
+      value: Ending
       objectReference: {fileID: 0}
     - target: {fileID: 5531826246719351854, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
@@ -3914,7 +3926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812166065501265201, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812166065920058832, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_LocalScale.x
@@ -3980,6 +3992,10 @@ PrefabInstance:
       propertyPath: _bakuhatuPower
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _powerUpCanvas
+      value: 
+      objectReference: {fileID: 1751528395}
     - target: {fileID: 6812166066168192634, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_Name
       value: PowerUP

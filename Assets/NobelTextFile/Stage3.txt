@@ -55,6 +55,7 @@ GenNormal
 Gen Surprised
 &Gen
 GenNormal
+チンギス
 あっ、でもちょっと待って。そういえば顔は
 見えなかったけど気を失う直前にフードを
 かぶった鼻の長い動物がいたわ。

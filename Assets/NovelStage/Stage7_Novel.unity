@@ -1101,15 +1101,15 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5224d6ba805c09645b4c74cab798644f, type: 3}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _sceneName
-      value: 
+      value: Nobel7Start
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageName
-      value: "\u305D\u308D\u305D\u308D\u7121\u53CC\u3067\u304D\u308B\u306E\u3067\u306F\uFF1F"
+      value: "\u3044\u3056\u6700\u7D42\u6C7A\u6226\u3078\uFF01"
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _startPlay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageNumber
@@ -1395,14 +1395,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nobelSceneName: Nobel7End
-  _deadEnemy: 0
+  _deadEnemy: 200
   _goalPos: {fileID: 274895284}
   _speed: 2
   _clearText: {fileID: 1760071842}
   _countDownTime: 500
   _enemymanege: {fileID: 665501467}
   _audio: {fileID: 8300000, guid: 8814df1b56b50704f82897117a9ec6ae, type: 3}
-  _uI: {fileID: 0}
 --- !u!61 &575733518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1628,6 +1627,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38eecc23e9adf34da998d44c8d5726a, type: 3}
+--- !u!223 &812517694 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6812166065501265101, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+  m_PrefabInstance: {fileID: 1405581949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &885604443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2303,7 +2307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6812166065501265201, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812166066168192628, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_RootOrder
@@ -2349,6 +2353,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _powerUpCanvas
+      value: 
+      objectReference: {fileID: 812517694}
     - target: {fileID: 6812166066168192634, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_Name
       value: NewPowerUP

@@ -1,4 +1,6 @@
-﻿&CharaIn
+﻿&BGMPlay
+NobelBattle2
+&CharaIn
 &Gen
 Drgon
 &Chara
@@ -19,6 +21,8 @@ BlueNormal
 ブルスラが心内で決意に燃えている中で
 ネラゴンが何かを見つける
 &Stop
+&Reaction
+Gen Surprised
 &Gen
 Drgon
 ネラゴン
@@ -44,6 +48,8 @@ BlueNormal
 近くの場所まで着いたら、僕を下ろしてくれ
 下ろしたら、ネラゴンは離れてて。
 &Stop
+&Reaction
+Gen Surprised
 &Gen
 Drgon
 ネラゴン
@@ -88,6 +94,8 @@ Drgon
 ネラゴンに地上に降ろして貰ったブルスラは
 モグラ団と魔物の集団へと近づいていく。
 &Stop
+&Reaction
+Blue Surprised
 &CharaIn
 &Gen
 Mogura
@@ -110,12 +118,17 @@ BlueNormal
 すぐにを冷静を取り戻し、モグラ団たちに
 意識を切り替えていく。
 &Stop
+&BGMStop
+&Reaction
+Blue Surprised
 &Blue
 BlueNormal
 ブルスラ
 やっと会えたな"モグラ団ボス"モグロワ！！
 僕はこの時をどれだけ望んでいたか・・・
 &Stop
+&BGMPlay
+NobelBoss3
 &Gen
 Mogura
 モグロワ
@@ -127,6 +140,8 @@ Mogura
 BlueNormal
 そうだといったら...？
 &Stop
+&Reaction
+Gen Question
 &Gen
 Mogura
 モグロワ
@@ -142,6 +157,8 @@ Mogura
 落ち着きを無くして目の前のモグロワらに
 どうしようもない憤りを感じていた。
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueAngry
 ブルスラ
@@ -149,6 +166,8 @@ BlueAngry
 僕の師匠を殺して今尚、僕の親友を苦しめて
 いるお前がっ！！
 &Stop
+&Reaction
+Gen Question
 &Gen
 Mogura
 モグロワ
@@ -163,20 +182,30 @@ BlueNormal
 &Stop
 僕の名はブルスラ。
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueAngry
 ブルスラ
 お前達によって、殺された老印剣士スライム
 の息子だ！！
 &Stop
+&BGMStop
+&Blue
+BlueAngry
+ブルスラ
 師と友の為にお前達の企みを
 &Stop
+&BGMPlay
+Revo
 &ShortShakeEvent
 &Blue
 BlueAngry
 ブルスラ
 此処でうち砕く！
 &Stop
+&Reaction
+Gen Surprised
 &Gen
 Mogura
 モグロワ

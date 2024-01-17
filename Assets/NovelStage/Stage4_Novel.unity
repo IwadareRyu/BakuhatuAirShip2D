@@ -1843,6 +1843,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1854767319189734936, guid: bff0724bbb19817469152e52de02e670, type: 3}
+      propertyPath: _bgmClip.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854767319189734936, guid: bff0724bbb19817469152e52de02e670, type: 3}
+      propertyPath: _bgmClip.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: c7433f172d73c0b41858f7d61dd2a690, type: 3}
     - target: {fileID: 8566060957340018741, guid: bff0724bbb19817469152e52de02e670, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2125,6 +2133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71eb1dbe617fa74aaea5c46e715973d, type: 3}
+--- !u!223 &2069519337 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6812166065501265101, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+  m_PrefabInstance: {fileID: 6812166066676977613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2122033761
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,7 +3115,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6812166065501265201, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812166066168192628, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_RootOrder
@@ -3160,6 +3173,10 @@ PrefabInstance:
       propertyPath: _bakuhatuPower
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _powerUpCanvas
+      value: 
+      objectReference: {fileID: 2069519337}
     - target: {fileID: 6812166066168192634, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_Name
       value: PowerUP

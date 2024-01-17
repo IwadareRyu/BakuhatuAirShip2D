@@ -1,5 +1,5 @@
 ﻿&BGMPlay
-Boss2
+NobelBattle2
 &CharaIn
 &Blue
 BlueNormal
@@ -16,12 +16,16 @@ BlueNormal
 住処で暴れまわり、悶え苦しんでいる
 ネラゴンの姿であった。
 &Stop
+&SEPlay
+FireBreath
 &CharaIn
 &Gen
 Drgon
 ネラゴン(暴走)
 グギュアバァッーーー！！！
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueAngry
 ブルスラ
@@ -39,8 +43,14 @@ BlueNormal
 ブルスラ
 ネラゴン！僕がお前を、魔王の呪縛
 &Stop
+&BGMStop
+&Blue
+BlueNormal
+ブルスラ
 そして、モグラ団の悪用から
 &Stop
+&BGMPlay
+Boss2
 &ShortShakeEvent
 &Blue
 BlueAngry

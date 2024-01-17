@@ -114,16 +114,16 @@ public class ImageManager : MonoBehaviour
             var tmptrans = _charaReactionImage[chara].transform.position;
             sequence.Append(_charaReactionImage[chara].transform.DOScaleY(tmpscale.y, _reactionTime))
                 .Join(_charaReactionImage[chara].transform.DOMoveY(tmptrans.y + 50, _reactionTime))
-                .Append(_charaReactionImage[chara].transform.DOMoveY(tmptrans.y, _reactionTime));
+                .Append(_charaReactionImage[chara].transform.DOMoveY(tmptrans.y, _reactionTime)).SetLink(_charaReactionImage[chara].gameObject);
         }   // ビックリはぴょんと飛ぶイメージ
         else
         {
             sequence.Append(_charaReactionImage[chara].transform.DORotate(new Vector3(0, 0, 15), _reactionTime / 2f))
                 .Join(_charaReactionImage[chara].transform.DOScaleY(tmpscale.y, _reactionTime / 2f))
                 .Append(_charaReactionImage[chara].transform.DORotate(new Vector3(0, 0, -30), _reactionTime))
-                .Append(_charaReactionImage[chara].transform.DORotate(new Vector3(0, 0, 15), _reactionTime / 2f));
+                .Append(_charaReactionImage[chara].transform.DORotate(new Vector3(0, 0, 15), _reactionTime / 2f)).SetLink(_charaReactionImage[chara].gameObject);
         }   //ハテナは首を左右に傾けるイメージ
-        sequence.Play().OnComplete(() => { _charaReactionImage[chara].DOFade(0f, _reactionTime * 2f); }).SetLink(gameObject);
+        sequence.Play().OnComplete(() => { _charaReactionImage[chara].DOFade(0f, _reactionTime * 2f); }).SetLink(_charaReactionImage[chara].gameObject);
     }
 
     public void CharaOut(int i)

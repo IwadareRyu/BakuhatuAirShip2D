@@ -195,4 +195,9 @@ public enum NobelBGM
     NobelRelax1,
     NobelRelax2,
     NobelCastle,
+    MoguraBoss,
+    Field3,
+    NobelRelax3,
+    NobelBoss3,
+    Revo,
 }

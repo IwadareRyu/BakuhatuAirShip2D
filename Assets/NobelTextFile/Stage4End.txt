@@ -1,11 +1,10 @@
-﻿&BGMPlay
-Boss2
-&CharaIn
+﻿&CharaIn
 &Blue
 BlueNormal
 ブルスラ
 師匠、やっと終わったよ・・・
 &Stop
+&BGMStop
 &CharaIn
 &Gen
 Mogura
@@ -21,6 +20,10 @@ Mogura
 致命傷ヲ負ワセルトワナ・・・ダガ小僧、
 我ガ ボスダト 何時カラ 錯覚シテイタ。
 &Stop
+&BGMPlay
+MoguraBoss
+&Reaction
+Blue Surprised
 &Blue
 BlueAngry
 ブルスラ
@@ -50,6 +53,8 @@ Mogura
 モグロワクローン
 魔物ヲ生ミ出セル。
 &Stop
+&Reaction
+Blue Question
 &Blue
 BlueNormal
 ブルスラ
@@ -58,7 +63,7 @@ BlueNormal
 魔物を生み出すなど・・・）
 &Stop
 &BGMPlay
-Boss1
+NobelBoss1
 &Gen
 Mogura
 モグロワクローン
@@ -70,6 +75,8 @@ Mogura
 自身ノコピーヲ 作ルノワ、
 オリジナル限定 ダガナ。
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueNormal
 ブルスラ
@@ -94,6 +101,7 @@ Mogura
 暴走ヲ 止メラㇾルカモ 
 知レナイナ…
 &Stop
+&BGMStop
 &CharaOut
 &Gen
 Mogura
