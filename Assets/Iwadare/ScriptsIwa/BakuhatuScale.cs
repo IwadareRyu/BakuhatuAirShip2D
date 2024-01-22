@@ -16,9 +16,7 @@ public class BakuhatuScale : MonoBehaviour
     Vector2 _cirleCenter;
     [Tooltip("攻撃フラグ")]
     bool _attackbool;
-    [SerializeField,
-        Tooltip("攻撃パターンの選択（Normal: 通常攻撃, AllAttack: 全体攻撃）"),
-        Header("攻撃パターンの選択（Normal: 通常攻撃, AllAttack: 全体攻撃)")]
+    [SerializeField,Tooltip("攻撃パターンの選択（Normal: 通常攻撃, AllAttack: 全体攻撃）"),Header("攻撃パターンの選択（Normal: 通常攻撃, AllAttack: 全体攻撃)")]
     Pattern _pattern;
 
     [SerializeField,Tooltip("カメラの振動設定のクラス")]
@@ -38,8 +36,8 @@ public class BakuhatuScale : MonoBehaviour
         {
             // 通常攻撃時の大きさを設定する。
             _power = GameObject.FindGameObjectWithTag("UP").GetComponent<PowerUp>();
-            transform.localScale = new Vector2(1.0f + _power._bakuhatuPower * 0.1f, 1.0f + _power._bakuhatuPower * 0.1f);
-            _circleRadius = new Vector3(1.0f + _power._bakuhatuPower * 0.1f, 0);
+            transform.localScale = new Vector2(1.0f + _power._bakuhatuPower * 0.15f, 1.0f + _power._bakuhatuPower * 0.15f);
+            _circleRadius = new Vector3(1.0f + _power._bakuhatuPower * 0.15f, 0);
             _cirleCenter = transform.position;
         }
         else
@@ -63,7 +61,7 @@ public class BakuhatuScale : MonoBehaviour
         if (_pattern == Pattern.Normal)
         {
             // 通常攻撃時の攻撃範囲
-            attacklange = Physics2D.OverlapCircleAll(_cirleCenter, (1.0f + _power._bakuhatuPower * 0.1f) / 2);
+            attacklange = Physics2D.OverlapCircleAll(_cirleCenter, (1.0f + _power._bakuhatuPower * 0.15f) / 2);
         }
         else
         {

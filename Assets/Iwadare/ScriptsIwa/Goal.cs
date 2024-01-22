@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 public class Goal : MonoBehaviour
 {
     SceneLoaderAditiveClass _sceneLoaderAditiveClass;
-    
+
+    [SerializeField]
+    bool _nobelBool = true;
     [SerializeField]
     string _nobelSceneName;
     
@@ -106,7 +108,8 @@ public class Goal : MonoBehaviour
         if (collision.gameObject.tag == "Player" && !_pause)
         {
             PauseManager.PauseResume();
-            if (_nobelSceneName != "")
+            GetComponent<Collider2D>().enabled = false;
+            if (_nobelSceneName != "" && _nobelBool)
             {
                 if (_uI.enabled) { _uI.enabled = false; }
                 _sceneLoaderAditiveClass = new SceneLoaderAditiveClass();

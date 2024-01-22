@@ -35,12 +35,6 @@ public class BGMManager : SingletonMonovihair<BGMManager>
  
     protected override bool _dontDestroyOnLoad { get { return true; } }
 
-
-    private void Start()
-    {
-        
-    }
-
     /// <summary>SE‚ğÄ¶‚·‚éƒƒ\ƒbƒh</summary>
     /// <param name="seEnum">se‚ÌEnumŒ^</param>
     public void SEPlay(SE seEnum)

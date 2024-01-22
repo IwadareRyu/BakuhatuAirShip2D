@@ -49,12 +49,12 @@ public class PowerUp : SingletonMonovihair<PowerUp>
         if (_bakuhatuPower < 50)
         {
             TextShow(_powerText, _bakuhatuPower);
-            TextShow(_powerMoneyText, _bakuhatuPower * 500);
+            TextShow(_powerMoneyText, _bakuhatuPower * 150);
         }
         else
         {
             TextShow(_powerText, _bakuhatuPower, true);
-            TextShow(_powerMoneyText, _bakuhatuPower * 500, true);
+            TextShow(_powerMoneyText, _bakuhatuPower * 150, true);
         }
 
         // 弾のスピードを表示
@@ -101,10 +101,10 @@ public class PowerUp : SingletonMonovihair<PowerUp>
     /// <summary>爆発範囲をアップさせる処理</summary>
     public void BakuhatuUp()
     {
-        if (GM._totalMoney >= _bakuhatuPower * 500 && _bakuhatuPower < 50)
+        if (GM._totalMoney >= _bakuhatuPower * 150 && _bakuhatuPower < 50)
         {
             BGMManager.Instance?.SEPlay(SE.PowerUp);
-            GM.TotalMoney(-_bakuhatuPower * 500);
+            GM.TotalMoney(-_bakuhatuPower * 150);
             _bakuhatuPower++;
             AllTextShow();
         }
