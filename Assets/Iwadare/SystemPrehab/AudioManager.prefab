@@ -1883,7 +1883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6467dd01c3f320241b6e2ad2d006b121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bgmVolume: -29.8
+  _bgmVolume: -20.2
   _seVolume: -19.2
   _bgmClip:
   - {fileID: 8300000, guid: da1978025a2a91a4e8d177202e7ebccd, type: 3}

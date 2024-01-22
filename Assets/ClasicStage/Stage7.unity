@@ -1101,7 +1101,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5224d6ba805c09645b4c74cab798644f, type: 3}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageName
-      value: "\u305D\u308D\u305D\u308D\u7121\u53CC\u3067\u304D\u308B\u306E\u3067\u306F\uFF1F"
+      value: "\u7121\u53CC\u30BF\u30A4\u30E0\uFF01"
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageNumber
@@ -1386,21 +1386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a5869943af903448283c89ccb10ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _nobelBool: 0
+  _nobelSceneName: 
   _deadEnemy: 150
   _goalPos: {fileID: 274895284}
   _speed: 2
@@ -2308,7 +2295,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6812166065501265201, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812166066168192628, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_RootOrder
@@ -2353,6 +2340,18 @@ PrefabInstance:
     - target: {fileID: 6812166066168192628, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _airnum
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _speedUp
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _bakuhatuPower
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 6812166066168192634, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_Name
@@ -3258,6 +3257,10 @@ PrefabInstance:
       propertyPath: _resultText
       value: 
       objectReference: {fileID: 1405581950}
+    - target: {fileID: 4994506639191379396, guid: 67ea25ec361b5a14ba356c7363a2cc2a, type: 3}
+      propertyPath: _totalMoney
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 4994506639191379402, guid: 67ea25ec361b5a14ba356c7363a2cc2a, type: 3}
       propertyPath: m_Name
       value: NEWGameManager

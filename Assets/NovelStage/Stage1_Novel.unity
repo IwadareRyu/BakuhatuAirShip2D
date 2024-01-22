@@ -1788,6 +1788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a5869943af903448283c89ccb10ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nobelBool: 1
   _nobelSceneName: 
   _deadEnemy: 100
   _goalPos: {fileID: 274895284}

@@ -435,8 +435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0428597b122db944a923a26f0457beb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: NobelEnding
-  _startPlay: 0
+  _sceneName: 
+  _startPlay: 1
   _bGMAudio: {fileID: 8300000, guid: 17c5e894d659e1e4786c3765f84345a0, type: 3}
   _stageNumber: 
   _stageName: 

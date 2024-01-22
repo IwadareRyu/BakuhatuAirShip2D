@@ -1,4 +1,6 @@
-﻿&Chara
+﻿&BGMPlay
+NobelCastle
+&Chara
 
 悲願であるモグラ団のボスとの戦いが
 不完全燃焼で終わりを迎えた
@@ -36,6 +38,7 @@ BlueHappy
 自国の王が彼で良かったと改めて感じ、
 国の為に邁進しようと心に誓った。
 &Stop
+&BGMStop
 &ShortShakeEvent
 &Chara
 
@@ -43,6 +46,8 @@ BlueHappy
 城で働くものたちの大声、慌てる声などが
 玉座の間まで響いてくる。
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueNormal
 ブルスラ
@@ -66,6 +71,10 @@ Moguu
 動物を見た瞬間、ムース王はひどく驚いた
 様子を見せた。
 &Stop
+&BGMPlay
+NobelBoss1
+&Reaction
+Gen Surprised
 &Gen
 Mouse
 ムース王
@@ -97,6 +106,8 @@ Moguu
 僧侶モグー
 その後お二人は、ある魔法を発動しました。
 &Stop
+&Reaction
+Gen Surprised
 &Gen
 Mouse
 ムース王
@@ -157,6 +168,7 @@ Mouse
 (次世代に世をか・・・)
 今日は、ゆっくり体を休ませよ。
 &Stop
+&BGMStop
 &CharaOut
 &Blue
 Moguu
@@ -179,6 +191,13 @@ BlueNormal
 ブルスラ
 いえ、勇者の件は僕も気になっていたので…
 &Stop
+&BGMPlay
+NobelRelax3
+&Reaction
+Blue Question
+&Blue
+BlueNormal
+ブルスラ
 …ムース王、魔物と人、動物たちが平和に
 暮らせる国は作れないのでしょうか？
 &Stop
@@ -220,11 +239,22 @@ Mouse
 (勇者がいう次代に彼も入るのだな)
 お前の心意気は伝わった。
 &Stop
+&BGMStop
+&Gen
+Mouse
+ムース王
 しかし、国というものは中々変えられない。
 &Stop
 だが、お主ら若い世代たちから変わって
 行けば国も良い方向に進めるやもしれない！
 &Stop
+&BGMPlay
+NobelBattle2
+&Reaction
+Gen Surprised
+&Gen
+Mouse
+ムース王
 お主たち次世代が
 国を変えるのじゃ！！
 &Stop
@@ -256,6 +286,8 @@ BlueNormal
 (やらないで後悔するよりも、僕に出来る
 精一杯やってやろう。話はそれからだ)
 &Stop
+&Reaction
+Blue Surprised
 &Blue
 BlueAngry
 ブルスラ
@@ -286,6 +318,7 @@ Mouse
 チンギスのように
 苦しむものを出さないために…
 &Stop
+&BGMStop
 &Image
 &ChangeChara
 &Gen
@@ -316,6 +349,8 @@ BlueNormal
 リストバンドをコツンとあわせた。
 &Stop
 &Image
+&BGMPlay
+Field2
 &Chara
 チンギス
 このリストバンドはあたし達の誓いの証だ！

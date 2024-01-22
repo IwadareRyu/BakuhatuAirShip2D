@@ -1,17 +1,19 @@
 ﻿using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class AirShipController : MonoBehaviour
 {
     Rigidbody2D _rb;
     [Tooltip("攻撃のクールタイム")]
     bool _cooltime;
-    [Tooltip("オールアタックポイント")]
+    [Tooltip("オールアタックの生成する場所")]
     [SerializeField] GameObject[] _allAttackPoints;
-    [Tooltip("全てを消す爆発,オールアタック")]
+    [Tooltip("全てを消す爆発,オールアタックのオブジェクト")]
     [SerializeField] GameObject _allAttack;
     [Tooltip("爆風")]
     [SerializeField] GameObject _bakuhatu;
@@ -20,9 +22,7 @@ public class AirShipController : MonoBehaviour
     [Tooltip("プレイヤーに付いてくる飛行機のオンオフ")]
     [SerializeField] GameObject _airShipOnOff;
     [Tooltip("右を向いていたら+1、左を向いていたら-1")]
-    float minas = 1;
-    float h;
-    float v;
+    float _minas = 1;
     [Tooltip("移動の向き")]
     Vector2 _move;
     [Tooltip("プレイヤーのスピード")]
@@ -31,15 +31,13 @@ public class AirShipController : MonoBehaviour
     [SerializeField] float _lowSpeed = 1.5f;
     [Tooltip("プレイヤーの現在のスピード")]
     float _nowSpeed;
-    public float _minas => minas;
+    public float Minas => _minas;
     [Tooltip("飛行機が再生成される時間")]
     [SerializeField] float _time = 3f;
     [Tooltip("GameManagerのインスタンス")]
     GameManager _gm;
-    [Tooltip("リトライするための変数。")]
-    SceneLoader _activeLoad;
     [Tooltip("PowerUpのインスタンス")]
-    private PowerUp _power;
+    PowerUp _power;
     [Tooltip("プール")]
     [SerializeField] BulletPoolActive _pool;
     [Header("trueにすれば、当たり判定なくなるから実質無敵")]
@@ -52,11 +50,14 @@ public class AirShipController : MonoBehaviour
     [Tooltip("無敵時の色")]
     [SerializeField] Color _starColor;
     [Tooltip("弾を出すフラグ")]
-    private bool _fire;
+    bool _fire;
     [Tooltip("移動を遅くするフラグ")]
-    private bool _slowMove;
+    bool _slowMove;
     [Tooltip("ポーズフラグ")]
-    private bool _pause;
+    bool _pause;
+    [Tooltip("クールタイムのテキスト")]
+    [SerializeField] Text _coolTimeText;
+    Coroutine _coolTimeCoroutine;
 
     /// InputSystem処理  
     /// <summary>移動処理</summary>
@@ -88,6 +89,7 @@ public class AirShipController : MonoBehaviour
         _gm = GameManager.Instance;
         _power = PowerUp.Instance;
         _nowSpeed = _speed;
+        _coolTimeText.enabled = false;
     }
 
     void Update()
@@ -101,6 +103,7 @@ public class AirShipController : MonoBehaviour
                 {
                     _gm.AddScore(-100);
                     StartCoroutine(BulletCoolTime());
+                    if (_coolTimeCoroutine == null) { _coolTimeCoroutine = StartCoroutine(CoolTimeText()); }
                 }
             }   // 攻撃ボタンを押した場合、クールタイムを確認し、攻撃を行う
 
@@ -136,6 +139,7 @@ public class AirShipController : MonoBehaviour
             _gm.AddScore(-500);
             _starTime = true;
             StartCoroutine(AllAtackTime());
+            if (_coolTimeCoroutine == null) { _coolTimeCoroutine = StartCoroutine(CoolTimeText()); }
         }   // 無敵状態でない場合、敵の弾や敵、ボスの攻撃に当たった場合、お金を減らし、無敵状態に移行する
 
         if (collision.gameObject.tag == "GetMoneyFloor")
@@ -151,6 +155,23 @@ public class AirShipController : MonoBehaviour
                 }
             }
         }   // プレイヤーが「GetMoneyFloor」に衝突した場合、周囲にあるお金をプレイヤーに引き寄せる。
+    }
+
+    /// <summary>クールタイムであることを表示するテキスト</summary>
+    /// <returns></returns>
+    IEnumerator CoolTimeText()
+    {
+        while(_cooltime)
+        {
+            for (float time = 0; time < 0.5f; time += Time.deltaTime)
+            {
+                if (!_cooltime) { break; }
+                yield return new WaitForFixedUpdate();
+            }
+            _coolTimeText.enabled = !_coolTimeText.enabled;
+        }
+        _coolTimeText.enabled = false;
+        _coolTimeCoroutine = null;
     }
 
     // 全体攻撃の無敵時間の処理

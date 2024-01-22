@@ -61,7 +61,7 @@ public class PlayerBullet : MonoBehaviour
     {
         RouinGameManager GM = GameObject.FindGameObjectWithTag("GM").GetComponent<RouinGameManager>();
         //壁か地面に当たったら破壊。
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Boss")
         {
             Bakuhatu();
         }

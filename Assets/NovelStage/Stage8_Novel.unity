@@ -1320,7 +1320,7 @@ PrefabInstance:
     - target: {fileID: 2237577838196876374, guid: bbe506c2ed4bd364598d19de0e62c76f, type: 3}
       propertyPath: _pool
       value: 
-      objectReference: {fileID: 1915144808}
+      objectReference: {fileID: 744209874}
     - target: {fileID: 2249337540322693555, guid: bbe506c2ed4bd364598d19de0e62c76f, type: 3}
       propertyPath: _pool
       value: 
@@ -1452,7 +1452,7 @@ PrefabInstance:
     - target: {fileID: 3350622384719504991, guid: bbe506c2ed4bd364598d19de0e62c76f, type: 3}
       propertyPath: _danmakuPattern.Array.data[0]
       value: 
-      objectReference: {fileID: 1011776359}
+      objectReference: {fileID: 1747162666}
     - target: {fileID: 3350622384719504991, guid: bbe506c2ed4bd364598d19de0e62c76f, type: 3}
       propertyPath: _danmakuPattern.Array.data[1]
       value: 
@@ -1468,7 +1468,7 @@ PrefabInstance:
     - target: {fileID: 3350622384719504991, guid: bbe506c2ed4bd364598d19de0e62c76f, type: 3}
       propertyPath: _danmakuPattern.Array.data[4]
       value: 
-      objectReference: {fileID: 1747162666}
+      objectReference: {fileID: 1011776359}
     - target: {fileID: 3350622384792701889, guid: bbe506c2ed4bd364598d19de0e62c76f, type: 3}
       propertyPath: _pool
       value: 
@@ -3777,7 +3777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531826247437824462, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_Text
-      value: "\u30BF\u30A4\u30C8\u30EB\u753B\u9762\u3078"
+      value: "\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\u3078"
       objectReference: {fileID: 0}
     - target: {fileID: 5531826247788354305, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_Name
@@ -3869,15 +3869,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531826247992509076, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531826248047583816, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5531826248047583816, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 211
+      value: 129
       objectReference: {fileID: 0}
     - target: {fileID: 5531826248047583818, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_Text
-      value: "\u30B2\u30FC\u30E0\u30AF\u30EA\u30A2\uFF01\n\u304A\u3081\u3067\u3068\u3046\uFF01\uFF01\n"
+      value: 'Stage Crear!
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531826248047583818, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7093747052431257684, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_AnchorMax.x

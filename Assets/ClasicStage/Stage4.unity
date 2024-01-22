@@ -2721,7 +2721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageName
-      value: 
+      value: "\u5BFE\u6C7A\uFF01\u30E2\u30B0\u30ED\u30EF\uFF01(1\u56DE\u76EE)"
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _startPlay

@@ -2354,6 +2354,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _airnum
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _speedUp
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _bakuhatuPower
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: _powerUpCanvas
       value: 
       objectReference: {fileID: 812517694}

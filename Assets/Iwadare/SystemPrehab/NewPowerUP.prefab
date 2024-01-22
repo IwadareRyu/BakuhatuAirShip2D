@@ -233,18 +233,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6812166064778345103}
-        m_TargetAssemblyTypeName: Sansyo, Assembly-CSharp
-        m_MethodName: PauseOff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6812166066168192629}
         m_TargetAssemblyTypeName: PowerUp, Assembly-CSharp
         m_MethodName: SceneLoad
@@ -257,10 +245,22 @@ MonoBehaviour:
           m_StringArgument: Stage1
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6812166065501265201}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 6812166065501265101}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6812166064778345103}
+        m_TargetAssemblyTypeName: Sansyo, Assembly-CSharp
+        m_MethodName: PauseOff
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2368,7 +2368,7 @@ MonoBehaviour:
   _powerMoneyText: {fileID: 6812166065776441642}
   _speedMoneyText: {fileID: 6812166065337090373}
   _airnumMoneyText: {fileID: 6812166065140177093}
-  _powerUpCanvas: {fileID: 0}
+  _powerUpCanvas: {fileID: 6812166065501265101}
 --- !u!114 &1466257289059744025
 MonoBehaviour:
   m_ObjectHideFlags: 0

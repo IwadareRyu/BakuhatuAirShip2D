@@ -2632,7 +2632,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u2190\u5F3E\u5E55\u30B2\u30FC\u30E0\u3060\u3051\u3092\n\u697D\u3057\u307F\u305F\u3044\u65B9\u306B\n\u7528\u610F\u3057\u307E\u3057\u305F\uFF01"
+  m_Text: "\u2190\u30B9\u30C8\u30FC\u30EA\u30FC\u306A\u3057\u306E\n\u30B2\u30FC\u30E0\u30E2\u30FC\u30C9\n\u96E3\u6613\u5EA6\u5C11\u3057\u9AD8\u3081"
 --- !u!222 &1963162022
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3080,9 +3080,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3996039965678498579}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: -10
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3736,9 +3736,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8609936229714361410}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: -10
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

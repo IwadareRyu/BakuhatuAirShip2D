@@ -828,6 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a5869943af903448283c89ccb10ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nobelBool: 0
   _nobelSceneName: 
   _deadEnemy: 1
   _goalPos: {fileID: 1920351826}
@@ -836,7 +837,6 @@ MonoBehaviour:
   _countDownTime: 500
   _enemymanege: {fileID: 0}
   _audio: {fileID: 8300000, guid: 8814df1b56b50704f82897117a9ec6ae, type: 3}
-  _uI: {fileID: 0}
 --- !u!61 &575733518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3800,7 +3800,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c7433f172d73c0b41858f7d61dd2a690, type: 3}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageName
-      value: 
+      value: "\u6700\u7D42\u6C7A\u6226\uFF01\u30E2\u30B0\u30ED\u30EF\uFF01(2\u56DE\u76EE)"
       objectReference: {fileID: 0}
     - target: {fileID: 1043968388095546543, guid: 9b171ed97603fbb42baf9e04b725b77f, type: 3}
       propertyPath: _stageNumber
@@ -4284,7 +4284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531826246719351854, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Title
+      value: ClassicEnding
       objectReference: {fileID: 0}
     - target: {fileID: 5531826246719351854, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
@@ -4296,7 +4296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531826247437824462, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_Text
-      value: "\u30BF\u30A4\u30C8\u30EB\u753B\u9762\u3078"
+      value: "\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\u3078"
       objectReference: {fileID: 0}
     - target: {fileID: 5531826247788354305, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_Name
@@ -4391,12 +4391,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5531826248047583816, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531826248047583816, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 211
+      value: 136
       objectReference: {fileID: 0}
     - target: {fileID: 5531826248047583818, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_Text
-      value: "\u30B2\u30FC\u30E0\u30AF\u30EA\u30A2\uFF01\n\u304A\u3081\u3067\u3068\u3046\uFF01\uFF01\n"
+      value: Game Crear!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531826248047583818, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7093747052431257684, guid: 5ee074bef54016e4da1c3406cb3fdd24, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4456,7 +4464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812166065501265201, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812166065920058832, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_LocalScale.x
