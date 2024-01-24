@@ -154,7 +154,7 @@ public class UserScriptsManage : MonoBehaviour
                 CharaChange(1);
                 break;
             case "&Image":
-                _imageManager.ChangeImage();
+                _imageManager.ChangeBackImage();
                 _novelNumber++;
                 break;
             case "&LongShakeEvent":
@@ -211,7 +211,7 @@ public class UserScriptsManage : MonoBehaviour
 
         _imageManager.CharaImage(i,image);
         
-        if(charaIn) 
+        if(charaIn)
         {
             _imageManager.CharaIn(i);
         }

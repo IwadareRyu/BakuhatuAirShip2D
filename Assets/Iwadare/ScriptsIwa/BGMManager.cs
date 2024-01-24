@@ -114,7 +114,7 @@ public class BGMManager : SingletonMonovihair<BGMManager>
     /// <param name="audioClip">指定されたオーディオクリップ</param>
     public void ClipBGMPlay(AudioClip audioClip)
     {
-        if (_bgm.clip != audioClip)
+        if (_bgm.clip != audioClip || !_bgm.isPlaying)
         {
             // 指定されたオーディオクリップをオーディオソースに設定し再生
             _bgm.clip = audioClip;

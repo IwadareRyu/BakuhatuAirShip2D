@@ -46,6 +46,8 @@ public class ImageManager : MonoBehaviour
     [SerializeField]
     Transform[] _charaOutPos;
 
+    Tween[] _moveTween;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -55,6 +57,8 @@ public class ImageManager : MonoBehaviour
         {
             i.color = _standCharaColor;
         }
+        // charaを表示させる数、Tweenを確保しておく。
+        _moveTween = new Tween[_charaImage.Length];
     }
 
     private void Start()
@@ -64,19 +68,22 @@ public class ImageManager : MonoBehaviour
         foreach (var i in _charaReactionImage) { i.color = _fadeColor; }
     }
 
-    public void ChangeImage()
+    /// <summary>背景を変更する処理</summary>
+    public void ChangeBackImage()
     {
         _changeSpriteNum++;
         _fadeBackGroundObject.sprite = _backGroundSprites[_changeSpriteNum];
         _fadeBackGroundObject.DOFade(1f, 1f).OnComplete(() =>
         {
-
             _fadeBackGroundObject.color = _fadeColor;
             _backGroundImage.sprite = _backGroundSprites[_changeSpriteNum];
         });
 
     }
 
+    /// <summary>キャラのイメージを変更する処理。</summary>
+    /// <param name="i"></param>
+    /// <param name="image"></param>
     public void CharaImage(int i, ImageState image)
     {
         if (i != -1)
@@ -100,6 +107,9 @@ public class ImageManager : MonoBehaviour
 
     }
 
+    /// <summary>キャラにリアクションをさせる処理</summary>
+    /// <param name="chara"></param>
+    /// <param name="reaction"></param>
     public void Reaction(int chara, int reaction)
     {
         var sequence = DOTween.Sequence();
@@ -126,15 +136,25 @@ public class ImageManager : MonoBehaviour
         sequence.Play().OnComplete(() => { _charaReactionImage[chara].DOFade(0f, _reactionTime * 2f); }).SetLink(_charaReactionImage[chara].gameObject);
     }
 
+    /// <summary>画面外に移動させる処理</summary>
+    /// <param name="i"></param>
     public void CharaOut(int i)
     {
-        _charaImage[i].transform.position = _charaOutPos[i].position;
-    }
+        if(_moveTween != null)
+        {
+            _moveTween[i].Complete();
+        }   //キャラインが動いている際、強制的にキャラインを完了させる。
 
+        _charaImage[i].transform.position = _charaOutPos[i].position;
+    }   //画面外に移動させる。
+
+    /// <summary>キャラが画面内に入る処理</summary>
+    /// <param name="i"></param>
     public void CharaIn(int i)
     {
-        _charaImage[i].transform.DOMove(_charainPos[i].position, 0.5f);
-    }
+        _moveTween[i] = _charaImage[i].transform.DOMove(_charainPos[i].position, 0.5f)
+            .OnComplete(() => _moveTween[i] = null);
+    }   //キャラアウトする際、DoMoveが動いているとキャラアウトしないので、動いているTweenとして確保しておく。
 }
 
 public enum ReactionState
