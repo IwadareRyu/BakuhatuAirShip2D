@@ -852,6 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a5869943af903448283c89ccb10ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nobelBool: 1
   _nobelSceneName: Nobel6End
   _deadEnemy: 1
   _goalPos: {fileID: 1920351826}
@@ -1385,6 +1386,14 @@ PrefabInstance:
       propertyPath: _resultText
       value: 
       objectReference: {fileID: 126200752}
+    - target: {fileID: 4994506639191379396, guid: 67ea25ec361b5a14ba356c7363a2cc2a, type: 3}
+      propertyPath: _startScore
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994506639191379396, guid: 67ea25ec361b5a14ba356c7363a2cc2a, type: 3}
+      propertyPath: _totalMoney
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 4994506639191379402, guid: 67ea25ec361b5a14ba356c7363a2cc2a, type: 3}
       propertyPath: m_Name
       value: NEWGameManager
@@ -2250,6 +2259,18 @@ PrefabInstance:
     - target: {fileID: 6812166066168192628, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _airnum
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _speedUp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
+      propertyPath: _bakuhatuPower
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6812166066168192629, guid: cf1457c5b5b33d04b8fe1e3365ab6f1b, type: 3}
       propertyPath: _powerUpCanvas

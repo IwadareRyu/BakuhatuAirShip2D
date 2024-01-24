@@ -17,6 +17,7 @@ public class SceneLoader : SingletonMonovihair<SceneLoader>
     public void ActiveSceneLoad()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 
     /// <summary>スコア、ライフのリセットのシーンのロード</summary>

@@ -1,7 +1,4 @@
-﻿using Steamworks;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -62,7 +59,7 @@ public class AirShipController : MonoBehaviour
     /// InputSystem処理  
     /// <summary>移動処理</summary>
     public void OnMove(InputValue value) => _move = value.Get<Vector2>();
-    
+
     /// <summary>弾を出す処理</summary>
     public void OnFire(InputValue value) => _fire = value.Get<float>() > 0;
 
@@ -118,7 +115,7 @@ public class AirShipController : MonoBehaviour
         }
         else
         {
-            _move = new Vector2(0,0);
+            _move = new Vector2(0, 0);
         }
     }
 
@@ -161,7 +158,7 @@ public class AirShipController : MonoBehaviour
     /// <returns></returns>
     IEnumerator CoolTimeText()
     {
-        while(_cooltime)
+        while (_cooltime)
         {
             for (float time = 0; time < 0.5f; time += Time.deltaTime)
             {

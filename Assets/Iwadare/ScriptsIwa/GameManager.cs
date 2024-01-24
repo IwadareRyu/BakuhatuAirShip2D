@@ -45,8 +45,7 @@ public class GameManager : SingletonMonovihair<GameManager>
 
     void Start()
     {
-        //Sansyo();
-        //GameSetting();
+        _gameOverCanvas.SetActive(false);
     }
 
     public void Sansyo()
